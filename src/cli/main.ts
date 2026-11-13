@@ -8,8 +8,9 @@ import { loadAssets } from '../scene/assets.js'
 import { parseFilm } from '../scene/validate.js'
 import { render } from '../renderers/render.js'
 import { verify } from '../renderers/verify.js'
-const help = 'aethermotion validate SCENE.json | render SCENE.json OUT.mp4 [--workers N --batch N --backend chromium|native] | verify SCENE.json OUT.mp4 | subtitles SCENE.json OUT.srt'
+const help = 'aethermotion validate SCENE.json | render SCENE.json OUT.mp4 [--workers N --batch N --backend chromium|native] | verify SCENE.json OUT.mp4 | subtitles SCENE.json OUT.srt | direct TOPIC OUT.json --model MODEL'
 async function main() {
+  if(process.argv[2]==='direct') return (await import('./direct.js')).runDirector(process.argv.slice(3))
   const {values,positionals} = parseArgs({options:{backend:{type:'string'},workers:{type:'string'},batch:{type:'string'},help:{type:'boolean'}},allowPositionals:true})
   if (values.help) return console.log(help)
   const [mode,spec,file] = positionals

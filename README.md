@@ -39,4 +39,18 @@ Start with examples/first-scene.json, a four-second moving circle. Copy an examp
 After building, run `python3 scripts/experiment.py out/experiment` on Linux to render all three, measure time and memory, hash the runtime around each production and write experiment.json. Supply an empty or new destination. Use `--backend chromium` to run the same experiment in Chromium. The complete scene specifications are in examples/. [Style authoring](docs/STYLES.md).
 
 ## Cartoon prototype
-[View the eight-second pier scene](samples/pier.mp4). The original 2D actor walks, stops, points and opens its mouth according to JSON tracks. See examples/pier.json and the [style reference](docs/STYLES.md). The films are silent. Three.js, Kokoro, audio mixing, timed subtitles, integration contracts and the Gemini director are open milestones.
+[View the eight-second pier scene](samples/pier.mp4). The original 2D actor walks, stops, points and opens its mouth according to JSON tracks. See examples/pier.json and the [style reference](docs/STYLES.md). The original pier example is silent. A second edition includes measured Kokoro speech, timed bells and burned-in captions.
+
+## 3D and narrated samples
+
+|Sample|What to look for|Download|
+|---|---|---|
+|Capsule|The camera travels around an imported eight-sided model, then the housing and rings separate.|[MP4](samples/capsule.mp4) · [frames](samples/capsule-contact.jpg)|
+|Signal|A Kokoro voice introduces the signal. Three timed bells mark the lights. Captions appear during speech.|[MP4](samples/signal.mp4) · [SRT](samples/signal.srt)|
+
+```sh
+node dist/cli/main.js render examples/signal.json out/signal.mp4 --backend native
+AETHER_WEBGL=software node dist/cli/main.js render examples/capsule.json out/capsule.mp4 --backend chromium
+```
+
+The narrated example ships its WAVs, so it runs immediately after the base install. The 3D example requires Chromium and WebGL 2. [Three.js authoring](docs/THREE.md) · [Narration and audio production](docs/AUDIO.md) · [Optional Gemini director](docs/DIRECTOR.md) · [Caller contracts](docs/ADAPTERS.md).

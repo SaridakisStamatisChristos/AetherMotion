@@ -39,7 +39,7 @@ export function parseFilm(input: unknown): Film {
         if(ids.has(model.id)) throw new Error(scene.id+': duplicate model or overlay '+model.id)
         ids.add(model.id)
         const shape=model.shape
-        if(shape.kind==='obj' && !input.assets?.[shape.asset]?.endsWith?.('.obj'))
+        if(shape.kind==='obj' && (!Object.hasOwn(input.assets ?? {},shape.asset) || !input.assets![shape.asset].endsWith('.obj')))
           throw new Error(model.id+': expected declared local OBJ asset '+shape.asset)
         if(shape.kind==='cylinder' && shape.radiusTop===0 && shape.radiusBottom===0)
           throw new Error(model.id+': cylinder needs a nonzero radius')
