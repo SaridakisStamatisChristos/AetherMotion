@@ -30,6 +30,12 @@ jobs:
         run: |
           node dist/cli/main.js produce examples/missing-square.json out/missing-square --backend ${{ matrix.backend }} --workers 2
           python3 scripts/check_missing_square.py out/missing-square/film.mp4
+      - name: Compile and render the motion storyboard
+        run: |
+          mkdir -p out/night-input
+          cp -r examples/night-post/voice out/night-input/
+          node dist/cli/main.js compile-board examples/night-post/board.json out/night-input/film.json
+          node dist/cli/main.js produce out/night-input/film.json out/night-post --backend ${{ matrix.backend }} --workers 2
       - name: Verify published eclipse film
         run: |
           node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4

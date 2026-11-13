@@ -15,3 +15,5 @@ Chromium's Three.js pass supplies a WebGL-rendered backdrop. The existing Canvas
 
 ## Production orchestration
 The produce entry point stages assets into a private output directory, batches missing speech in a single local model session, and derives caption intervals from measured WAV lengths. It then invokes the normal verified render pipeline and publishes the directory by rename. The Painter applies parent transforms recursively. Fades are sampled at exact frame indices independently of seek order.
+
+Motion storyboards add an optional authoring layer before scene validation. The provider and offline CLI share a schema and compiler. Compile time converts relative poses to frame-indexed Canvas groups, fits the stage to the selected aspect ratio, and emits masks for off-stage geometry. The renderer continues to consume the same scene v0.1 format.

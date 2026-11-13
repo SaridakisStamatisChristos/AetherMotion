@@ -2,7 +2,10 @@ import { Ajv } from 'ajv'
 import type { Film, Drawable, Scalar } from '../scene/types.js'
 import { parseFilm } from '../scene/validate.js'
 
+import { compileMotion, motionSchema, type MotionBoard } from './motion.js'
+
 export interface Brief {
+  layout?:'labels'|'motion'
   topic:string
   seconds:number
   style:'whiteboard'|'infographic'
@@ -71,17 +74,43 @@ export function compileBoard(brief:Brief,board:Storyboard) {
   return {film:parseFilm(film),narration}
 }
 
+function validateBrief(brief:Brief) {
+  if(!brief || typeof brief.topic!=='string' || !brief.topic.trim() || brief.topic.length>2000 ||
+    !Number.isInteger(brief.seconds) || brief.seconds<6 || brief.seconds>180 ||
+    !['whiteboard','infographic'].includes(brief.style) || !['portrait','landscape'].includes(brief.format) ||
+    !['labels','motion'].includes(brief.layout ?? 'labels') || typeof brief.narration!=='boolean')
+    throw new Error('Invalid brief')
+}
+
+function compiler(brief:Brief) {
+  validateBrief(brief)
+  const motion=brief.layout==='motion'
+  const schema=motion ? motionSchema(brief.narration) : boardSchema(brief.narration)
+  const validator=new Ajv({allErrors:true})
+  const check=validator.compile<MotionBoard | Storyboard>(schema)
+  function compile(board:unknown) {
+    if(!check(board)) throw new Error(validator.errorsText(check.errors?.slice(0,10)))
+    return motion ? compileMotion(brief,board as MotionBoard) : compileBoard(brief,board as Storyboard)
+  }
+  return {schema,compile}
+}
+
+/** Validate provider-independent storyboard data and compile it without network access. */
+export function compileStoryboard(brief:Brief, board:unknown) {
+  return compiler(brief).compile(board)
+}
+
 /** Each attempt emits usage when the provider supplies it. Validation failures get a bounded repair. */
 export async function direct(brief:Brief,provider:Director,retries=1) {
-  if(typeof brief.topic!=='string' || !brief.topic.trim() || brief.topic.length>2000 || !Number.isInteger(brief.seconds) || brief.seconds<6 || brief.seconds>180 ||
-    !['whiteboard','infographic'].includes(brief.style) || !['portrait','landscape'].includes(brief.format) ||
-    typeof brief.narration!=='boolean' || !Number.isInteger(retries) || retries<0 || retries>3) throw new Error('Invalid brief or retry limit')
-  const schema=boardSchema(brief.narration)
-  const check=new Ajv().compile<Storyboard>(schema)
+  if(!Number.isInteger(retries) || retries<0 || retries>3) throw new Error('Invalid retry limit')
+  const {schema,compile}=compiler(brief)
   const usage:(Record<string,unknown>|null)[]=[]
   let feedback=''
-  const prompt='Write a factual, concise sequence of 2–6 teaching beats. Labels describe successive concepts. Use natural short titles. '+
-    'If narration is requested, keep speech short enough for each equal-length shot. Return only the specified JSON. Brief: '+JSON.stringify(brief)
+  const direction=brief.layout==='motion'
+    ? 'Design distinct illustrated shots on a 100 wide by 48 high stage. Coordinates grow right and down. Layer marks are local to their poses. Animate meaningful movement with increasing pose times from 0 to 1. Shot weights divide the duration. Set a legible ink color, and use the requested style to guide the palette and drawing. '
+    : 'Write a factual, concise sequence of 2–6 teaching beats. Labels describe successive concepts. Use natural short titles. '
+  const prompt=direction+
+    'If narration is requested, keep speech short enough for each shot. Return only the specified JSON. Brief: '+JSON.stringify(brief)
   for(let i=0;;i++) {
     let result
     try {result=await provider.generate(prompt+feedback,schema)}
@@ -94,8 +123,7 @@ export async function direct(brief:Brief,provider:Director,retries=1) {
     usage.push(result.usage ?? null)
     try {
       const data=JSON.parse(result.text)
-      if(!check(data)) throw new Error(new Ajv().errorsText(check.errors))
-      return {...compileBoard(brief,data),usage,attempts:i+1}
+      return {...compile(data),board:data,usage,attempts:i+1}
     } catch(error) {
       if(i===retries) throw new Error('Director returned an invalid storyboard: '+(error as Error).message)
       feedback='\nCorrect the previous validation error: '+(error as Error).message.slice(0,400)
