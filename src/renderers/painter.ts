@@ -2,6 +2,7 @@ import type { Film, Drawable, Shot } from '../scene/types.js'
 import { cameraMatrix, locate, sample } from '../timeline/sample.js'
 
 import { arrow, letters, measure, write, type Ink } from '../engines/whiteboard.js'
+import { actor } from '../engines/cartoon.js'
 import { bars, milestones } from '../engines/infographic.js'
 const cache = new WeakMap<Drawable,Ink>()
 function strokes(o: Extract<Drawable,{kind:'path'|'arrow'|'handwriting'}>) {
@@ -35,6 +36,7 @@ function paint(ctx: CanvasRenderingContext2D, images: ReadonlyMap<string,CanvasI
       bars(ctx,o.data,o.width,o.height,o.ceiling,sample(o.reveal,t,1),ink,o.size); break
     case 'milestones':
       milestones(ctx,o.labels,o.width,sample(o.reveal,t,1),ink,o.size); break
+    case 'actor': actor(ctx,o,t); break
     case 'counter':
       ctx.font = 'bold '+o.size+'px monospace'
       ctx.fillText(sample(o.value,t,0).toFixed(o.decimals)+(o.suffix ?? ''),0,0); break

@@ -90,7 +90,8 @@
               "name": {
                 "enum": [
                   "whiteboard",
-                  "infographic"
+                  "infographic",
+                  "cartoon"
                 ]
               },
               "accent": {
@@ -880,12 +881,142 @@
             "size"
           ],
           "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "x": {
+              "$ref": "#/definitions/coord"
+            },
+            "y": {
+              "$ref": "#/definitions/coord"
+            },
+            "rotation": {
+              "$ref": "#/definitions/coord"
+            },
+            "opacity": {
+              "$ref": "#/definitions/unit"
+            },
+            "scale": {
+              "$ref": "#/definitions/scale"
+            },
+            "kind": {
+              "const": "actor"
+            },
+            "height": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            },
+            "phase": {
+              "$ref": "#/definitions/coord"
+            },
+            "stride": {
+              "$ref": "#/definitions/stride"
+            },
+            "gesture": {
+              "$ref": "#/definitions/unit"
+            },
+            "mouth": {
+              "$ref": "#/definitions/unit"
+            },
+            "expression": {
+              "enum": [
+                "neutral",
+                "happy",
+                "curious",
+                "concerned"
+              ]
+            },
+            "facing": {
+              "enum": [
+                "left",
+                "right"
+              ]
+            },
+            "skin": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "shirt": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "trousers": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "hair": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "shoes": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "height",
+            "skin",
+            "shirt",
+            "trousers",
+            "hair",
+            "shoes"
+          ],
+          "additionalProperties": false
         }
       ],
       "type": "object",
       "discriminator": {
         "propertyName": "kind"
       }
+    },
+    "stride": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 30
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "frame": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 216000
+              },
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 30
+              },
+              "ease": {
+                "enum": [
+                  "linear",
+                  "smooth",
+                  "hold"
+                ]
+              }
+            },
+            "required": [
+              "frame",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 256
+        }
+      ]
     }
   }
 }

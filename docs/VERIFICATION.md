@@ -15,3 +15,6 @@ With engine commit 0254d177109a72ea38c6db5d91ae1c986cc679cb, run `python3 script
 |Triangular numbers|720|9.61 s|237264|191672|
 
 benchmarks/reuse.json includes each output hash and a separate 50 ms sampled RSS sum for visible process descendants. Measurements depend on the host. Every output passed FFprobe dimension, codec, rate, duration and frame-count checks and a complete FFmpeg decode. samples/reuse-contact.jpg uses frames 205, 445 and 685 from each decoded film. The director made zero model calls during rendering. Tokens used to author JSON in development were not metered. These experiments establish reuse and local rendering; comparison with per-film coding costs requires separately measured authoring workflows.
+
+## Early Stage C
+Eight seconds of cartoon motion from examples/pier.json were encoded at 720×406, 24 fps (192 frames), and fully decoded. Inspection of frames 21, 84 and 151 shows the actor moving, the signal changing, and a final gesture with a keyed mouth and dialogue label. The gait regression tests alternating limb lift, rest and random-access frame identity. No narrated speech, automatic lip synchronization or production-grade rig assessment has been performed. See benchmarks/pier.json and samples/pier-contact.jpg.

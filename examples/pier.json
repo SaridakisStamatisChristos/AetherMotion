@@ -1,0 +1,321 @@
+{
+  "version": "0.1",
+  "engine": "canvas2d",
+  "width": 720,
+  "height": 406,
+  "fps": 24,
+  "durationFrames": 192,
+  "scenes": [
+    {
+      "id": "pier",
+      "style": {
+        "name": "cartoon"
+      },
+      "frames": 192,
+      "background": "#173542",
+      "objects": [
+        {
+          "kind": "text",
+          "id": "field",
+          "text": "ACTING STUDY    /    A CUE AT THE PIER",
+          "x": 38,
+          "y": 42,
+          "size": 15,
+          "color": "#8DC6B5",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "title",
+          "text": "Wait for the third light.",
+          "x": 36,
+          "y": 108,
+          "size": 49,
+          "color": "#FAF2DB",
+          "face": "serif"
+        },
+        {
+          "kind": "rect",
+          "id": "pier",
+          "x": 0,
+          "y": 379,
+          "width": 720,
+          "height": 30,
+          "color": "#42626B"
+        },
+        {
+          "id": "ring0",
+          "kind": "circle",
+          "x": 552,
+          "y": 215,
+          "radius": 17,
+          "color": "#355B62"
+        },
+        {
+          "id": "lamp0",
+          "kind": "circle",
+          "x": 552,
+          "y": 215,
+          "radius": 10,
+          "color": "#F8BD63",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 70,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 78,
+              "value": 1,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "ring1",
+          "kind": "circle",
+          "x": 599,
+          "y": 215,
+          "radius": 17,
+          "color": "#355B62"
+        },
+        {
+          "id": "lamp1",
+          "kind": "circle",
+          "x": 599,
+          "y": 215,
+          "radius": 10,
+          "color": "#F8BD63",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 105,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 113,
+              "value": 1,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "ring2",
+          "kind": "circle",
+          "x": 646,
+          "y": 215,
+          "radius": 17,
+          "color": "#355B62"
+        },
+        {
+          "id": "lamp2",
+          "kind": "circle",
+          "x": 646,
+          "y": 215,
+          "radius": 10,
+          "color": "#F8BD63",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 140,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 148,
+              "value": 1,
+              "ease": "linear"
+            }
+          ]
+        },
+        {
+          "id": "mast",
+          "kind": "rect",
+          "x": 597,
+          "y": 238,
+          "width": 5,
+          "height": 141,
+          "color": "#55727B"
+        },
+        {
+          "id": "walker",
+          "kind": "actor",
+          "height": 179,
+          "x": [
+            {
+              "frame": 0,
+              "value": 65,
+              "ease": "linear"
+            },
+            {
+              "frame": 112,
+              "value": 416,
+              "ease": "linear"
+            },
+            {
+              "frame": 191,
+              "value": 416,
+              "ease": "linear"
+            }
+          ],
+          "y": 378,
+          "phase": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 112,
+              "value": 3.5,
+              "ease": "linear"
+            },
+            {
+              "frame": 191,
+              "value": 3.5,
+              "ease": "linear"
+            }
+          ],
+          "stride": [
+            {
+              "frame": 0,
+              "value": 24,
+              "ease": "linear"
+            },
+            {
+              "frame": 104,
+              "value": 24,
+              "ease": "linear"
+            },
+            {
+              "frame": 112,
+              "value": 0,
+              "ease": "linear"
+            }
+          ],
+          "gesture": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 108,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 140,
+              "value": 1,
+              "ease": "smooth"
+            },
+            {
+              "frame": 191,
+              "value": 1,
+              "ease": "smooth"
+            }
+          ],
+          "mouth": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 133,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 138,
+              "value": 1,
+              "ease": "linear"
+            },
+            {
+              "frame": 142,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 148,
+              "value": 0.8,
+              "ease": "linear"
+            },
+            {
+              "frame": 154,
+              "value": 0.1,
+              "ease": "linear"
+            },
+            {
+              "frame": 158,
+              "value": 0.9,
+              "ease": "linear"
+            },
+            {
+              "frame": 164,
+              "value": 0,
+              "ease": "linear"
+            }
+          ],
+          "skin": "#E5AD8C",
+          "shirt": "#F9B65C",
+          "trousers": "#668A98",
+          "hair": "#382F39",
+          "shoes": "#292F39",
+          "expression": "curious"
+        },
+        {
+          "kind": "text",
+          "id": "line",
+          "text": "\u201cThere it is.\u201d",
+          "x": 433,
+          "y": 177,
+          "size": 23,
+          "color": "#FAF2DB",
+          "face": "serif",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 132,
+              "value": 0,
+              "ease": "linear"
+            },
+            {
+              "frame": 139,
+              "value": 1,
+              "ease": "linear"
+            },
+            {
+              "frame": 175,
+              "value": 1,
+              "ease": "linear"
+            },
+            {
+              "frame": 191,
+              "value": 0,
+              "ease": "linear"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

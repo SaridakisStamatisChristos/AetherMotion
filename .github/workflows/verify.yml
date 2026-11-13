@@ -22,6 +22,8 @@ jobs:
         env:
           TEST_BACKEND: ${{ matrix.backend }}
       - run: mkdir -p out && npm run --silent motion -- render examples/wave.json out/wave.mp4 --backend ${{ matrix.backend }} > out/metrics.json
+      - run: python3 scripts/experiment.py out/reuse --backend ${{ matrix.backend }}
+      - run: node dist/cli/main.js render examples/pier.json out/pier.mp4 --backend ${{ matrix.backend }}
       - uses: actions/upload-artifact@v4
         with:
           name: wave-${{ matrix.backend }}

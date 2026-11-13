@@ -21,6 +21,7 @@ export function parseFilm(input: unknown): Film {
     for (const object of scene.objects) {
       if (ids.has(object.id)) throw new Error(scene.id + ': duplicate object ' + object.id)
       ids.add(object.id)
+      if (object.kind==='actor' && scene.style?.name!=='cartoon') throw new Error(object.id + ': select cartoon style for actor')
       if (object.kind==='bars' && object.data.some(d => d.value>object.ceiling))
         throw new Error(object.id + ': bar values must fit the chart ceiling')
       if ((object.kind==='handwriting' || object.kind==='arrow') && scene.style?.name!=='whiteboard')

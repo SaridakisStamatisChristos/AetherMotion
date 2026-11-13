@@ -29,7 +29,7 @@ node dist/cli/main.js render examples/wave.json out/wave-browser.mp4 --backend c
 The render command prints JSON metrics to standard output. Choose a fresh output filename. A failed render can be retried at the same destination. If Chromium reports a socket or sandbox startup failure in a container, use the native backend. For missing encoders check `ffmpeg -encoders` for libx264. For missing libraries on a new install, use the supported Node version and install optional npm dependencies. System fonts affect layout. Match fonts and toolchain versions when reproducing pixels.
 
 ## Authoring and extension
-Copy an example JSON file, change its contents and run validate, render and verify. The schema rejects unknown actions. [Scene format and API](docs/SCENE.md) · [Architecture](docs/ARCHITECTURE.md) · [Reference and licensing](docs/RECONNAISSANCE.md) · [Verification](docs/VERIFICATION.md) · [Development status](docs/PROGRESS.md) · [Continuation](docs/CONTINUATION_CHECKPOINT.md).
+Start with examples/first-scene.json, a four-second moving circle. Copy an example JSON file, change its contents and run validate, render and verify. The schema rejects unknown actions. [Scene format and API](docs/SCENE.md) · [Architecture](docs/ARCHITECTURE.md) · [Reference and licensing](docs/RECONNAISSANCE.md) · [Verification](docs/VERIFICATION.md) · [Development status](docs/PROGRESS.md) · [Continuation](docs/CONTINUATION_CHECKPOINT.md).
 
 ## Three films from the same engine
 [Light and distance](samples/light.mp4) · [A counterexample about courage](samples/courage.mp4) · [Triangular numbers](samples/triangles.mp4)
@@ -38,4 +38,5 @@ Copy an example JSON file, change its contents and run validate, render and veri
 
 After building, run `python3 scripts/experiment.py out/experiment` on Linux to render all three, measure time and memory, hash the runtime around each production and write experiment.json. Supply an empty or new destination. Use `--backend chromium` to run the same experiment in Chromium. The complete scene specifications are in examples/. [Style authoring](docs/STYLES.md).
 
-These releases produce silent video. The director, audio adapter, character rigs, and 3D backend are planned milestones.
+## Cartoon prototype
+[View the eight-second pier scene](samples/pier.mp4). The original 2D actor walks, stops, points and opens its mouth according to JSON tracks. See examples/pier.json and the [style reference](docs/STYLES.md). The films are silent. Three.js, Kokoro, audio mixing, timed subtitles, integration contracts and the Gemini director are open milestones.

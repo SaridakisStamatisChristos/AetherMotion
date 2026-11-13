@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "engine": "canvas2d",
+  "width": 640,
+  "height": 360,
+  "fps": 24,
+  "durationFrames": 96,
+  "scenes": [{
+    "id": "arrival",
+    "frames": 96,
+    "background": "#173542",
+    "objects": [{
+      "id": "sun",
+      "kind": "circle",
+      "radius": 38,
+      "color": "#F8BD63",
+      "x": [{"frame": 0, "value": 90, "ease": "smooth"}, {"frame": 95, "value": 530}],
+      "y": 180
+    }]
+  }]
+}

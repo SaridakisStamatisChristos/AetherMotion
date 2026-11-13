@@ -10,3 +10,6 @@ Select the shot's style with {"name":"whiteboard","ink":"#132838","accent":"#007
 |infographic|milestones|labels in chronological order, width, size, optional reveal. Point and label appear when the axis reaches them. Equal spacing is categorical.|
 
 Use reveal keys for drawing, camera keys to travel across a board, transform keys to move diagrams, and opacity for staged entrances. Missing or unsupported glyphs and cross-style objects fail validation. Multiple scenes can select different styles in one film. Input JSON never imports a plugin.
+
+## Cartoon prototype
+Select style.name "cartoon". An actor requires kind, id, height and hex colors for skin, hair, shirt, trousers and shoes. Its x/y origin is on the ground between its feet. A pose has optional facing (left/right), expression (neutral/happy/curious/concerned), phase (walking cycles), stride (0–30 rig units), gesture (rest to full point, 0–1) and mouth (closed to open, 0–1). Each numeric pose property accepts scalar tracks. Key x/y independently for travel. Set stride to zero to stop. The prototype is one profile rig with hand-keyed mouth timing. examples/pier.json demonstrates the supported performance range.
