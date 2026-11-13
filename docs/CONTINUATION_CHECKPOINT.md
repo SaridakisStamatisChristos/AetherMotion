@@ -31,3 +31,7 @@ Run npm test and the balloon commands in docs/DIRECTOR.md. Motion boards accept 
 ## Resume graphics refinement
 
 The user has deferred live Gemini creation. Continue with graphics and rendering. Run npm test and render examples/ascent.json using docs/GRAPHICS.md. The checked-in 12-second silent sample demonstrates the shape primitive with cubic curves, gradients, outlines and shadow support. The broader engine still needs richer character artwork and movement, transitions, material effects and artistic assessment. Keep all work on feature/aethermotion-v0.1.
+
+## Resume after the illustrated courtyard
+
+Continue graphics work. The courtyard example uses actor design illustrated and a silent 720×1280 composition. Run npm test and render examples/courtyard.json. Review samples/courtyard-contact.jpg and docs/STYLES.md. The actor retains the existing keyed controls, with a new drawing implementation. Improve foot contact and natural rest posture, broaden gestures and add character variants. Live Gemini remains deferred.

@@ -33,3 +33,7 @@ Motion boards can specify a vertical stage. The 15-second balloon example uses d
 ## Graphics refinement
 
 Curved vector shapes, linear gradients, outlines and soft shadows now work through ordinary scene JSON. The Ascent sample replaces the earlier flat balloon composition with original shaded artwork at 720×1280. Provider generation is deferred by user instruction. Focus further work on graphics, composition, animation and rendering quality. See docs/GRAPHICS.md for the API and reproduction commands.
+
+## Illustrated character study
+
+An optional illustrated actor design now supplies curved clothing, profile facial detail, shaded limbs and shaped shoes. It reuses the established walk and gesture controls. The courtyard example combines the rig with gradient architecture, citrus foliage, a butterfly and depth ordering. The silent 12-second export passed full decode. Further gait polish, broader expression controls and character variants remain open.

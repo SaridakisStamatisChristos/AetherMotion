@@ -86,3 +86,9 @@ The explicitly authored 60×90 stage compiled into a 540×960 film with 360 fram
 The 12-second Ascent study rendered at 720×1280, 24 fps and 288 frames, using two native workers. Rendering and full verification took 11.06 seconds. Peak Node RSS was 282028 KiB and the MP4 is 240925 bytes. FFprobe and a full FFmpeg decode passed. Frames 12, 144 and 275 show a rising balloon, moving cloud wisps and terrain parallax. A decoded full-size midpoint was also inspected for typography, fabric shading and basket detail.
 
 The local suite passed 26 tests and skipped the browser-only WebGL test. New pixel tests check gradient direction, curve fill bounds and frame-seek repeatability. Invalid geometry headers, invisible shapes and malformed gradients are rejected. The sample is silent. Independent artistic review remains open. [Film](../samples/ascent.mp4) · [Frames](../samples/ascent-contact.jpg) · [Raw measurements](../benchmarks/ascent.json)
+
+## Illustrated courtyard character
+
+The final silent 12-second courtyard sample has 288 H.264 frames at 720×1280 and 24 fps. FFprobe and full FFmpeg decoding passed. Native rendering and verification used two workers, took 8.09 seconds and peaked at 274808 KiB Node RSS. The exported MP4 is 204510 bytes. Three decoded samples at frames 16, 100 and 183 show walking, stopping and reaching. A larger decoded frame was inspected for hand placement, face and clothing detail.
+
+The local suite passed 27 tests, with one browser-only WebGL check skipped. The illustrated fixture verifies palette use, changed gesture pixels, facing and exact seek restoration. Classic rig tests also passed. This is a stylized prototype. Independent viewer assessment, naturalistic gait and prop attachment remain open. [Film](../samples/courtyard.mp4) · [Frames](../samples/courtyard-contact.jpg) · [Measurements](../benchmarks/courtyard.json)

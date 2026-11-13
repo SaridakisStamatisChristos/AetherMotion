@@ -1,3 +1,4 @@
+import { illustratedActor } from './illustrated.js'
 import { sample } from '../timeline/sample.js'
 import type { Drawable } from '../scene/types.js'
 
@@ -13,6 +14,7 @@ export function gait(phase:number, stride:number) {
   })
 }
 export function actor(ctx:CanvasRenderingContext2D, o:Actor, frame:number) {
+  if(o.design==='illustrated') return illustratedActor(ctx,o,frame)
   const factor=o.height/152, phase=sample(o.phase,frame,0), stride=sample(o.stride,frame,0)
   const direction=o.facing==='left'?-1:1
   ctx.scale(factor*direction,factor)

@@ -1,5 +1,8 @@
 # AetherMotion
 
+[Watch the illustrated courtyard character](samples/courtyard.mp4) · [Decoded frames](samples/courtyard-contact.jpg). A reusable shaded profile rig walks, stops and reaches toward a butterfly.
+
+
 [Watch the revised balloon artwork](samples/ascent.mp4) · [Decoded frames](samples/ascent-contact.jpg). This 720×1280 visual study uses curved shapes, gradient shading and layered terrain. [Drawing API](docs/GRAPHICS.md)
 
 Render an animated film locally from a versioned JSON file. The supplied 30-second physics film animates rotation, projection and period in three shots. Its graphics and camera are evaluated at exact frame indices. No API key is needed.

@@ -13,3 +13,14 @@ Use reveal keys for drawing, camera keys to travel across a board, transform key
 
 ## Cartoon prototype
 Select style.name "cartoon". An actor requires kind, id, height and hex colors for skin, hair, shirt, trousers and shoes. Its x/y origin is on the ground between its feet. A pose has optional facing (left/right), expression (neutral/happy/curious/concerned), phase (walking cycles), stride (0–30 rig units), gesture (rest to full point, 0–1) and mouth (closed to open, 0–1). Each numeric pose property accepts scalar tracks. Key x/y independently for travel. Set stride to zero to stop. The prototype is one profile rig with hand-keyed mouth timing. examples/pier.json demonstrates the supported performance range.
+
+## Illustrated profile rig
+
+Set an actor's optional design to illustrated to use the curved coat, sculpted face, hair, shoes and shaded limbs. The existing palette, phase, stride, gesture, facing, expression and mouth controls apply. Omit design or use classic for the earlier drawing. Height is the nominal rest silhouette height. Coordinates are anchored at ground level. Walking foot lift and arm swing are deterministic functions of phase.
+
+The illustrated rig is a stylized profile. It has no automatic lip synchronization, inverse kinematics or hand attachment solver. Match props to the hand through authored scene keys. Courtyard demonstrates a walk, stop and reach with a butterfly using independent keyed motion.
+
+```sh
+node dist/cli/main.js render examples/courtyard.json out/courtyard.mp4 --backend native --workers 2
+node dist/cli/main.js verify examples/courtyard.json out/courtyard.mp4
+```
