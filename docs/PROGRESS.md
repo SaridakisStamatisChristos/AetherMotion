@@ -9,3 +9,7 @@
 |Stage D|876671a2b2f4491c25cf08db711dad1b9cb57e87|Kokoro speech generated locally, two-stream MP4, timed effects, burned-in captions, SRT and documented caller contracts.|
 
 The optional Gemini transport, compact storyboard compiler and offline integration tests are included. Live Gemini usage and billing measurement are open. Neither external application has been modified or integrated. All development is on feature/aethermotion-v0.1.
+
+## Ecosystem status — 2026-11-13
+
+An updated cross-repository readiness assessment is recorded in [ECOSYSTEM_STATUS_2026-11-13.md](ECOSYSTEM_STATUS_2026-11-13.md). AetherMotion's sample videos are real and its renderer is functional, but this remains a **prototype rather than a finished script-to-film production system**. **Integration with ClaudeCreate or AetherRendering is explicitly deferred** pending richer standalone visual capabilities, representative original-scene renders and manual artistic review. Existing [ADAPTERS.md](ADAPTERS.md) defines prospective contracts only, not delivered integration. Preserve all current work and continue on the feature branch.
