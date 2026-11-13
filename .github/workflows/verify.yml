@@ -25,7 +25,11 @@ jobs:
       - run: mkdir -p out && npm run --silent motion -- render examples/wave.json out/wave.mp4 --backend ${{ matrix.backend }} > out/metrics.json
       - run: python3 scripts/experiment.py out/reuse --backend ${{ matrix.backend }}
       - run: node dist/cli/main.js render examples/pier.json out/pier.mp4 --backend ${{ matrix.backend }}
-      - run: node dist/cli/main.js render examples/signal.json out/signal.mp4 --backend ${{ matrix.backend }}
+      - run: node dist/cli/main.js produce examples/signal.json out/signal-production --backend ${{ matrix.backend }}
+      - name: Verify published eclipse film
+        run: |
+          node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4
+          python3 scripts/frame_variation.py samples/eclipse.mp4 > out/eclipse-variation.json
       - if: matrix.backend == 'chromium'
         name: Verify and capture 3D film
         env:

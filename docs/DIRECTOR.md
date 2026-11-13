@@ -16,3 +16,5 @@ Add --narration to include spoken lines. The report lists text, relative WAV fil
 
 ## Other providers
 Implement the TypeScript Director.generate(prompt,schema) interface in src/ai/director.ts and return text plus optional usage. direct(brief,provider,retries) applies the shared validation, repair and compilation logic. Tests exercise Gemini request fields, error classes, usage accounting, both layout selection and the real offline export path with a controlled response. A live provider call still requires the operator's own key and an available compatible model. [Google structured-output reference](https://ai.google.dev/gemini-api/docs/structured-output).
+
+After generating JSON with --narration, run `node dist/cli/main.js produce out/eclipse.json out/eclipse-production --backend native` to synthesize its missing voice clips, measure their durations and export the MP4. See [production setup](PRODUCE.md).

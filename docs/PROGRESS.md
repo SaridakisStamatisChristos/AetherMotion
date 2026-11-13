@@ -13,3 +13,7 @@ The optional Gemini transport, compact storyboard compiler and offline integrati
 ## Ecosystem status — 2026-11-13
 
 An updated cross-repository readiness assessment is recorded in [ECOSYSTEM_STATUS_2026-11-13.md](ECOSYSTEM_STATUS_2026-11-13.md). AetherMotion's sample videos are real and its renderer is functional, but this remains a **prototype rather than a finished script-to-film production system**. **Integration with ClaudeCreate or AetherRendering is explicitly deferred** pending richer standalone visual capabilities, representative original-scene renders and manual artistic review. Existing [ADAPTERS.md](ADAPTERS.md) defines prospective contracts only, not delivered integration. Preserve all current work and continue on the feature branch.
+
+## Standalone narrated production
+
+Revision `05cd99344a09fa43a26169213ebe6c83d6da40e5` adds the produce command, nested groups, polygons, radial glows and shot fades. The original eclipse scene uses these primitives for three distinct views. One local invocation synthesized the voice, timed the captions, rendered the shots and published a verified 30-second MP4. This production used an explicitly authored scene with zero Gemini calls. Independent artistic review, live director evaluation and comparisons of authoring cost are open. [Film](../samples/eclipse.mp4) · [Verification](VERIFICATION.md#inside-an-eclipse)

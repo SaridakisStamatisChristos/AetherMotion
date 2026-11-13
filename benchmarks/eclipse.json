@@ -1,0 +1,53 @@
+{
+  "input": "eclipse.json",
+  "requestedFrames": 720,
+  "actualFrames": 720,
+  "synthesizedClips": 3,
+  "speech": [
+    {
+      "index": 0,
+      "seconds": 4.992,
+      "role": "narration",
+      "file": "clip-1.wav",
+      "startFrame": 12,
+      "endFrame": 132,
+      "caption": "From the ground, a solar eclipse begins when the Moon moves across the face of the Sun."
+    },
+    {
+      "index": 1,
+      "seconds": 6.72,
+      "role": "narration",
+      "file": "clip-2.wav",
+      "startFrame": 252,
+      "endFrame": 414,
+      "caption": "From space, the same event is a shadow. Inside its darkest part, the Moon hides the entire bright disk."
+    },
+    {
+      "index": 2,
+      "seconds": 6.613333,
+      "role": "narration",
+      "file": "clip-3.wav",
+      "startFrame": 492,
+      "endFrame": 651,
+      "caption": "The lunar orbit is tilted. A solar eclipse needs a new moon near a node, where the two orbital planes cross."
+    }
+  ],
+  "media": {
+    "frames": 720,
+    "width": 960,
+    "height": 540,
+    "duration": 30,
+    "fps": 24,
+    "codec": "h264",
+    "audioCodec": "aac",
+    "audioDuration": 30,
+    "decoded": true,
+    "bytes": 604596,
+    "sha256": "9565dae23af0dd002b55fa39e969db3721271e9c18b5c86ba54396156fa2563c",
+    "elapsedSeconds": 11.733146037000003,
+    "peakNodeRssKiB": 265576,
+    "workers": 2,
+    "batch": 2,
+    "backend": "native"
+  }
+}

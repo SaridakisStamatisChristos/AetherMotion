@@ -1,0 +1,11 @@
+1
+00:00:00,500 --> 00:00:05,500
+From the ground, a solar eclipse begins when the Moon moves across the face of the Sun.
+
+2
+00:00:10,500 --> 00:00:17,250
+From space, the same event is a shadow. Inside its darkest part, the Moon hides the entire bright disk.
+
+3
+00:00:20,500 --> 00:00:27,125
+The lunar orbit is tilted. A solar eclipse needs a new moon near a node, where the two orbital planes cross.

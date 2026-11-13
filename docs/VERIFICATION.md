@@ -26,3 +26,21 @@ Kokoro ONNX synthesized examples/audio/signal.wav from the text in docs/AUDIO.md
 
 ## Director verification boundary
 The transport and compiler tests use injected HTTP/provider responses. A six-second compiled storyboard was rendered and fully decoded through the regular CLI backend API. Tests exercise the Gemini request contract, validation repair, token cap configuration and per-attempt usage propagation. No Gemini key was available for a live request. Provider-side schema acceptance, creative quality and real token consumption still require a live run.
+
+## Inside an eclipse
+
+The production implementation at `05cd99344a09fa43a26169213ebe6c83d6da40e5` rendered the three-shot eclipse specification. Kokoro produced three local WAVs lasting 4.992, 6.720 and 6.613333 seconds. All fit the authored ten-second shots. Captions occupy frames [12,132), [252,414) and [492,651). The automated timing test also covers a longer narration that extends the first shot and moves the second one.
+
+FFprobe counted 720 H.264 frames at 960×540 and 24 fps. FFmpeg decoded the entire 30-second file, including its stereo AAC track. The native render and verification took 11.73 seconds with two workers. Peak Node RSS was 265576 KiB. Both measurements exclude the earlier Kokoro step. The output is 604596 bytes. The report includes the SHA-256 and raw measurements. [Production report](../benchmarks/eclipse.json)
+
+The contact sheet samples frames 40, 171, 276, 415, 528 and 662 from the exported video. They show the Moon moving in front of the Sun, the appearance of the shadow cones and the Moon reaching the projected orbital crossing. The titles and captions remain readable at full frame size. The diagrams use enlarged distances and bodies. The orbital diagram uses projection and omits perspective depth cues. The captions are timed by utterance. Independent human artistic and listening review remains open. [Decoded frames](../samples/eclipse-contact.jpg)
+
+`python3 scripts/frame_variation.py samples/eclipse.mp4` measures exact repeats after reducing decoded frames to 80×45 grayscale. It found 585 distinct thumbnails, 100 identical adjacent pairs and a longest hold of 57 frames (2.375 seconds). This measurement is sensitive to compression and scale. It cannot identify repetitive storytelling or establish artistic quality.
+
+To reproduce, follow [the production guide](PRODUCE.md). To verify the published artifact independently:
+```sh
+npm ci && npm run build
+node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4
+python3 scripts/frame_variation.py samples/eclipse.mp4
+sha256sum samples/eclipse.mp4
+```

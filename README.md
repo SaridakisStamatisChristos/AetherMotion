@@ -3,6 +3,16 @@ Render an animated film locally from a versioned JSON file. The supplied 30-seco
 
 ![Three decoded frames](samples/wave-contact.jpg)
 
+## Watch the narrated eclipse film
+
+[Download the 30-second MP4](samples/eclipse.mp4) · [View the decoded frames](samples/eclipse-contact.jpg) · [Read the scene JSON](examples/eclipse.json)
+
+A single production command turns the authored film into a video, measures local speech, times the captions and bundles everything needed to render again. See [production setup and commands](docs/PRODUCE.md). To try it immediately using the checked-in signal narration:
+
+```sh
+node dist/cli/main.js produce examples/signal.json out/signal-production --backend native
+```
+
 ## Install on Ubuntu or Linux Mint
 Install Node.js 22.12 or later (including npm) via your usual Node version manager. Check both versions before installing dependencies.
 

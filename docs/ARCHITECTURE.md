@@ -12,3 +12,6 @@ AJV validates JSON Schema (MIT). Playwright Core controls Chromium (Apache-2.0).
 
 ## 3D, production and direction
 Chromium's Three.js pass supplies a WebGL-rendered backdrop. The existing Canvas painter draws overlays and timed captions above it. The native backend remains available for 2D productions. Node resolves and validates local assets before dispatch. Integer frame indices drive both the scene-local camera and global audio cues. After silent video encoding, FFmpeg mixes PCM cues to a film-length AAC track and stream-copies the H.264 video. Strict verification decodes both streams before publication. The Python Kokoro adapter is a separate preprocessing tool. The optional director compiles a compact, constrained storyboard into the same Film interface. Existing productions can be rendered offline with no director dependencies or secrets.
+
+## Production orchestration
+The produce entry point stages assets into a private output directory, batches missing speech in a single local model session, and derives caption intervals from measured WAV lengths. It then invokes the normal verified render pipeline and publishes the directory by rename. The Painter applies parent transforms recursively. Fades are sampled at exact frame indices independently of seek order.

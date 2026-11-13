@@ -19,3 +19,5 @@ Import built ESM modules under dist/; TypeScript declarations are generated alon
 For a new primitive, extend the discriminated union, add a closed schema variant, implement its painter using the supplied local frame, and add a pixel fixture and end-to-end regression. Never read wall time or invoke the director from a painter. Audio cues and the optional director are described in the production guides.
 
 The optional shot style activates the additional [whiteboard and infographic objects](STYLES.md). Both use the same timeline and composition pipeline.
+
+Groups, polygons, glows and frame-defined shot fades are described in [production and choreography](PRODUCE.md).
