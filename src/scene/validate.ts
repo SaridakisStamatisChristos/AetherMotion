@@ -21,7 +21,13 @@ export function parseFilm(input: unknown): Film {
     sceneIds.add(scene.id)
     if ((input.engine==='three') !== Boolean(scene.world)) throw new Error(scene.id+': three requires a world in every shot; canvas2d accepts only 2D shots')
     const ids = new Set<string>()
-    for (const object of scene.objects) {
+    if((scene.fade?.inFrames ?? 0)+(scene.fade?.outFrames ?? 0)>scene.frames)
+      throw new Error(scene.id+': fades exceed the shot duration')
+    const pending=scene.objects.map(object=>({object,depth:1}))
+    while(pending.length) {
+      const {object,depth}=pending.pop()!
+      if(depth>12 || ids.size>=2048) throw new Error(scene.id+': maximum 12 levels and 2048 drawable objects per shot')
+      if(object.kind==='group') for(const child of object.children) pending.push({object:child,depth:depth+1})
       if (ids.has(object.id)) throw new Error(scene.id + ': duplicate object ' + object.id)
       ids.add(object.id)
       if (object.kind==='actor' && scene.style?.name!=='cartoon') throw new Error(object.id + ': select cartoon style for actor')

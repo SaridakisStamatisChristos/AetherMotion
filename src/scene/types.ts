@@ -17,6 +17,9 @@ export interface Pose {
 }
 export type Point = [number, number]
 export type Drawable = Pose & (
+  | {kind:'group'; children:Drawable[]}
+  | {kind:'polygon'; points:Point[]; color:string}
+  | {kind:'glow'; radius:number; color:string}
   | {kind: 'circle'; radius: number; color: string}
   | {kind: 'rect'; width: number; height: number; color: string}
   | {kind: 'path'; points: Point[]; stroke: number; color: string; reveal?: Scalar}
@@ -36,6 +39,7 @@ export interface Shot {
   style?: {name:"whiteboard"|"infographic"|"cartoon"; accent?:string; ink?:string; penWidth?:number}
   background: string
   world?: World
+  fade?: {color:string; inFrames?:number; outFrames?:number}
   camera?: Camera
   objects: Drawable[]
 }

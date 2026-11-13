@@ -21,10 +21,24 @@ function paint(ctx: CanvasRenderingContext2D, images: ReadonlyMap<string,CanvasI
   ctx.rotate(sample(o.rotation,t,0)*Math.PI/180)
   const scale = sample(o.scale,t,1)
   ctx.scale(scale,scale)
-  ctx.globalAlpha = sample(o.opacity,t,1)
+  ctx.globalAlpha *= sample(o.opacity,t,1)
   const ink = style?.ink ?? '#193038'
   ctx.fillStyle = ctx.strokeStyle = ('color' in o && o.color) || style?.accent || (style?.name==='whiteboard' ? '#235577' : '#007C79')
   switch (o.kind) {
+    case 'group':
+      for(const child of o.children) paint(ctx,images,child,t,style)
+      break
+    case 'polygon':
+      ctx.beginPath();ctx.moveTo(...o.points[0])
+      for(let i=1;i<o.points.length;i++) ctx.lineTo(...o.points[i])
+      ctx.closePath();ctx.fill();break
+    case 'glow': {
+      const gradient=ctx.createRadialGradient(0,0,0,0,0,o.radius)
+      gradient.addColorStop(0,o.color);gradient.addColorStop(1,o.color+'00')
+      ctx.fillStyle=gradient
+      ctx.fillRect(-o.radius,-o.radius,2*o.radius,2*o.radius)
+      break
+    }
     case 'rect': ctx.fillRect(0,0,o.width,o.height); break
     case 'circle':
       ctx.beginPath(); ctx.arc(0,0,o.radius,0,Math.PI*2); ctx.fill(); break
@@ -58,5 +72,14 @@ export function drawFrame(ctx: CanvasRenderingContext2D, film: Film, images: Rea
     const {zoom,dx,dy} = cameraMatrix(scene.camera,frame)
     ctx.setTransform(zoom,0,0,zoom,dx,dy)
     for (const o of scene.objects) paint(ctx,images,o,frame,scene.style)
+    if(scene.fade) {
+      const fade=scene.fade
+      const enter=fade.inFrames ? 1-frame/(fade.inFrames-1) : 0
+      const exit=fade.outFrames ? 1-(scene.frames-1-frame)/(fade.outFrames-1) : 0
+      ctx.save();ctx.resetTransform()
+      ctx.globalAlpha=Math.max(0,enter,exit)
+      ctx.fillStyle=fade.color;ctx.fillRect(0,0,film.width,film.height)
+      ctx.restore()
+    }
     drawCaption(ctx,film,index)
 }
