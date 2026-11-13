@@ -1,0 +1,2 @@
+# Architecture
+A versioned JSON contract feeds a semantic validation pass, an integer-frame scheduler, a Canvas painter in headless Chromium, then an ordered FFmpeg encoder. Output publication follows FFprobe and a complete decode. A scene has no hooks for code, URLs or host commands. An AI director and an audio producer can sit outside this pipeline. Future engine additions must define schema, typed paint behavior, boundary tests and a visible fixture before they can be selected by a scene.
