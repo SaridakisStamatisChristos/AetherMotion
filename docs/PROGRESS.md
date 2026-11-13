@@ -21,3 +21,7 @@ Revision `05cd99344a09fa43a26169213ebe6c83d6da40e5` adds the produce command, ne
 ## Second standalone production using the eclipse runtime
 
 At `dd758420ccb91271252a85b993cc1b2079f9f449`, an original geometry film moves from landscape astronomy to a portrait tile dissection using only new scene JSON and three voice clips for production. The test fixture independently samples 49 cells in two decoded frames and checks speech against the WAVs. The native replay produced byte-identical media with a different worker count. [The Missing Square](../samples/missing-square.mp4) · [Measured results](VERIFICATION.md#portrait-reuse--the-missing-square)
+
+## Director motion input and offline compilation
+
+Revision `2f5414fdd0c75df2b9f68d2d4af69089124f2ec4` lets the optional director and an offline CLI compile the same motion storyboard into a standard scene. The verified night mail film uses three weighted shots and grouped shape movement. Its one-worker replay matched the original two-worker MP4 byte for byte. Live Gemini schema acceptance and authoring-token measurements remain open. [Film](../samples/night-post.mp4) · [Scene instructions](../examples/night-post/board.json)

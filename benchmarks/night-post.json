@@ -1,0 +1,83 @@
+{
+  "compilerRevision": "2f5414fdd0c75df2b9f68d2d4af69089124f2ec4",
+  "source": "session-authored motion storyboard",
+  "storyboardMinifiedBytes": 9840,
+  "compiledFilmMinifiedBytes": 22832,
+  "production": {
+    "input": "film.json",
+    "requestedFrames": 720,
+    "actualFrames": 720,
+    "synthesizedClips": 0,
+    "speech": [
+      {
+        "index": 0,
+        "seconds": 4.69,
+        "file": "clip-1.wav",
+        "role": "narration",
+        "startFrame": 0,
+        "endFrame": 113,
+        "caption": "At dusk, the last mail train leaves the valley with one letter still to deliver."
+      },
+      {
+        "index": 1,
+        "seconds": 5.175,
+        "file": "clip-2.wav",
+        "role": "narration",
+        "startFrame": 240,
+        "endFrame": 365,
+        "caption": "Inside the sorting car, the clerk stamps the envelope and sends it on its way."
+      },
+      {
+        "index": 2,
+        "seconds": 4.275,
+        "file": "clip-3.wav",
+        "role": "narration",
+        "startFrame": 456,
+        "endFrame": 559,
+        "caption": "At the last house, a light comes on. The letter has reached Bellwater."
+      }
+    ],
+    "media": {
+      "frames": 720,
+      "width": 960,
+      "height": 540,
+      "duration": 30,
+      "fps": 24,
+      "codec": "h264",
+      "audioCodec": "aac",
+      "audioDuration": 30,
+      "decoded": true,
+      "bytes": 553732,
+      "sha256": "94e532dca8e673679ae0fb3bdc467d72271c10c75262e7f59674baa772a05b3b",
+      "elapsedSeconds": 21.388866943,
+      "peakNodeRssKiB": 253460,
+      "workers": 2,
+      "batch": 2,
+      "backend": "native"
+    }
+  },
+  "replay": {
+    "frames": 720,
+    "width": 960,
+    "height": 540,
+    "duration": 30,
+    "fps": 24,
+    "codec": "h264",
+    "audioCodec": "aac",
+    "audioDuration": 30,
+    "decoded": true,
+    "bytes": 553732,
+    "sha256": "94e532dca8e673679ae0fb3bdc467d72271c10c75262e7f59674baa772a05b3b",
+    "elapsedSeconds": 37.258496999,
+    "peakNodeRssKiB": 224584,
+    "workers": 1,
+    "batch": 3,
+    "backend": "native"
+  },
+  "frameVariation": {
+    "frames": 720,
+    "uniqueThumbnails": 701,
+    "adjacentIdenticalPairs": 19,
+    "longestIdenticalRun": 10
+  }
+}

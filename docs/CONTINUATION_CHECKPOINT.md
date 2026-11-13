@@ -17,3 +17,9 @@ For the next standalone milestone, obtain an independent artistic and listening 
 Film inputs and decoded-content checks are at `dd758420ccb91271252a85b993cc1b2079f9f449`. The TypeScript runtime matches the eclipse revision. Run the reproduction commands in [VERIFICATION.md](VERIFICATION.md#portrait-reuse--the-missing-square). The three WAVs in examples/audio allow immediate offline replay. The native one-worker replay yielded the same MP4 SHA-256 as the two-worker production.
 
 The strongest remaining unverified step is directing varied films from a topic alone. The two narrated films used explicitly authored scenes. Before measuring real Gemini tokens, check which compositions the current storyboard compiler can express. A useful next test is a storyboard that names reusable shapes, timed group motion and an output aspect ratio, with budget, validation and reproducible offline replay. Independent viewer feedback on both films remains open.
+
+## Resume after motion storyboard compilation
+
+The motion compiler and runnable example are at `2f5414fdd0c75df2b9f68d2d4af69089124f2ec4`. Run `npm ci && npm test`, then follow [the offline commands](DIRECTOR.md#motion-storyboards) for the night mail film. The three WAVs are included in the repository. Both a saved director report and a standalone version-1 bundle are accepted by compile-board.
+
+The next empirical step is to run direct with --layout motion on a new topic using a configured Gemini key and model, preserve its raw report, and compile it again offline. Compare the result with the brief, inspect caption layout, and record provider usage by attempt. The existing sample establishes the compiler and rendering path. It does not measure live model quality or savings. Portrait uses a centred wide stage, so full-height portrait choreography remains an extension.

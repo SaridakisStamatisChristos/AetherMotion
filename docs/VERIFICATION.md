@@ -66,3 +66,13 @@ sha256sum out/missing-square/film.mp4 out/square-replay.mp4
 ```
 
 [Production and replay metrics](../benchmarks/missing-square.json) · [Film](../samples/missing-square.mp4) · [Decoded frames](../samples/missing-square-contact.jpg) · [Timed captions](../samples/missing-square.srt)
+
+## The last train to Bellwater
+
+The offline CLI compiled an original motion storyboard into three shots of 240, 216 and 264 frames. They use the existing 2D renderer. No Gemini credentials were available. Tests exercised provider schema selection and recovery from an unsupported mark. The example was explicitly authored, and its WAVs were synthesized separately with Flite.
+
+The final export contains 720 frames of 960×540 H.264 at 24 fps and 30 seconds of stereo AAC. Two native workers rendered and fully verified the MP4 in 21.39 seconds. Peak Node RSS was 253460 KiB. The production report records speech lengths of 4.690, 5.175 and 4.275 seconds. Full decoding verified both streams. The first frame review caught the train running beyond the panel. The revised compiler masks offstage geometry. Six decoded frames show the train leaving, the stamp descending, the envelope reaching the mailbox and the window illuminated.
+
+The 80×45 grayscale comparison found 701 distinct thumbnails, 19 identical adjacent pairs and a longest identical run of ten frames (0.42 s). These measurements describe pixel changes. Independent viewer and listening reviews remain open. No provider token measurement was made.
+
+Use the [director guide](DIRECTOR.md#motion-storyboards) to compile and produce the film. From the repository root, run `python3 scripts/frame_variation.py samples/night-post.mp4` and `node dist/cli/main.js verify out/night-post/film.json samples/night-post.mp4` after production. [Film](../samples/night-post.mp4) · [Decoded frames](../samples/night-post-contact.jpg) · [Benchmark](../benchmarks/night-post.json)
