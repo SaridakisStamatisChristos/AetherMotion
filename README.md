@@ -3,6 +3,8 @@ Render an animated film locally from a versioned JSON file. The supplied 30-seco
 
 ![Three decoded frames](samples/wave-contact.jpg)
 
+[Watch the vertical balloon study](samples/balloon.mp4). Its editable motion storyboard uses a 60×90 stage to fill the portrait frame. [Stage setup](docs/DIRECTOR.md#vertical-stages) · [Decoded frames](samples/balloon-contact.jpg)
+
 ## Watch the night mail train
 
 [The last train to Bellwater](samples/night-post.mp4) tells a short story in three shots. The train, stamp and envelope move according to an [editable storyboard](examples/night-post/board.json). Compile the storyboard offline, or use the optional director with `--layout motion` to request the same format from Gemini. The film includes three local voice clips. [Reproduction commands](docs/DIRECTOR.md#motion-storyboards) · [Decoded frames](samples/night-post-contact.jpg)

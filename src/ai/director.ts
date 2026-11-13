@@ -107,7 +107,7 @@ export async function direct(brief:Brief,provider:Director,retries=1) {
   const usage:(Record<string,unknown>|null)[]=[]
   let feedback=''
   const direction=brief.layout==='motion'
-    ? 'Design distinct illustrated shots on a 100 wide by 48 high stage. Coordinates grow right and down. Layer marks are local to their poses. Animate meaningful movement with increasing pose times from 0 to 1. Shot weights divide the duration. Set a legible ink color, and use the requested style to guide the palette and drawing. '
+    ? 'Design distinct illustrated shots. Set stage width and height to fit the requested format, for example 100 by 48 landscape or 60 by 90 portrait. Without stage, the default is 100 by 48. Coordinates grow right and down. Layer marks are local to their poses. Animate meaningful movement with increasing pose times from 0 to 1. Shot weights divide the duration. Set a legible ink color, and use the requested style to guide the palette and drawing. '
     : 'Write a factual, concise sequence of 2–6 teaching beats. Labels describe successive concepts. Use natural short titles. '
   const prompt=direction+
     'If narration is requested, keep speech short enough for each shot. Return only the specified JSON. Brief: '+JSON.stringify(brief)

@@ -25,3 +25,7 @@ At `dd758420ccb91271252a85b993cc1b2079f9f449`, an original geometry film moves f
 ## Director motion input and offline compilation
 
 Revision `2f5414fdd0c75df2b9f68d2d4af69089124f2ec4` lets the optional director and an offline CLI compile the same motion storyboard into a standard scene. The verified night mail film uses three weighted shots and grouped shape movement. Its one-worker replay matched the original two-worker MP4 byte for byte. Live Gemini schema acceptance and authoring-token measurements remain open. [Film](../samples/night-post.mp4) · [Scene instructions](../examples/night-post/board.json)
+
+## Explicit stage dimensions
+
+Motion boards can specify a vertical stage. The 15-second balloon example uses depth ordering, moving clouds and a rising balloon. Local tests passed with 24 successes and one WebGL check reserved for Chromium CI. Independent artistic review and live Gemini evaluation remain open.

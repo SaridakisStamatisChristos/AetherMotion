@@ -1,0 +1,319 @@
+{
+  "version": "1",
+  "brief": {
+    "layout": "motion",
+    "topic": "A balloon rises above the sleeping valley",
+    "seconds": 15,
+    "style": "infographic",
+    "format": "portrait",
+    "narration": false
+  },
+  "board": {
+    "stage": {
+      "width": 60,
+      "height": 90
+    },
+    "scenes": [
+      {
+        "title": "Above the sleeping valley",
+        "weight": 1,
+        "background": "#213849",
+        "ink": "#F7E9D9",
+        "layers": [
+          {
+            "name": "sky",
+            "marks": [
+              {
+                "kind": "box",
+                "x": 0,
+                "y": 0,
+                "w": 60,
+                "h": 90,
+                "color": "#507D8C"
+              },
+              {
+                "kind": "disc",
+                "x": 46,
+                "y": 12,
+                "r": 6,
+                "color": "#F2C88C"
+              }
+            ],
+            "poses": [
+              {
+                "at": 0,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "name": "far-cloud",
+            "marks": [
+              {
+                "kind": "disc",
+                "x": 0,
+                "y": 0,
+                "r": 3,
+                "color": "#F7E9D9"
+              },
+              {
+                "kind": "disc",
+                "x": 4,
+                "y": -1,
+                "r": 4,
+                "color": "#F7E9D9"
+              },
+              {
+                "kind": "disc",
+                "x": 8,
+                "y": 0,
+                "r": 3,
+                "color": "#F7E9D9"
+              },
+              {
+                "kind": "box",
+                "x": 0,
+                "y": 0,
+                "w": 8,
+                "h": 3,
+                "color": "#F7E9D9"
+              }
+            ],
+            "poses": [
+              {
+                "at": 0,
+                "x": 35,
+                "y": 30,
+                "ease": "smooth"
+              },
+              {
+                "at": 1,
+                "x": 45,
+                "y": 30,
+                "ease": "smooth"
+              }
+            ]
+          },
+          {
+            "name": "hills",
+            "marks": [
+              {
+                "kind": "polygon",
+                "color": "#345D65",
+                "points": [
+                  [
+                    0,
+                    65
+                  ],
+                  [
+                    12,
+                    48
+                  ],
+                  [
+                    24,
+                    63
+                  ],
+                  [
+                    40,
+                    45
+                  ],
+                  [
+                    60,
+                    62
+                  ],
+                  [
+                    60,
+                    90
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              }
+            ],
+            "poses": [
+              {
+                "at": 0,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "name": "balloon",
+            "marks": [
+              {
+                "kind": "disc",
+                "x": 0,
+                "y": 0,
+                "r": 7,
+                "color": "#E5A467"
+              },
+              {
+                "kind": "disc",
+                "x": -2,
+                "y": -1,
+                "r": 4,
+                "color": "#E7BD87"
+              },
+              {
+                "kind": "line",
+                "points": [
+                  [
+                    -5,
+                    4
+                  ],
+                  [
+                    -2,
+                    12
+                  ]
+                ],
+                "color": "#F7E9D9",
+                "stroke": 0.3
+              },
+              {
+                "kind": "line",
+                "points": [
+                  [
+                    5,
+                    4
+                  ],
+                  [
+                    2,
+                    12
+                  ]
+                ],
+                "color": "#F7E9D9",
+                "stroke": 0.3
+              },
+              {
+                "kind": "box",
+                "x": -2,
+                "y": 11,
+                "w": 4,
+                "h": 4,
+                "color": "#A5634A"
+              }
+            ],
+            "poses": [
+              {
+                "at": 0,
+                "x": 27,
+                "y": 69,
+                "ease": "smooth"
+              },
+              {
+                "at": 0.5,
+                "x": 32,
+                "y": 40,
+                "ease": "smooth"
+              },
+              {
+                "at": 1,
+                "x": 28,
+                "y": 11,
+                "ease": "smooth"
+              }
+            ]
+          },
+          {
+            "name": "near-cloud",
+            "marks": [
+              {
+                "kind": "disc",
+                "x": 0,
+                "y": 0,
+                "r": 3,
+                "color": "#F7E9D9"
+              },
+              {
+                "kind": "disc",
+                "x": 4,
+                "y": -1,
+                "r": 4,
+                "color": "#F7E9D9"
+              },
+              {
+                "kind": "disc",
+                "x": 8,
+                "y": 0,
+                "r": 3,
+                "color": "#F7E9D9"
+              },
+              {
+                "kind": "box",
+                "x": 0,
+                "y": 0,
+                "w": 8,
+                "h": 3,
+                "color": "#F7E9D9"
+              }
+            ],
+            "poses": [
+              {
+                "at": 0,
+                "x": -10,
+                "y": 48,
+                "ease": "smooth"
+              },
+              {
+                "at": 1,
+                "x": 63,
+                "y": 48,
+                "ease": "smooth"
+              }
+            ]
+          },
+          {
+            "name": "foreground",
+            "marks": [
+              {
+                "kind": "polygon",
+                "color": "#213849",
+                "points": [
+                  [
+                    0,
+                    83
+                  ],
+                  [
+                    15,
+                    70
+                  ],
+                  [
+                    35,
+                    80
+                  ],
+                  [
+                    48,
+                    68
+                  ],
+                  [
+                    60,
+                    76
+                  ],
+                  [
+                    60,
+                    90
+                  ],
+                  [
+                    0,
+                    90
+                  ]
+                ]
+              }
+            ],
+            "poses": [
+              {
+                "at": 0,
+                "x": 0,
+                "y": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

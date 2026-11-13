@@ -76,3 +76,7 @@ The final export contains 720 frames of 960×540 H.264 at 24 fps and 30 seconds 
 The 80×45 grayscale comparison found 701 distinct thumbnails, 19 identical adjacent pairs and a longest identical run of ten frames (0.42 s). These measurements describe pixel changes. Independent viewer and listening reviews remain open. No provider token measurement was made.
 
 Use the [director guide](DIRECTOR.md#motion-storyboards) to compile and produce the film. From the repository root, run `python3 scripts/frame_variation.py samples/night-post.mp4` and `node dist/cli/main.js verify out/night-post/film.json samples/night-post.mp4` after production. [Film](../samples/night-post.mp4) · [Decoded frames](../samples/night-post-contact.jpg) · [Benchmark](../benchmarks/night-post.json)
+
+## Vertical balloon stage
+
+The explicitly authored 60×90 stage compiled into a 540×960 film with 360 frames at 24 fps. FFprobe and full FFmpeg decode passed. The silent H.264 export took 4.94 seconds including verification with two native workers and peaked at 237408 KiB Node RSS. Samples at frames 12, 175 and 345 show the balloon rising from behind the foreground hills, crossing behind a cloud and reaching the upper sky. The source uses the same uniform scale on both axes. The output has no narration. [Film](../samples/balloon.mp4) · [Frames](../samples/balloon-contact.jpg) · [Metrics](../benchmarks/balloon.json)

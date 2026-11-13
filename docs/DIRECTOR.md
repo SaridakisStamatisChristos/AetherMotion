@@ -53,3 +53,13 @@ node dist/cli/main.js verify out/night-post/film.json out/night-post/film.mp4
 ```
 
 The sample storyboard was authored in this development session. Its three Flite voice clips ship with it. A live Gemini run still requires a key and model that accepts the response schema. The test suite checks the provider request and bounded repair offline.
+
+## Vertical stages
+
+A motion board may include `stage: {"width":60,"height":90}`. The compiler fits that rectangle into the selected output while preserving equal horizontal and vertical scale. The title sits above the illustration and narration reserves space below it. The stage dimensions accept values from 20 through 200. Omitting stage preserves the original 100×48 composition.
+
+Reproduce the silent 15-second portrait example:
+```sh
+node dist/cli/main.js compile-board examples/balloon/board.json out/balloon.json
+node dist/cli/main.js render out/balloon.json out/balloon.mp4 --backend native --workers 2
+```

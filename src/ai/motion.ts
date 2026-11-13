@@ -10,7 +10,7 @@ type Mark =
   | { kind: 'line'; points: Point[]; stroke: number; color: string }
 interface Layer { name: string; poses: Position[]; marks: Mark[] }
 interface MotionShot { title: string; background: string; ink: string; weight: number; layers: Layer[]; narration?: string }
-export interface MotionBoard { scenes: MotionShot[] }
+export interface MotionBoard { stage?: {width:number;height:number}; scenes: MotionShot[] }
 
 const number = (minimum: number, maximum: number) => ({type:'number', minimum, maximum})
 const coord = number(-200, 200)
@@ -37,7 +37,7 @@ export function motionSchema(narration: boolean) {
   const fields: Record<string,object> = {title:{type:'string',minLength:1,maxLength:36}, background:color,
     ink:color, weight:{type:'integer',minimum:1,maximum:20}, layers:array(layer,1,24)}
   if (narration) fields.narration = {type:'string',minLength:1,maxLength:180}
-  return object({scenes:array(object(fields),1,8)})
+  return object({stage:object({width:number(20,200),height:number(20,200)}),scenes:array(object(fields),1,8)}, ['scenes'])
 }
 
 function drawable(mark: Mark, id: string, scale: number): Drawable {
@@ -67,9 +67,10 @@ export function compileMotion(brief: Brief, board: MotionBoard) {
   const portrait = brief.format === 'portrait'
   const width = portrait ? 540 : 960, height = portrait ? 960 : 540
   const fps = 24, durationFrames = brief.seconds*fps
-  const scale = Math.min((width-48)/100,(height-(brief.narration?182:105))/48)
-  const left = (width-100*scale)/2
-  const top = portrait ? (height-48*scale)/2-30 : 69
+  const stage = board.stage ?? {width:100,height:48}
+  const scale = Math.min((width-48)/stage.width,(height-(brief.narration?182:105))/stage.height)
+  const left = (width-stage.width*scale)/2
+  const top = board.stage ? 69+(height-(brief.narration?182:105)-stage.height*scale)/2 : portrait ? (height-48*scale)/2-30 : 69
   const totalWeight = board.scenes.reduce((n,s)=>n+s.weight,0)
   const narration: {file:string;text:string;startFrame:number;endFrame:number}[] = []
   let accumulated = 0, end = 0
@@ -84,7 +85,7 @@ export function compileMotion(brief: Brief, board: MotionBoard) {
       y:top-16,size:Math.min(30,Math.floor((width-48)/(shot.title.length*.95))),color:shot.ink,face:'serif'}
     if (brief.narration) narration.push({file:'voice/shot-'+(i+1)+'.wav',text:shot.narration!,startFrame:start,endFrame:end})
     // Mask overscan at the stage edges so entrances and exits end at the scenery.
-    const bottom=top+48*scale
+    const bottom=top+stage.height*scale
     const mask=(id:string,x:number,y:number,w:number,h:number): Drawable => ({
       kind:'rect',id,x,y,width:w,height:h,color:shot.background
     })

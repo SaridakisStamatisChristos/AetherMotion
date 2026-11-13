@@ -51,3 +51,18 @@ test('offline CLI accepts saved director reports and preserves existing output',
   assert.deepEqual(JSON.parse(await readFile(dest,'utf8')),compileStoryboard(bundle.brief,bundle.board).film)
   assert.throws(compile,/EEXIST/)
 })
+
+test('explicit portrait stage preserves equal axis scale and reserves caption space',()=>{
+  const board=structuredClone(bundle.board)
+  board.stage={width:60,height:90}
+  const {film}=compileStoryboard({...bundle.brief,format:'portrait'},board)
+  const objects=film.scenes[0].objects
+  const stage=objects.find(o=>o.id==='stage')
+  const bottom=objects.find(o=>o.id==='bottom-edge')
+  assert.ok(bottom.y-stage.y>700)
+  assert.ok(bottom.y<=film.height-100)
+  const train=stage.children.find(o=>o.id==='layer-mail-train')
+  assert.equal(train.children[0].width/45,train.children[0].height/1.4)
+  board.stage.height=0
+  assert.throws(()=>compileStoryboard(bundle.brief,board))
+})

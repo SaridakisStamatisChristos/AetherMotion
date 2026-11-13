@@ -23,3 +23,7 @@ The strongest remaining unverified step is directing varied films from a topic a
 The motion compiler and runnable example are at `2f5414fdd0c75df2b9f68d2d4af69089124f2ec4`. Run `npm ci && npm test`, then follow [the offline commands](DIRECTOR.md#motion-storyboards) for the night mail film. The three WAVs are included in the repository. Both a saved director report and a standalone version-1 bundle are accepted by compile-board.
 
 The next empirical step is to run direct with --layout motion on a new topic using a configured Gemini key and model, preserve its raw report, and compile it again offline. Compare the result with the brief, inspect caption layout, and record provider usage by attempt. The existing sample establishes the compiler and rendering path. It does not measure live model quality or savings. Portrait uses a centred wide stage, so full-height portrait choreography remains an extension.
+
+## Resume after vertical stages
+
+Run npm test and the balloon commands in docs/DIRECTOR.md. Motion boards accept optional stage width and height, with legacy dimensions preserved when omitted. The silent portrait sample and measured report are in samples/balloon.mp4 and benchmarks/balloon.json. Further capability work can add scene camera direction or reusable illustration assets. Live model evaluation still needs a configured provider key.
