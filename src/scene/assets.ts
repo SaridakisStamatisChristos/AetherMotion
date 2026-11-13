@@ -17,7 +17,7 @@ export async function loadAssets(film: Film, directory: string) {
     if (!metadata.isFile() || metadata.size > 8*1024**2 || total > 32*1024**2) throw new Error(id + ': asset exceeds size limit or is not a file')
     const bytes = await readFile(actual)
     const png = bytes.subarray(0,8).equals(Buffer.from('89504e470d0a1a0a','hex'))
-    if (!png && bytes.readUIntBE(0,Math.min(3,bytes.length) || 1) !== 0xffd8ff) throw new Error(id + ': expected a PNG or JPEG signature')
+    if (!png && !bytes.subarray(0,3).equals(Buffer.from('ffd8ff','hex'))) throw new Error(id + ': expected a PNG or JPEG signature')
     assets[id] = 'data:image/'+(png?'png':'jpeg')+';base64,'+bytes.toString('base64')
   }
   return assets

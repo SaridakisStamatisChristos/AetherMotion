@@ -19,11 +19,17 @@ export type Drawable = Pose & (
   | {kind: 'rect'; width: number; height: number; color: string}
   | {kind: 'path'; points: Point[]; stroke: number; color: string; reveal?: Scalar}
   | {kind: 'text'; text: string; size: number; color: string; face?: 'sans'|'serif'|'mono'; bold?: boolean}
+  | {kind: 'handwriting'; text:string; size:number; reveal?:Scalar; color?:string}
+  | {kind: 'arrow'; dx:number; dy:number; head:number; reveal?:Scalar; color?:string}
+  | {kind: 'bars'; data:{label:string; value:number}[]; width:number; height:number; ceiling:number; size:number; reveal?:Scalar; color?:string}
+  | {kind: 'counter'; value:Scalar; decimals:number; suffix?:string; size:number; color?:string}
+  | {kind: 'milestones'; labels:string[]; width:number; size:number; reveal?:Scalar; color?:string}
   | {kind: 'image'; asset: string; width: number; height: number}
 )
 export interface Shot {
   id: string
   frames: number
+  style?: {name:"whiteboard"|"infographic"; accent?:string; ink?:string; penWidth?:number}
   background: string
   camera?: Camera
   objects: Drawable[]
