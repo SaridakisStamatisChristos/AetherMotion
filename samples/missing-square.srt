@@ -1,0 +1,11 @@
+1
+00:00:00,417 --> 00:00:06,000
+Start with a four by four square. Two strips add twelve tiles each, bringing the total to forty.
+
+2
+00:00:10,417 --> 00:00:16,125
+Slide one strip to the right side and the other below. The empty corner is three tiles by three.
+
+3
+00:00:20,417 --> 00:00:26,833
+Nine tiles close the gap. Forty plus nine makes forty-nine, a square with seven tiles on each side.

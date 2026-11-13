@@ -1,0 +1,101 @@
+{
+  "runtimeCommit": "1805f161ff9a0904306a0864ff0938f75cd70aad",
+  "sourceTree": "3b45165d3f8faf580b1b5f6c9db9cbc0ccb4d5c4",
+  "schemaTree": "57c16f3b8f0342eacea36cbb67bb61150c4a597e",
+  "dependencyLock": "5216fbe2c75a32a1b651093622d6268c27310854",
+  "speechSource": "Bundled PCM WAVs, synthesized with FFmpeg flite/slt",
+  "production": {
+    "input": "missing-square.json",
+    "requestedFrames": 720,
+    "actualFrames": 720,
+    "synthesizedClips": 0,
+    "speech": [
+      {
+        "index": 0,
+        "seconds": 5.545,
+        "role": "narration",
+        "file": "clip-1.wav",
+        "startFrame": 10,
+        "endFrame": 144,
+        "caption": "Start with a four by four square. Two strips add twelve tiles each, bringing the total to forty."
+      },
+      {
+        "index": 1,
+        "seconds": 5.67,
+        "role": "narration",
+        "file": "clip-2.wav",
+        "startFrame": 250,
+        "endFrame": 387,
+        "caption": "Slide one strip to the right side and the other below. The empty corner is three tiles by three."
+      },
+      {
+        "index": 2,
+        "seconds": 6.415,
+        "role": "narration",
+        "file": "clip-3.wav",
+        "startFrame": 490,
+        "endFrame": 644,
+        "caption": "Nine tiles close the gap. Forty plus nine makes forty-nine, a square with seven tiles on each side."
+      }
+    ],
+    "media": {
+      "frames": 720,
+      "width": 540,
+      "height": 960,
+      "duration": 30,
+      "fps": 24,
+      "codec": "h264",
+      "audioCodec": "aac",
+      "audioDuration": 30,
+      "decoded": true,
+      "bytes": 884430,
+      "sha256": "1dc7267c97d3f3d6e3deb2f2c9d440e73d2cdc8feda0adc234c3f2650c909562",
+      "elapsedSeconds": 23.696987880000002,
+      "peakNodeRssKiB": 260648,
+      "workers": 2,
+      "batch": 2,
+      "backend": "native"
+    }
+  },
+  "replay": {
+    "frames": 720,
+    "width": 540,
+    "height": 960,
+    "duration": 30,
+    "fps": 24,
+    "codec": "h264",
+    "audioCodec": "aac",
+    "audioDuration": 30,
+    "decoded": true,
+    "bytes": 884430,
+    "sha256": "1dc7267c97d3f3d6e3deb2f2c9d440e73d2cdc8feda0adc234c3f2650c909562",
+    "elapsedSeconds": 35.655519547999994,
+    "peakNodeRssKiB": 223304,
+    "workers": 1,
+    "batch": 3,
+    "backend": "native"
+  },
+  "frameVariation": {
+    "frames": 720,
+    "uniqueThumbnails": 711,
+    "adjacentIdenticalPairs": 8,
+    "longestIdenticalRun": 4
+  },
+  "decodedContent": {
+    "frame454": {
+      "sand": 16,
+      "coral": 24,
+      "gap": 9
+    },
+    "frame683": {
+      "sand": 16,
+      "coral": 24,
+      "mint": 9
+    },
+    "speechEnvelopeSimilarity": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}

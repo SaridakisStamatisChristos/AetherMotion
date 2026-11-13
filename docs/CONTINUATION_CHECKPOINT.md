@@ -11,3 +11,9 @@ Fetch feature/aethermotion-v0.1 and use README for the local install. Earlier fr
 Fetch the feature branch. The production implementation is at `05cd99344a09fa43a26169213ebe6c83d6da40e5`. Start with `npm ci && npm test`, then `node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4`. Follow [PRODUCE.md](PRODUCE.md) to regenerate the three local voice clips and the film in a new output directory. Run `python3 scripts/frame_variation.py samples/eclipse.mp4` for the repeat-frame measurements. See [VERIFICATION.md](VERIFICATION.md#inside-an-eclipse) for measured timings and the six decoded frames.
 
 For the next standalone milestone, obtain an independent artistic and listening review, particularly of the 57-frame hold, caption legibility during narration, and depth in the orbital view. Use a different topic to test whether these primitives support another composition unchanged. Live Gemini direction and token measurements still require a configured key. Keep any cross-repository integration in a separately authorized campaign.
+
+## Resume after the portrait reuse test
+
+Film inputs and decoded-content checks are at `dd758420ccb91271252a85b993cc1b2079f9f449`. The TypeScript runtime matches the eclipse revision. Run the reproduction commands in [VERIFICATION.md](VERIFICATION.md#portrait-reuse--the-missing-square). The three WAVs in examples/audio allow immediate offline replay. The native one-worker replay yielded the same MP4 SHA-256 as the two-worker production.
+
+The strongest remaining unverified step is directing varied films from a topic alone. The two narrated films used explicitly authored scenes. Before measuring real Gemini tokens, check which compositions the current storyboard compiler can express. A useful next test is a storyboard that names reusable shapes, timed group motion and an output aspect ratio, with budget, validation and reproducible offline replay. Independent viewer feedback on both films remains open.

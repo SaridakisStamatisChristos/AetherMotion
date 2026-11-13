@@ -3,6 +3,17 @@ Render an animated film locally from a versioned JSON file. The supplied 30-seco
 
 ![Three decoded frames](samples/wave-contact.jpg)
 
+## Watch the portrait geometry film
+
+[The Missing Square](samples/missing-square.mp4) rearranges forty tiles and shows why nine more complete a seven-by-seven square. It uses the same renderer as the eclipse film. The three local voice clips ship with the example. After installation and build, run:
+
+```sh
+node dist/cli/main.js produce examples/missing-square.json out/missing-square --backend native --workers 2
+python3 scripts/check_missing_square.py out/missing-square/film.mp4
+```
+
+[Six decoded frames](samples/missing-square-contact.jpg) · [Scene JSON](examples/missing-square.json) · [Verification](docs/VERIFICATION.md#portrait-reuse--the-missing-square)
+
 ## Watch the narrated eclipse film
 
 [Download the 30-second MP4](samples/eclipse.mp4) · [View the decoded frames](samples/eclipse-contact.jpg) · [Read the scene JSON](examples/eclipse.json)

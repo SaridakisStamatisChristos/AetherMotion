@@ -44,3 +44,25 @@ node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4
 python3 scripts/frame_variation.py samples/eclipse.mp4
 sha256sum samples/eclipse.mp4
 ```
+
+## Portrait reuse — The Missing Square
+
+The portrait film uses the eclipse runtime at `1805f161ff9a0904306a0864ff0938f75cd70aad`. Its TypeScript source tree, schema, dependency lock, production CLI and local render pipeline are identical. The 540×960 composition was authored in JSON with three original, locally synthesized PCM WAVs. The sample uses FFmpeg's Flite filter, voice `slt`. Generating these files was a separate content-authoring step. The ordinary production command uses the bundled audio offline. No language-model calls were made during production and authoring tokens were unmetered.
+
+At 24 fps, the encoded H.264 video has 720 frames and the stereo AAC track lasts 30 seconds. FFprobe and a strict FFmpeg decode passed. The native render and verification took 23.70 seconds with two workers and peaked at 260648 KiB Node RSS. The measured voice durations are 5.545, 5.670 and 6.415 seconds. Their captions end on the first frame boundary at or after the measured end of each WAV.
+
+The six-frame review led to two scene edits: moving the equation above the captions and drawing dimensions beside the gap during the second shot. The final 80×45 grayscale check found 711 distinct thumbnails and eight identical adjacent pairs, with a longest run of four frames. Small line movements can change that measurement. Independent human review of narration and pacing remains open.
+
+The fixture check reads pixels from the **exported MP4** and counts the tile colours. At frame 454 it finds 16 sand cells, 24 coral cells and a nine-cell hole. At frame 683 the nine cells are mint and the 7×7 square is complete. It also compares the decoded audio energy envelope against each local WAV at its scripted onset. This catches a dropped or misplaced clip. It does not assess pronunciation or word alignment.
+
+```sh
+npm ci && npm test
+node dist/cli/main.js produce examples/missing-square.json out/missing-square --backend native --workers 2
+node dist/cli/main.js verify examples/missing-square.json out/missing-square/film.mp4
+python3 scripts/check_missing_square.py out/missing-square/film.mp4
+python3 scripts/frame_variation.py out/missing-square/film.mp4
+node dist/cli/main.js render out/missing-square/film.json out/square-replay.mp4 --backend native --workers 1 --batch 3
+sha256sum out/missing-square/film.mp4 out/square-replay.mp4
+```
+
+[Production and replay metrics](../benchmarks/missing-square.json) · [Film](../samples/missing-square.mp4) · [Decoded frames](../samples/missing-square-contact.jpg) · [Timed captions](../samples/missing-square.srt)

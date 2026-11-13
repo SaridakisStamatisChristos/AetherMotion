@@ -17,3 +17,7 @@ An updated cross-repository readiness assessment is recorded in [ECOSYSTEM_STATU
 ## Standalone narrated production
 
 Revision `05cd99344a09fa43a26169213ebe6c83d6da40e5` adds the produce command, nested groups, polygons, radial glows and shot fades. The original eclipse scene uses these primitives for three distinct views. One local invocation synthesized the voice, timed the captions, rendered the shots and published a verified 30-second MP4. This production used an explicitly authored scene with zero Gemini calls. Independent artistic review, live director evaluation and comparisons of authoring cost are open. [Film](../samples/eclipse.mp4) · [Verification](VERIFICATION.md#inside-an-eclipse)
+
+## Second standalone production using the eclipse runtime
+
+At `dd758420ccb91271252a85b993cc1b2079f9f449`, an original geometry film moves from landscape astronomy to a portrait tile dissection using only new scene JSON and three voice clips for production. The test fixture independently samples 49 cells in two decoded frames and checks speech against the WAVs. The native replay produced byte-identical media with a different worker count. [The Missing Square](../samples/missing-square.mp4) · [Measured results](VERIFICATION.md#portrait-reuse--the-missing-square)
