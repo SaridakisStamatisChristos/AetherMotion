@@ -1,0 +1,542 @@
+{
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "0.1"
+    },
+    "engine": {
+      "const": "canvas2d"
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 16,
+      "maximum": 3840,
+      "multipleOf": 2
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 16,
+      "maximum": 3840,
+      "multipleOf": 2
+    },
+    "fps": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "durationFrames": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 216000
+    },
+    "assets": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+      },
+      "maxProperties": 64,
+      "additionalProperties": {
+        "type": "string",
+        "maxLength": 256,
+        "pattern": "^[A-Za-z0-9_./-]+[.](png|jpe?g)$"
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+          },
+          "frames": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 216000
+          },
+          "background": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "camera": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "$ref": "#/definitions/coord"
+              },
+              "y": {
+                "$ref": "#/definitions/coord"
+              },
+              "zoom": {
+                "$ref": "#/definitions/scale"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/object"
+            },
+            "minItems": 0,
+            "maxItems": 512
+          }
+        },
+        "required": [
+          "id",
+          "frames",
+          "background",
+          "objects"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 512
+    }
+  },
+  "required": [
+    "version",
+    "engine",
+    "width",
+    "height",
+    "fps",
+    "durationFrames",
+    "scenes"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "coord": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": -100000,
+          "maximum": 100000
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "frame": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 216000
+              },
+              "value": {
+                "type": "number",
+                "minimum": -100000,
+                "maximum": 100000
+              },
+              "ease": {
+                "enum": [
+                  "linear",
+                  "smooth",
+                  "hold"
+                ]
+              }
+            },
+            "required": [
+              "frame",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 256
+        }
+      ]
+    },
+    "unit": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "frame": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 216000
+              },
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "ease": {
+                "enum": [
+                  "linear",
+                  "smooth",
+                  "hold"
+                ]
+              }
+            },
+            "required": [
+              "frame",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 256
+        }
+      ]
+    },
+    "scale": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0.001,
+          "maximum": 100
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "frame": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 216000
+              },
+              "value": {
+                "type": "number",
+                "minimum": 0.001,
+                "maximum": 100
+              },
+              "ease": {
+                "enum": [
+                  "linear",
+                  "smooth",
+                  "hold"
+                ]
+              }
+            },
+            "required": [
+              "frame",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 256
+        }
+      ]
+    },
+    "quantity": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": -1000000000.0,
+          "maximum": 1000000000.0
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "frame": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 216000
+              },
+              "value": {
+                "type": "number",
+                "minimum": -1000000000.0,
+                "maximum": 1000000000.0
+              },
+              "ease": {
+                "enum": [
+                  "linear",
+                  "smooth",
+                  "hold"
+                ]
+              }
+            },
+            "required": [
+              "frame",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 256
+        }
+      ]
+    },
+    "object": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "x": {
+              "$ref": "#/definitions/coord"
+            },
+            "y": {
+              "$ref": "#/definitions/coord"
+            },
+            "rotation": {
+              "$ref": "#/definitions/coord"
+            },
+            "opacity": {
+              "$ref": "#/definitions/unit"
+            },
+            "scale": {
+              "$ref": "#/definitions/scale"
+            },
+            "kind": {
+              "const": "circle"
+            },
+            "radius": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            },
+            "color": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "radius",
+            "color"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "x": {
+              "$ref": "#/definitions/coord"
+            },
+            "y": {
+              "$ref": "#/definitions/coord"
+            },
+            "rotation": {
+              "$ref": "#/definitions/coord"
+            },
+            "opacity": {
+              "$ref": "#/definitions/unit"
+            },
+            "scale": {
+              "$ref": "#/definitions/scale"
+            },
+            "kind": {
+              "const": "rect"
+            },
+            "width": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            },
+            "height": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            },
+            "color": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "width",
+            "height",
+            "color"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "x": {
+              "$ref": "#/definitions/coord"
+            },
+            "y": {
+              "$ref": "#/definitions/coord"
+            },
+            "rotation": {
+              "$ref": "#/definitions/coord"
+            },
+            "opacity": {
+              "$ref": "#/definitions/unit"
+            },
+            "scale": {
+              "$ref": "#/definitions/scale"
+            },
+            "kind": {
+              "const": "path"
+            },
+            "points": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": -100000,
+                  "maximum": 100000
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "minItems": 2,
+              "maxItems": 4096
+            },
+            "stroke": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            },
+            "color": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "reveal": {
+              "$ref": "#/definitions/unit"
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "points",
+            "stroke",
+            "color"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "x": {
+              "$ref": "#/definitions/coord"
+            },
+            "y": {
+              "$ref": "#/definitions/coord"
+            },
+            "rotation": {
+              "$ref": "#/definitions/coord"
+            },
+            "opacity": {
+              "$ref": "#/definitions/unit"
+            },
+            "scale": {
+              "$ref": "#/definitions/scale"
+            },
+            "kind": {
+              "const": "text"
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 2048
+            },
+            "size": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            },
+            "color": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "face": {
+              "enum": [
+                "sans",
+                "serif",
+                "mono"
+              ]
+            },
+            "bold": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "text",
+            "size",
+            "color"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "x": {
+              "$ref": "#/definitions/coord"
+            },
+            "y": {
+              "$ref": "#/definitions/coord"
+            },
+            "rotation": {
+              "$ref": "#/definitions/coord"
+            },
+            "opacity": {
+              "$ref": "#/definitions/unit"
+            },
+            "scale": {
+              "$ref": "#/definitions/scale"
+            },
+            "kind": {
+              "const": "image"
+            },
+            "asset": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "width": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            },
+            "height": {
+              "type": "number",
+              "minimum": 0.001,
+              "maximum": 16384
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "asset",
+            "width",
+            "height"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

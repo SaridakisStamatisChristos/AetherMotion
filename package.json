@@ -1,0 +1,27 @@
+{
+  "name": "aethermotion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "bin": {
+    "aethermotion": "./dist/cli/main.js"
+  },
+  "scripts": {
+    "build": "tsc && esbuild src/renderers/browser.ts --bundle --platform=browser --target=chrome120 --outfile=dist/painter.js",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "motion": "node dist/cli/main.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.80",
+    "ajv": "8.17.1",
+    "playwright-core": "1.56.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.30",
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3"
+  }
+}

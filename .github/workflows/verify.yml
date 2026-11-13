@@ -1,0 +1,29 @@
+name: Verify animation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        backend: [native, chromium]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-liberation fonts-dejavu-core
+      - run: npm ci
+      - if: matrix.backend == 'chromium'
+        run: npx playwright-core install --with-deps chromium
+      - run: npm test
+        env:
+          TEST_BACKEND: ${{ matrix.backend }}
+      - run: mkdir -p out && npm run --silent motion -- render examples/wave.json out/wave.mp4 --backend ${{ matrix.backend }} > out/metrics.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wave-${{ matrix.backend }}
+          path: out/
+          retention-days: 7

@@ -1,0 +1,2 @@
+# Continuation checkpoint
+Check out feature/aethermotion-v0.1 and run npm ci and npm test. Reproduce the Stage A render from README. Next add the typed whiteboard and infographic engines and render three distinct 30-second specifications with one unchanged engine commit. Later add character rigs, Three.js, local narration and the optional director. ClaudeCreate and AetherRendering are read-only integration targets.

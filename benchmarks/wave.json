@@ -1,0 +1,16 @@
+{
+  "frames": 720,
+  "width": 960,
+  "height": 540,
+  "duration": 30,
+  "fps": 24,
+  "codec": "h264",
+  "decoded": true,
+  "bytes": 210935,
+  "sha256": "ac756c6c253c0df81d1e431989f2836bd2a41e3b08a0bdc3ea830c07852c7df8",
+  "elapsedSeconds": 8.866161945000002,
+  "peakNodeRssKiB": 232604,
+  "workers": 2,
+  "batch": 3,
+  "backend": "native"
+}
