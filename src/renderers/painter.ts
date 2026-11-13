@@ -1,3 +1,4 @@
+import { drawCaption } from '../audio/subtitles.js'
 import type { Film, Drawable, Shot } from '../scene/types.js'
 import { cameraMatrix, locate, sample } from '../timeline/sample.js'
 
@@ -57,4 +58,5 @@ export function drawFrame(ctx: CanvasRenderingContext2D, film: Film, images: Rea
     const {zoom,dx,dy} = cameraMatrix(scene.camera,frame)
     ctx.setTransform(zoom,0,0,zoom,dx,dy)
     for (const o of scene.objects) paint(ctx,images,o,frame,scene.style)
+    drawCaption(ctx,film,index)
 }

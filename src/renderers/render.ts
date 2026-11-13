@@ -1,3 +1,4 @@
+import { mixAudio, prepareAudio } from '../audio/produce.js'
 import { openPool, type Backend } from './workers.js'
 import { createReadStream, existsSync } from 'node:fs'
 import { mkdir, mkdtemp, rm, stat, link } from 'node:fs/promises'
@@ -19,15 +20,17 @@ export async function render(input: unknown, directory: string, output: string, 
   if (existsSync(file)) throw new Error('Output already exists: '+file)
   const start = performance.now()
   const assets = await loadAssets(film,directory)
+  const audio = film.audio ? await prepareAudio(film,directory) : []
   const backend = options.backend ?? 'chromium'
   if (backend!=='chromium' && backend!=='native') throw new Error('Expected chromium or native backend')
   await mkdir(dirname(file),{recursive:true})
   const temp = await mkdtemp(join(dirname(file),'.aethermotion-'))
-  const partial = join(temp,'render.mp4')
+  const silent = join(temp,'silent.mp4')
+  const partial = audio.length ? join(temp,'mixed.mp4') : silent
   try {
     const pool = await openPool(backend,Math.min(workers,film.durationFrames),film,assets)
     try {
-      const ff = spawn('ffmpeg',['-hide_banner','-v','error','-f','image2pipe','-c:v','png','-framerate',String(film.fps),'-i','pipe:0','-an','-c:v','libx264','-threads','2','-preset','veryfast','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',partial],{stdio:['pipe','ignore','inherit']})
+      const ff = spawn('ffmpeg',['-hide_banner','-v','error','-f','image2pipe','-c:v','png','-framerate',String(film.fps),'-i','pipe:0','-an','-c:v','libx264','-threads','2','-preset','veryfast','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',silent],{stdio:['pipe','ignore','inherit']})
       const exit = new Promise<void>((ok,fail) => {
         ff.once('error',fail)
         ff.once('close',code => code===0 ? ok() : fail(new Error('FFmpeg exited with code '+code)))
@@ -45,6 +48,7 @@ export async function render(input: unknown, directory: string, output: string, 
       try { await Promise.all([exit,pipeline(frames(),ff.stdin)]) }
       finally { if (ff.exitCode===null) ff.kill() }
     } finally {await pool.close()}
+    if(audio.length) await mixAudio(film,audio,silent,partial)
     const report = await verify(film,partial)
     const hash = createHash('sha256')
     for await (const chunk of createReadStream(partial)) hash.update(chunk)

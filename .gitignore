@@ -3,3 +3,5 @@ dist/
 out/
 .env
 .env.*
+.venv/
+models/

@@ -9,10 +9,7 @@ export async function loadAssets(film: Film, directory: string) {
   const assets: Record<string,string> = Object.create(null)
   let total = 0
   for (const [id,path] of Object.entries(film.assets ?? {})) {
-    if (isAbsolute(path) || path.split('/').includes('..')) throw new Error(id + ': expected a relative asset path inside scene directory')
-    const actual = await realpath(resolve(root,path)).catch(() => {throw new Error(id + ': missing asset ' + path)})
-    const rel = relative(root,actual)
-    if (rel === '..' || rel.startsWith('..'+sep)) throw new Error(id + ': asset escapes scene directory')
+    const actual = await localAsset(root,path,id)
     const metadata = await stat(actual)
     total += metadata.size
     if (!metadata.isFile() || metadata.size > 8*1024**2 || total > 32*1024**2) throw new Error(id + ': asset exceeds size limit or is not a file')
@@ -28,4 +25,13 @@ export async function loadAssets(film: Film, directory: string) {
     assets[id] = 'data:image/'+(png?'png':'jpeg')+';base64,'+bytes.toString('base64')
   }
   return assets
+}
+
+/** Resolve a declared local file under an already canonicalized scene root. */
+export async function localAsset(root:string,path:string,id:string) {
+    if (isAbsolute(path) || path.split('/').includes('..')) throw new Error(id + ': expected a relative asset path inside scene directory')
+    const actual = await realpath(resolve(root,path)).catch(() => {throw new Error(id + ': missing asset ' + path)})
+    const rel = relative(root,actual)
+    if (rel === '..' || rel.startsWith('..'+sep)) throw new Error(id + ': asset escapes scene directory')
+    return actual
 }

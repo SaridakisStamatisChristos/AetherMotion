@@ -1,19 +1,28 @@
 #!/usr/bin/env node
-import { readFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
+import { prepareAudio } from '../audio/produce.js'
+import { subtitles } from '../audio/subtitles.js'
 import { dirname } from 'node:path'
 import { parseArgs } from 'node:util'
 import { loadAssets } from '../scene/assets.js'
 import { parseFilm } from '../scene/validate.js'
 import { render } from '../renderers/render.js'
 import { verify } from '../renderers/verify.js'
-const help = 'aethermotion validate SCENE.json | render SCENE.json OUT.mp4 [--workers N --batch N --backend chromium|native] | verify SCENE.json OUT.mp4'
+const help = 'aethermotion validate SCENE.json | render SCENE.json OUT.mp4 [--workers N --batch N --backend chromium|native] | verify SCENE.json OUT.mp4 | subtitles SCENE.json OUT.srt'
 async function main() {
   const {values,positionals} = parseArgs({options:{backend:{type:'string'},workers:{type:'string'},batch:{type:'string'},help:{type:'boolean'}},allowPositionals:true})
   if (values.help) return console.log(help)
   const [mode,spec,file] = positionals
-  if (!['validate','render','verify'].includes(mode) || positionals.length!==(mode==='validate'?2:3)) throw new Error(help)
+  if (!['validate','render','verify','subtitles'].includes(mode) || positionals.length!==(mode==='validate'?2:3)) throw new Error(help)
   const film = parseFilm(JSON.parse(await readFile(spec,'utf8')))
+  if (mode==='subtitles') {
+    const srt=subtitles(film)
+    if(!srt) throw new Error('Film has no caption cues')
+    await writeFile(file,srt,{flag:'wx'})
+    return
+  }
   if (mode === 'validate') {
+    if(film.audio) await prepareAudio(film,dirname(spec))
     await loadAssets(film,dirname(spec))
     return console.log('Valid: '+film.durationFrames+' frames')
   }

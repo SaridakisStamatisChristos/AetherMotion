@@ -1,0 +1,18 @@
+{
+  "frames": 192,
+  "width": 720,
+  "height": 406,
+  "duration": 8,
+  "fps": 24,
+  "codec": "h264",
+  "audioCodec": "aac",
+  "audioDuration": 8,
+  "decoded": true,
+  "bytes": 146930,
+  "sha256": "7856fdf2bd5a7a24eff0e96b8efee37ff069170790d66abf59e2fd2b08424aac",
+  "elapsedSeconds": 3.187742733,
+  "peakNodeRssKiB": 197972,
+  "workers": 1,
+  "batch": 2,
+  "backend": "native"
+}

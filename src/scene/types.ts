@@ -1,3 +1,4 @@
+import type { AudioCue } from '../audio/types.js'
 import type { World } from '../engines/three/types.js'
 export interface Key {
   frame: number
@@ -46,5 +47,6 @@ export interface Film {
   fps: number
   durationFrames: number
   assets?: Record<string, string>
+  audio?: AudioCue[]
   scenes: Shot[]
 }

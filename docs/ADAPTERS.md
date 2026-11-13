@@ -1,0 +1,9 @@
+# Caller contracts (proposed integration)
+A caller stages a self-contained directory with scene JSON and local audio, raster and mesh files. Run the compiled CLI validate command, render to a new path, and consume its JSON metrics only on exit 0. Use independent verify on receipt. Select native for 2D or chromium for Three.js. Reflow text and positions for each target aspect ratio. A failed process must not publish its output. Keep keys and host paths out of scene data.
+
+|Caller source|Mapping to AetherMotion|
+|---|---|
+|ClaudeCreate examples/dummy.json, revision 6c4b0129e11058331b20db93c427982e8e5b0f13|Map scenes[].say to caller-generated WAV + caption cue. Accent is a style color. counter.props.from/to become numeric keys; prefix needs a separate label and suffix maps directly. object_3d.props.shape maps through a supported primitive table. caption_screen becomes a text object. Resolve sfx names to local WAVs. Reject unmapped template or prop combinations.|
+|AetherRendering reels/demo/video_plan.json and README, revision b76d390bfd985bf5bef302ac20e1bbc7022a95bf|Map title/subtitle to text overlays; convert its motion preset to declared tracks. The caller can supply its existing HyperFrames/Kokoro narration WAVs. Use measured lengths for narration intervals. For older project.json inputs, map visual through an explicit preset table. Reject unknown presets with their source scene index.|
+
+A narration interval starts at the accumulated global frame offset and ends at that offset plus ceil(WAV seconds × fps). Extend the shot when narration exceeds its estimate. Pass output paths as argv elements to the CLI and retain stdout, stderr and the exit code. These are interface specifications; both caller repositories were inspected read-only. No application-level installation or end-to-end caller integration has been carried out.

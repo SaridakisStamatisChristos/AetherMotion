@@ -47,6 +47,15 @@ export function parseFilm(input: unknown): Film {
     }
     validateKeys(scene,scene.frames,scene.id)
   }
+  const captions: NonNullable<Film['audio']> = []
+  for (const [index,cue] of (input.audio ?? []).entries()) {
+    if(cue.endFrame<=cue.startFrame || cue.endFrame>input.durationFrames)
+      throw new Error('/audio/'+index+': expected a nonempty frame interval inside the film')
+    if(cue.caption) captions.push(cue)
+  }
+  captions.sort((a,b)=>a.startFrame-b.startFrame)
+  if(captions.some((cue,i)=>i>0 && cue.startFrame<captions[i-1].endFrame))
+    throw new Error('/audio: caption intervals overlap')
   return input
 }
 
