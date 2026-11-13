@@ -48,11 +48,12 @@ function paint(ctx: CanvasRenderingContext2D, images: ReadonlyMap<string,CanvasI
   ctx.restore()
 }
 /** Paint one complete frame into a Canvas 2D context. */
-export function drawFrame(ctx: CanvasRenderingContext2D, film: Film, images: ReadonlyMap<string,CanvasImageSource>, index: number) {
+export function drawFrame(ctx: CanvasRenderingContext2D, film: Film, images: ReadonlyMap<string,CanvasImageSource>, index: number, backdrop?: CanvasImageSource) {
     const {scene,frame} = locate(film,index)
     ctx.resetTransform()
     ctx.fillStyle = scene.background
     ctx.fillRect(0,0,film.width,film.height)
+    if (backdrop) ctx.drawImage(backdrop,0,0)
     const {zoom,dx,dy} = cameraMatrix(scene.camera,frame)
     ctx.setTransform(zoom,0,0,zoom,dx,dy)
     for (const o of scene.objects) paint(ctx,images,o,frame,scene.style)

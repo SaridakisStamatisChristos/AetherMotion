@@ -1,3 +1,4 @@
+import { parseObj } from '../engines/three/obj.js'
 import { readFile, realpath, stat } from 'node:fs/promises'
 import { isAbsolute, relative, resolve, sep } from 'node:path'
 import type { Film } from './types.js'
@@ -16,6 +17,12 @@ export async function loadAssets(film: Film, directory: string) {
     total += metadata.size
     if (!metadata.isFile() || metadata.size > 8*1024**2 || total > 32*1024**2) throw new Error(id + ': asset exceeds size limit or is not a file')
     const bytes = await readFile(actual)
+    if (path.endsWith('.obj')) {
+      const source=bytes.toString('utf8')
+      parseObj(source,id)
+      assets[id]=source
+      continue
+    }
     const png = bytes.subarray(0,8).equals(Buffer.from('89504e470d0a1a0a','hex'))
     if (!png && !bytes.subarray(0,3).equals(Buffer.from('ffd8ff','hex'))) throw new Error(id + ': expected a PNG or JPEG signature')
     assets[id] = 'data:image/'+(png?'png':'jpeg')+';base64,'+bytes.toString('base64')

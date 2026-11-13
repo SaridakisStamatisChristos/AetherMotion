@@ -1,3 +1,4 @@
+import type { World } from '../engines/three/types.js'
 export interface Key {
   frame: number
   value: number
@@ -33,12 +34,13 @@ export interface Shot {
   frames: number
   style?: {name:"whiteboard"|"infographic"|"cartoon"; accent?:string; ink?:string; penWidth?:number}
   background: string
+  world?: World
   camera?: Camera
   objects: Drawable[]
 }
 export interface Film {
   version: '0.1'
-  engine: 'canvas2d'
+  engine: 'canvas2d' | 'three'
   width: number
   height: number
   fps: number

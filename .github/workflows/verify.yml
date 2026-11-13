@@ -20,10 +20,25 @@ jobs:
         run: npx playwright-core install --with-deps chromium
       - run: npm test
         env:
+          AETHER_WEBGL: software
           TEST_BACKEND: ${{ matrix.backend }}
       - run: mkdir -p out && npm run --silent motion -- render examples/wave.json out/wave.mp4 --backend ${{ matrix.backend }} > out/metrics.json
       - run: python3 scripts/experiment.py out/reuse --backend ${{ matrix.backend }}
       - run: node dist/cli/main.js render examples/pier.json out/pier.mp4 --backend ${{ matrix.backend }}
+      - if: matrix.backend == 'chromium'
+        name: Verify and capture 3D film
+        env:
+          AETHER_WEBGL: software
+        run: |
+          mkdir -p out/three
+          node dist/cli/main.js render examples/capsule.json out/three/capsule.mp4 --workers 2 > out/three/metrics.json
+          ffmpeg -v error -i out/three/capsule.mp4 -vf "select='eq(n,12)+eq(n,85)+eq(n,175)',scale=384:216,tile=3x1" -frames:v 1 out/three/capsule-contact.jpg
+      - if: matrix.backend == 'chromium'
+        uses: actions/upload-artifact@v4
+        with:
+          name: capsule-3d
+          path: out/three/
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         with:
           name: wave-${{ matrix.backend }}

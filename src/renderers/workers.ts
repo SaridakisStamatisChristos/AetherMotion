@@ -14,6 +14,7 @@ interface Pool {lanes: Batch[]; close(): Promise<void>}
 export async function openPool(backend: Backend, count: number, film: Film, assets: Record<string,string>): Promise<Pool> {
   const lanes: Batch[] = []
   if (backend==='native') {
+    if (film.engine==='three') throw new Error('Three.js films require --backend chromium')
     const workers: Worker[] = []
     const close = async () => {await Promise.all(workers.map(w => w.terminate()))}
     try {
@@ -31,7 +32,9 @@ export async function openPool(backend: Backend, count: number, film: Film, asse
     return {lanes,close}
   }
   const executablePath = process.env.CHROMIUM_PATH || (existsSync('/usr/bin/chromium') ? '/usr/bin/chromium' : undefined)
-  const browser = await chromium.launch({executablePath,headless:true})
+  const args = film.engine==='three' && process.env.AETHER_WEBGL==='software'
+    ? ['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'] : []
+  const browser = await chromium.launch({executablePath,headless:true,args})
   try {
     for(let i=0;i<count;i++) {
       const page = await browser.newPage()

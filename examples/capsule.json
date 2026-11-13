@@ -1,0 +1,1109 @@
+{
+  "engine": "three",
+  "version": "0.1",
+  "width": 720,
+  "height": 406,
+  "fps": 24,
+  "durationFrames": 192,
+  "assets": {
+    "capsule": "assets/capsule.obj"
+  },
+  "scenes": [
+    {
+      "id": "shot1",
+      "frames": 96,
+      "background": "#223949",
+      "objects": [
+        {
+          "id": "panel",
+          "kind": "rect",
+          "color": "#132632",
+          "width": 720,
+          "height": 76,
+          "y": 0
+        },
+        {
+          "kind": "text",
+          "id": "series",
+          "text": "OBJECT STUDIES   /   VOL. 01",
+          "x": 28,
+          "y": 30,
+          "size": 13,
+          "color": "#8FD4CA",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "kind": "text",
+          "id": "title",
+          "text": "The sample capsule",
+          "x": 27,
+          "y": 60,
+          "size": 26,
+          "color": "#FFFFFF",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "kind": "text",
+          "id": "index",
+          "text": "1 / 2",
+          "x": 620,
+          "y": 49,
+          "size": 18,
+          "color": "#CDA784",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "footer",
+          "kind": "rect",
+          "x": 0,
+          "y": 362,
+          "width": 720,
+          "height": 44,
+          "color": "#132632"
+        },
+        {
+          "kind": "text",
+          "id": "caption",
+          "text": "An eight-sided housing rests between two retaining rings.",
+          "x": 27,
+          "y": 390,
+          "size": 17,
+          "color": "#E6E3DA",
+          "face": "sans",
+          "bold": false
+        }
+      ],
+      "world": {
+        "camera": {
+          "position": [
+            [
+              {
+                "frame": 0,
+                "value": 3.2,
+                "ease": "smooth"
+              },
+              {
+                "frame": 95,
+                "value": -2.4
+              }
+            ],
+            2.3,
+            5.9
+          ],
+          "target": [
+            0,
+            0.1,
+            0
+          ],
+          "fov": 32
+        },
+        "lights": [
+          {
+            "kind": "ambient",
+            "color": "#CEE9FF",
+            "intensity": 1.45
+          },
+          {
+            "kind": "directional",
+            "color": "#FFE7B8",
+            "intensity": 3.5,
+            "position": [
+              3,
+              6,
+              4
+            ]
+          },
+          {
+            "kind": "directional",
+            "color": "#85CDE3",
+            "intensity": 2,
+            "position": [
+              -3,
+              2,
+              -3
+            ]
+          }
+        ],
+        "models": [
+          {
+            "id": "base",
+            "shape": {
+              "kind": "cylinder",
+              "radiusTop": 1.48,
+              "radiusBottom": 1.62,
+              "height": 0.34
+            },
+            "material": {
+              "color": "#486174",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              -0.65,
+              0
+            ]
+          },
+          {
+            "id": "plinth",
+            "shape": {
+              "kind": "cylinder",
+              "radiusTop": 1.05,
+              "radiusBottom": 1.12,
+              "height": 0.12
+            },
+            "material": {
+              "color": "#D4B188",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              -0.43,
+              0
+            ]
+          },
+          {
+            "id": "capsule",
+            "shape": {
+              "kind": "obj",
+              "asset": "capsule"
+            },
+            "material": {
+              "color": "#DF915C",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              0.37,
+              0
+            ],
+            "rotation": [
+              0,
+              [
+                {
+                  "frame": 0,
+                  "value": 7,
+                  "ease": "smooth"
+                },
+                {
+                  "frame": 95,
+                  "value": 73
+                }
+              ],
+              0
+            ]
+          },
+          {
+            "id": "ring0",
+            "shape": {
+              "kind": "torus",
+              "radius": 0.61,
+              "tube": 0.056
+            },
+            "material": {
+              "color": "#74CCC2",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              0.02,
+              0
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "ring1",
+            "shape": {
+              "kind": "torus",
+              "radius": 0.61,
+              "tube": 0.056
+            },
+            "material": {
+              "color": "#74CCC2",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              0.62,
+              0
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "tick0",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              1.35,
+              -0.462,
+              0.0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "tick1",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              1.1691342951089922,
+              -0.462,
+              0.6749999999999999
+            ],
+            "rotation": [
+              0,
+              -30,
+              0
+            ]
+          },
+          {
+            "id": "tick2",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              0.6750000000000002,
+              -0.462,
+              1.1691342951089922
+            ],
+            "rotation": [
+              0,
+              -60,
+              0
+            ]
+          },
+          {
+            "id": "tick3",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              8.266365894244634e-17,
+              -0.462,
+              1.35
+            ],
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          {
+            "id": "tick4",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -0.6749999999999997,
+              -0.462,
+              1.1691342951089922
+            ],
+            "rotation": [
+              0,
+              -120,
+              0
+            ]
+          },
+          {
+            "id": "tick5",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -1.1691342951089922,
+              -0.462,
+              0.6749999999999999
+            ],
+            "rotation": [
+              0,
+              -150,
+              0
+            ]
+          },
+          {
+            "id": "tick6",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -1.35,
+              -0.462,
+              1.6532731788489269e-16
+            ],
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          {
+            "id": "tick7",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -1.1691342951089925,
+              -0.462,
+              -0.6749999999999997
+            ],
+            "rotation": [
+              0,
+              -210,
+              0
+            ]
+          },
+          {
+            "id": "tick8",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -0.6750000000000006,
+              -0.462,
+              -1.1691342951089918
+            ],
+            "rotation": [
+              0,
+              -240,
+              0
+            ]
+          },
+          {
+            "id": "tick9",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -2.4799097682733903e-16,
+              -0.462,
+              -1.35
+            ],
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          {
+            "id": "tick10",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              0.6750000000000002,
+              -0.462,
+              -1.1691342951089922
+            ],
+            "rotation": [
+              0,
+              -300,
+              0
+            ]
+          },
+          {
+            "id": "tick11",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              1.1691342951089918,
+              -0.462,
+              -0.6750000000000006
+            ],
+            "rotation": [
+              0,
+              -330,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "shot2",
+      "frames": 96,
+      "background": "#223949",
+      "objects": [
+        {
+          "id": "panel",
+          "kind": "rect",
+          "color": "#132632",
+          "width": 720,
+          "height": 76,
+          "y": 0
+        },
+        {
+          "kind": "text",
+          "id": "series",
+          "text": "OBJECT STUDIES   /   VOL. 01",
+          "x": 28,
+          "y": 30,
+          "size": 13,
+          "color": "#8FD4CA",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "kind": "text",
+          "id": "title",
+          "text": "Exploded view",
+          "x": 27,
+          "y": 60,
+          "size": 26,
+          "color": "#FFFFFF",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "kind": "text",
+          "id": "index",
+          "text": "2 / 2",
+          "x": 620,
+          "y": 49,
+          "size": 18,
+          "color": "#CDA784",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "footer",
+          "kind": "rect",
+          "x": 0,
+          "y": 362,
+          "width": 720,
+          "height": 44,
+          "color": "#132632"
+        },
+        {
+          "kind": "text",
+          "id": "caption",
+          "text": "The housing lifts clear of the base as the rings separate.",
+          "x": 27,
+          "y": 390,
+          "size": 17,
+          "color": "#E6E3DA",
+          "face": "sans",
+          "bold": false
+        }
+      ],
+      "world": {
+        "camera": {
+          "position": [
+            [
+              {
+                "frame": 0,
+                "value": -2.4,
+                "ease": "smooth"
+              },
+              {
+                "frame": 95,
+                "value": 1.5
+              }
+            ],
+            2.6,
+            6.3
+          ],
+          "target": [
+            0,
+            0.57,
+            0
+          ],
+          "fov": 32
+        },
+        "lights": [
+          {
+            "kind": "ambient",
+            "color": "#CEE9FF",
+            "intensity": 1.45
+          },
+          {
+            "kind": "directional",
+            "color": "#FFE7B8",
+            "intensity": 3.5,
+            "position": [
+              3,
+              6,
+              4
+            ]
+          },
+          {
+            "kind": "directional",
+            "color": "#85CDE3",
+            "intensity": 2,
+            "position": [
+              -3,
+              2,
+              -3
+            ]
+          }
+        ],
+        "models": [
+          {
+            "id": "base",
+            "shape": {
+              "kind": "cylinder",
+              "radiusTop": 1.48,
+              "radiusBottom": 1.62,
+              "height": 0.34
+            },
+            "material": {
+              "color": "#486174",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              -0.65,
+              0
+            ]
+          },
+          {
+            "id": "plinth",
+            "shape": {
+              "kind": "cylinder",
+              "radiusTop": 1.05,
+              "radiusBottom": 1.12,
+              "height": 0.12
+            },
+            "material": {
+              "color": "#D4B188",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              -0.43,
+              0
+            ]
+          },
+          {
+            "id": "capsule",
+            "shape": {
+              "kind": "obj",
+              "asset": "capsule"
+            },
+            "material": {
+              "color": "#DF915C",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              [
+                {
+                  "frame": 0,
+                  "value": 0.37,
+                  "ease": "smooth"
+                },
+                {
+                  "frame": 95,
+                  "value": 1.08
+                }
+              ],
+              0
+            ],
+            "rotation": [
+              0,
+              [
+                {
+                  "frame": 0,
+                  "value": 7,
+                  "ease": "smooth"
+                },
+                {
+                  "frame": 95,
+                  "value": 73
+                }
+              ],
+              0
+            ]
+          },
+          {
+            "id": "ring0",
+            "shape": {
+              "kind": "torus",
+              "radius": 0.61,
+              "tube": 0.056
+            },
+            "material": {
+              "color": "#74CCC2",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              [
+                {
+                  "frame": 0,
+                  "value": 0.02,
+                  "ease": "smooth"
+                },
+                {
+                  "frame": 95,
+                  "value": 0.27
+                }
+              ],
+              0
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "ring1",
+            "shape": {
+              "kind": "torus",
+              "radius": 0.61,
+              "tube": 0.056
+            },
+            "material": {
+              "color": "#74CCC2",
+              "roughness": 0.45
+            },
+            "position": [
+              0,
+              [
+                {
+                  "frame": 0,
+                  "value": 0.62,
+                  "ease": "smooth"
+                },
+                {
+                  "frame": 95,
+                  "value": 1.9900000000000002
+                }
+              ],
+              0
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "tick0",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              1.35,
+              -0.462,
+              0.0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "tick1",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              1.1691342951089922,
+              -0.462,
+              0.6749999999999999
+            ],
+            "rotation": [
+              0,
+              -30,
+              0
+            ]
+          },
+          {
+            "id": "tick2",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              0.6750000000000002,
+              -0.462,
+              1.1691342951089922
+            ],
+            "rotation": [
+              0,
+              -60,
+              0
+            ]
+          },
+          {
+            "id": "tick3",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              8.266365894244634e-17,
+              -0.462,
+              1.35
+            ],
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          },
+          {
+            "id": "tick4",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -0.6749999999999997,
+              -0.462,
+              1.1691342951089922
+            ],
+            "rotation": [
+              0,
+              -120,
+              0
+            ]
+          },
+          {
+            "id": "tick5",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -1.1691342951089922,
+              -0.462,
+              0.6749999999999999
+            ],
+            "rotation": [
+              0,
+              -150,
+              0
+            ]
+          },
+          {
+            "id": "tick6",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -1.35,
+              -0.462,
+              1.6532731788489269e-16
+            ],
+            "rotation": [
+              0,
+              -180,
+              0
+            ]
+          },
+          {
+            "id": "tick7",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -1.1691342951089925,
+              -0.462,
+              -0.6749999999999997
+            ],
+            "rotation": [
+              0,
+              -210,
+              0
+            ]
+          },
+          {
+            "id": "tick8",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -0.6750000000000006,
+              -0.462,
+              -1.1691342951089918
+            ],
+            "rotation": [
+              0,
+              -240,
+              0
+            ]
+          },
+          {
+            "id": "tick9",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              -2.4799097682733903e-16,
+              -0.462,
+              -1.35
+            ],
+            "rotation": [
+              0,
+              -270,
+              0
+            ]
+          },
+          {
+            "id": "tick10",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              0.6750000000000002,
+              -0.462,
+              -1.1691342951089922
+            ],
+            "rotation": [
+              0,
+              -300,
+              0
+            ]
+          },
+          {
+            "id": "tick11",
+            "shape": {
+              "kind": "box",
+              "size": [
+                0.1,
+                0.028,
+                0.042
+              ]
+            },
+            "material": {
+              "color": "#AAC1C6",
+              "roughness": 0.45
+            },
+            "position": [
+              1.1691342951089918,
+              -0.462,
+              -0.6750000000000006
+            ],
+            "rotation": [
+              0,
+              -330,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
