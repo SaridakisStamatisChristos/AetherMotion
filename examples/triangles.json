@@ -1,0 +1,1013 @@
+{
+  "version": "0.1",
+  "engine": "canvas2d",
+  "width": 960,
+  "height": 540,
+  "fps": 24,
+  "durationFrames": 720,
+  "scenes": [
+    {
+      "id": "build",
+      "frames": 240,
+      "style": {
+        "name": "whiteboard",
+        "ink": "#242C47",
+        "accent": "#4D53AA",
+        "penWidth": 3
+      },
+      "background": "#EDF0F6",
+      "objects": [
+        {
+          "id": "label",
+          "kind": "text",
+          "text": "NUMBER THEORY     /     VISUAL PROOF",
+          "x": 48,
+          "y": 40,
+          "size": 16,
+          "color": "#4D53AA",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "id": "index",
+          "kind": "text",
+          "text": "01   /   03",
+          "x": 813,
+          "y": 40,
+          "size": 16,
+          "color": "#626C85",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "hr",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              58
+            ],
+            [
+              912,
+              58
+            ]
+          ],
+          "color": "#626C85",
+          "stroke": 1
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Build a triangular number.",
+          "x": 48,
+          "y": 132,
+          "size": 55,
+          "color": "#242C47",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Each row has one more dot than the row above it.",
+          "x": 49,
+          "y": 174,
+          "size": 21,
+          "color": "#242C47",
+          "face": "sans",
+          "bold": false
+        },
+        {
+          "id": "footerline",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              455
+            ],
+            [
+              912,
+              455
+            ]
+          ],
+          "color": "#626C85",
+          "stroke": 1
+        },
+        {
+          "id": "caption",
+          "kind": "text",
+          "text": "Four rows contain 1 + 2 + 3 + 4 = 10 dots.",
+          "x": 49,
+          "y": 499,
+          "size": 23,
+          "color": "#242C47",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "d0_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 234,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 36,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d1_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 282,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 40,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 76,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d1_1",
+          "kind": "circle",
+          "x": 202,
+          "y": 282,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 40,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 76,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d2_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 330,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 80,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 116,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d2_1",
+          "kind": "circle",
+          "x": 202,
+          "y": 330,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 80,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 116,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d2_2",
+          "kind": "circle",
+          "x": 244,
+          "y": 330,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 80,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 116,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d3_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 378,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 120,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 156,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d3_1",
+          "kind": "circle",
+          "x": 202,
+          "y": 378,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 120,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 156,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d3_2",
+          "kind": "circle",
+          "x": 244,
+          "y": 378,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 120,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 156,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d3_3",
+          "kind": "circle",
+          "x": 286,
+          "y": 378,
+          "radius": 14,
+          "color": "#4D53AA",
+          "opacity": [
+            {
+              "frame": 120,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 156,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "sum",
+          "kind": "handwriting",
+          "text": "1   2   3   4",
+          "x": 447,
+          "y": 291,
+          "size": 29,
+          "reveal": [
+            {
+              "frame": 20,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 185,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "legend",
+          "kind": "text",
+          "text": "DOTS PER ROW",
+          "x": 448,
+          "y": 366,
+          "size": 17,
+          "color": "#626C85",
+          "face": "mono",
+          "bold": false
+        }
+      ]
+    },
+    {
+      "id": "pair",
+      "frames": 240,
+      "style": {
+        "name": "whiteboard",
+        "ink": "#242C47",
+        "accent": "#4D53AA",
+        "penWidth": 3
+      },
+      "background": "#EDF0F6",
+      "objects": [
+        {
+          "id": "label",
+          "kind": "text",
+          "text": "NUMBER THEORY     /     VISUAL PROOF",
+          "x": 48,
+          "y": 40,
+          "size": 16,
+          "color": "#4D53AA",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "id": "index",
+          "kind": "text",
+          "text": "02   /   03",
+          "x": 813,
+          "y": 40,
+          "size": 16,
+          "color": "#626C85",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "hr",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              58
+            ],
+            [
+              912,
+              58
+            ]
+          ],
+          "color": "#626C85",
+          "stroke": 1
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Pair two equal triangles.",
+          "x": 48,
+          "y": 132,
+          "size": 55,
+          "color": "#242C47",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Turn a second copy around and fill the empty positions.",
+          "x": 49,
+          "y": 174,
+          "size": 21,
+          "color": "#242C47",
+          "face": "sans",
+          "bold": false
+        },
+        {
+          "id": "footerline",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              455
+            ],
+            [
+              912,
+              455
+            ]
+          ],
+          "color": "#626C85",
+          "stroke": 1
+        },
+        {
+          "id": "caption",
+          "kind": "text",
+          "text": "The rectangle has 4 \u00d7 5 = 20 dots. One triangle has half.",
+          "x": 49,
+          "y": 499,
+          "size": 23,
+          "color": "#242C47",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "d0_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 240,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d0_1",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 330,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 200
+            }
+          ],
+          "y": 240,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d0_2",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 370,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 240
+            }
+          ],
+          "y": 240,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d0_3",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 410,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 280
+            }
+          ],
+          "y": 240,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d0_4",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 450,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 320
+            }
+          ],
+          "y": 240,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d1_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 282,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d1_1",
+          "kind": "circle",
+          "x": 200,
+          "y": 282,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d1_2",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 370,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 240
+            }
+          ],
+          "y": 282,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d1_3",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 410,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 280
+            }
+          ],
+          "y": 282,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d1_4",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 450,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 320
+            }
+          ],
+          "y": 282,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d2_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 324,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d2_1",
+          "kind": "circle",
+          "x": 200,
+          "y": 324,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d2_2",
+          "kind": "circle",
+          "x": 240,
+          "y": 324,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d2_3",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 410,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 280
+            }
+          ],
+          "y": 324,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d2_4",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 450,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 320
+            }
+          ],
+          "y": 324,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "d3_0",
+          "kind": "circle",
+          "x": 160,
+          "y": 366,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d3_1",
+          "kind": "circle",
+          "x": 200,
+          "y": 366,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d3_2",
+          "kind": "circle",
+          "x": 240,
+          "y": 366,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d3_3",
+          "kind": "circle",
+          "x": 280,
+          "y": 366,
+          "radius": 13,
+          "color": "#4D53AA",
+          "opacity": 1
+        },
+        {
+          "id": "d3_4",
+          "kind": "circle",
+          "x": [
+            {
+              "frame": 32,
+              "value": 450,
+              "ease": "smooth"
+            },
+            {
+              "frame": 154,
+              "value": 320
+            }
+          ],
+          "y": 366,
+          "radius": 13,
+          "color": "#C16748",
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 65,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "equation",
+          "kind": "handwriting",
+          "text": "4 X 5",
+          "x": 535,
+          "y": 270,
+          "size": 48,
+          "reveal": [
+            {
+              "frame": 50,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 160,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "divide",
+          "kind": "text",
+          "text": "Then divide by two.",
+          "x": 535,
+          "y": 370,
+          "size": 23,
+          "color": "#242C47",
+          "face": "sans",
+          "bold": false
+        }
+      ]
+    },
+    {
+      "id": "generalize",
+      "frames": 240,
+      "style": {
+        "name": "infographic",
+        "ink": "#242C47",
+        "accent": "#4D53AA",
+        "penWidth": 3
+      },
+      "background": "#EDF0F6",
+      "objects": [
+        {
+          "id": "label",
+          "kind": "text",
+          "text": "NUMBER THEORY     /     VISUAL PROOF",
+          "x": 48,
+          "y": 40,
+          "size": 16,
+          "color": "#4D53AA",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "id": "index",
+          "kind": "text",
+          "text": "03   /   03",
+          "x": 813,
+          "y": 40,
+          "size": 16,
+          "color": "#626C85",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "hr",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              58
+            ],
+            [
+              912,
+              58
+            ]
+          ],
+          "color": "#626C85",
+          "stroke": 1
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Count any number of rows.",
+          "x": 48,
+          "y": 132,
+          "size": 55,
+          "color": "#242C47",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Two copies make a rectangle n rows high and n + 1 dots wide.",
+          "x": 49,
+          "y": 174,
+          "size": 21,
+          "color": "#242C47",
+          "face": "sans",
+          "bold": false
+        },
+        {
+          "id": "footerline",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              455
+            ],
+            [
+              912,
+              455
+            ]
+          ],
+          "color": "#626C85",
+          "stroke": 1
+        },
+        {
+          "id": "caption",
+          "kind": "text",
+          "text": "For n rows, the triangular number is n(n + 1) / 2.",
+          "x": 49,
+          "y": 499,
+          "size": 23,
+          "color": "#242C47",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "chart",
+          "kind": "bars",
+          "x": 63,
+          "y": 394,
+          "width": 557,
+          "height": 151,
+          "ceiling": 15,
+          "size": 16,
+          "data": [
+            {
+              "label": "1 row",
+              "value": 1
+            },
+            {
+              "label": "2 rows",
+              "value": 3
+            },
+            {
+              "label": "3 rows",
+              "value": 6
+            },
+            {
+              "label": "4 rows",
+              "value": 10
+            },
+            {
+              "label": "5 rows",
+              "value": 15
+            }
+          ],
+          "reveal": [
+            {
+              "frame": 6,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 171,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "total",
+          "kind": "counter",
+          "x": 675,
+          "y": 328,
+          "value": [
+            {
+              "frame": 6,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 171,
+              "value": 15
+            }
+          ],
+          "decimals": 0,
+          "size": 68
+        },
+        {
+          "id": "totalcap",
+          "kind": "text",
+          "text": "DOTS IN 5 ROWS",
+          "x": 674,
+          "y": 371,
+          "size": 16,
+          "color": "#626C85",
+          "face": "mono",
+          "bold": false
+        }
+      ]
+    }
+  ]
+}

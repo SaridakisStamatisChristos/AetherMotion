@@ -1,0 +1,495 @@
+{
+  "version": "0.1",
+  "engine": "canvas2d",
+  "width": 960,
+  "height": 540,
+  "fps": 24,
+  "durationFrames": 720,
+  "scenes": [
+    {
+      "id": "claim",
+      "frames": 240,
+      "style": {
+        "name": "whiteboard",
+        "ink": "#312C35",
+        "accent": "#9E452A",
+        "penWidth": 3
+      },
+      "background": "#FAF0DF",
+      "objects": [
+        {
+          "id": "label",
+          "kind": "text",
+          "text": "DIALECTIC     /     AN ARGUMENT",
+          "x": 48,
+          "y": 40,
+          "size": 16,
+          "color": "#9E452A",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "id": "index",
+          "kind": "text",
+          "text": "01   /   03",
+          "x": 813,
+          "y": 40,
+          "size": 16,
+          "color": "#826958",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "hr",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              58
+            ],
+            [
+              912,
+              58
+            ]
+          ],
+          "color": "#826958",
+          "stroke": 1
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "What counts as courage?",
+          "x": 48,
+          "y": 132,
+          "size": 55,
+          "color": "#312C35",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Begin with a proposed definition that can be tested.",
+          "x": 49,
+          "y": 174,
+          "size": 21,
+          "color": "#312C35",
+          "face": "sans",
+          "bold": false
+        },
+        {
+          "id": "footerline",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              455
+            ],
+            [
+              912,
+              455
+            ]
+          ],
+          "color": "#826958",
+          "stroke": 1
+        },
+        {
+          "id": "caption",
+          "kind": "text",
+          "text": "A definition makes a claim about every case it covers.",
+          "x": 49,
+          "y": 499,
+          "size": 23,
+          "color": "#312C35",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "definition",
+          "kind": "handwriting",
+          "text": "COURAGE IS STAYING.",
+          "x": 105,
+          "y": 252,
+          "size": 42,
+          "reveal": [
+            {
+              "frame": 10,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 170,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "underline",
+          "kind": "path",
+          "points": [
+            [
+              103,
+              320
+            ],
+            [
+              783,
+              320
+            ]
+          ],
+          "color": "#9E452A",
+          "stroke": 3,
+          "reveal": [
+            {
+              "frame": 100,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 203,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "type",
+          "kind": "text",
+          "text": "THE INITIAL CLAIM",
+          "x": 107,
+          "y": 384,
+          "size": 18,
+          "color": "#826958",
+          "face": "mono",
+          "bold": false
+        }
+      ],
+      "camera": {
+        "x": [
+          {
+            "frame": 0,
+            "value": 0,
+            "ease": "smooth"
+          },
+          {
+            "frame": 220,
+            "value": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "test",
+      "frames": 240,
+      "style": {
+        "name": "whiteboard",
+        "ink": "#312C35",
+        "accent": "#9E452A",
+        "penWidth": 3
+      },
+      "background": "#FAF0DF",
+      "objects": [
+        {
+          "id": "label",
+          "kind": "text",
+          "text": "DIALECTIC     /     AN ARGUMENT",
+          "x": 48,
+          "y": 40,
+          "size": 16,
+          "color": "#9E452A",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "id": "index",
+          "kind": "text",
+          "text": "02   /   03",
+          "x": 813,
+          "y": 40,
+          "size": 16,
+          "color": "#826958",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "hr",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              58
+            ],
+            [
+              912,
+              58
+            ]
+          ],
+          "color": "#826958",
+          "stroke": 1
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Try a counterexample.",
+          "x": 48,
+          "y": 132,
+          "size": 55,
+          "color": "#312C35",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "A rescuer leaves a dangerous ledge to fetch a rope.",
+          "x": 49,
+          "y": 174,
+          "size": 21,
+          "color": "#312C35",
+          "face": "sans",
+          "bold": false
+        },
+        {
+          "id": "footerline",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              455
+            ],
+            [
+              912,
+              455
+            ]
+          ],
+          "color": "#826958",
+          "stroke": 1
+        },
+        {
+          "id": "caption",
+          "kind": "text",
+          "text": "If leaving can be courageous, staying cannot be necessary.",
+          "x": 49,
+          "y": 499,
+          "size": 23,
+          "color": "#312C35",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "left",
+          "kind": "handwriting",
+          "text": "LEAVE",
+          "x": 110,
+          "y": 281,
+          "size": 37,
+          "reveal": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 80,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "join",
+          "kind": "arrow",
+          "x": 333,
+          "y": 304,
+          "dx": 157,
+          "dy": 0,
+          "head": 18,
+          "reveal": [
+            {
+              "frame": 65,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 130,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "right",
+          "kind": "handwriting",
+          "text": "RETURN",
+          "x": 554,
+          "y": 281,
+          "size": 37,
+          "reveal": [
+            {
+              "frame": 115,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 201,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "leftcap",
+          "kind": "text",
+          "text": "Get the rope",
+          "x": 112,
+          "y": 379,
+          "size": 22,
+          "color": "#312C35",
+          "face": "sans",
+          "bold": false
+        },
+        {
+          "id": "rightcap",
+          "kind": "text",
+          "text": "Help the climber",
+          "x": 556,
+          "y": 379,
+          "size": 22,
+          "color": "#312C35",
+          "face": "sans",
+          "bold": false
+        }
+      ]
+    },
+    {
+      "id": "revise",
+      "frames": 240,
+      "style": {
+        "name": "infographic",
+        "ink": "#312C35",
+        "accent": "#9E452A",
+        "penWidth": 3
+      },
+      "background": "#FAF0DF",
+      "objects": [
+        {
+          "id": "label",
+          "kind": "text",
+          "text": "DIALECTIC     /     AN ARGUMENT",
+          "x": 48,
+          "y": 40,
+          "size": 16,
+          "color": "#9E452A",
+          "face": "mono",
+          "bold": true
+        },
+        {
+          "id": "index",
+          "kind": "text",
+          "text": "03   /   03",
+          "x": 813,
+          "y": 40,
+          "size": 16,
+          "color": "#826958",
+          "face": "mono",
+          "bold": false
+        },
+        {
+          "id": "hr",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              58
+            ],
+            [
+              912,
+              58
+            ]
+          ],
+          "color": "#826958",
+          "stroke": 1
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Revise the definition.",
+          "x": 48,
+          "y": 132,
+          "size": 55,
+          "color": "#312C35",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "So far, the example rules out one proposed requirement.",
+          "x": 49,
+          "y": 174,
+          "size": 21,
+          "color": "#312C35",
+          "face": "sans",
+          "bold": false
+        },
+        {
+          "id": "footerline",
+          "kind": "path",
+          "points": [
+            [
+              48,
+              455
+            ],
+            [
+              912,
+              455
+            ]
+          ],
+          "color": "#826958",
+          "stroke": 1
+        },
+        {
+          "id": "caption",
+          "kind": "text",
+          "text": "The next question is whether a new definition survives another case.",
+          "x": 49,
+          "y": 499,
+          "size": 23,
+          "color": "#312C35",
+          "face": "serif",
+          "bold": false
+        },
+        {
+          "id": "logic",
+          "kind": "milestones",
+          "x": 110,
+          "y": 315,
+          "width": 725,
+          "size": 22,
+          "labels": [
+            "Propose",
+            "Test",
+            "Revise"
+          ],
+          "reveal": [
+            {
+              "frame": 0,
+              "value": 0,
+              "ease": "smooth"
+            },
+            {
+              "frame": 170,
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "note",
+          "kind": "text",
+          "text": "A METHOD OF INQUIRY",
+          "x": 330,
+          "y": 408,
+          "size": 17,
+          "color": "#826958",
+          "face": "mono",
+          "bold": false
+        }
+      ]
+    }
+  ]
+}

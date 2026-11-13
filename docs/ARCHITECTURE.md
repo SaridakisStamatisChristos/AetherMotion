@@ -1,2 +1,11 @@
 # Architecture
 A versioned JSON contract feeds a semantic validation pass, an integer-frame scheduler, a Canvas painter in headless Chromium, then an ordered FFmpeg encoder. Output publication follows FFprobe and a complete decode. A scene has no hooks for code, URLs or host commands. An AI director and an audio producer can sit outside this pipeline. Future engine additions must define schema, typed paint behavior, boundary tests and a visible fixture before they can be selected by a scene.
+
+## Stage A implementation
+Both backends call drawFrame with the same validated Film, frame index and raster image cache. Chromium runs a bundled painter inside Playwright pages and blocks network requests. The native backend uses Skia in Node worker threads. Each worker computes a bounded contiguous range. The coordinator drains ranges in frame order into one FFmpeg process using stream backpressure. On normal errors cleanup removes the temporary output. Publication uses a same-filesystem atomic hard link so two writers cannot overwrite each other's result. After a forced host shutdown, abandoned .aethermotion-* directories may be removed once no render is active. Start a fresh render to recover.
+
+## Stage B implementation
+The shot selects a named style and parameters. Whiteboard handwriting and arrows compile locally to cached, length-measured pen strokes. Infographics use fixed chart domains, numeric tracks and categorical timelines. Both engines share transforms, seeking, scene cuts and the same renderer. Render workers cache geometry by object identity. New productions can change all text, paths, chart values and timing in the specification.
+
+## Dependency provenance
+AJV validates JSON Schema (MIT). Playwright Core controls Chromium (Apache-2.0). @napi-rs/canvas provides native Canvas (MIT package, native graphics dependencies have their own notices). TypeScript is Apache-2.0, esbuild is MIT, and @types/node is MIT. package-lock.json records exact package releases and integrity hashes. Chromium, system fonts and FFmpeg are external installations. FFmpeg licensing depends on its build, including libx264 support. Installer sources, licenses and notices belong to their respective distributors. The repository MIT license covers original project material.

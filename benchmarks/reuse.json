@@ -1,0 +1,63 @@
+{
+  "engineDigest": "7e3aa8819e4a2e3fe1b449a21e4d8319e9e10e0e346f593098ade68ff78b4a67",
+  "modelCalls": 0,
+  "directorTokens": 0,
+  "engineSourceChanges": 0,
+  "rssSampleIntervalSeconds": 0.05,
+  "runs": [
+    {
+      "spec": "examples/light.json",
+      "frames": 720,
+      "width": 960,
+      "height": 540,
+      "duration": 30,
+      "fps": 24,
+      "codec": "h264",
+      "decoded": true,
+      "bytes": 161259,
+      "sha256": "5305030cd40294f8c549e1d74f05571a6e73a0208f982b219c75f78fc4ead975",
+      "elapsedSeconds": 8.877921624,
+      "peakNodeRssKiB": 242764,
+      "workers": 2,
+      "batch": 3,
+      "backend": "native",
+      "sampledTreeRssKiB": 243808
+    },
+    {
+      "spec": "examples/courage.json",
+      "frames": 720,
+      "width": 960,
+      "height": 540,
+      "duration": 30,
+      "fps": 24,
+      "codec": "h264",
+      "decoded": true,
+      "bytes": 604822,
+      "sha256": "2c37ec0cfcf3d5893705ce0cf83d64d74169a4cdf6d37880c02dc91ce426a0b6",
+      "elapsedSeconds": 9.884038739,
+      "peakNodeRssKiB": 236956,
+      "workers": 2,
+      "batch": 3,
+      "backend": "native",
+      "sampledTreeRssKiB": 238136
+    },
+    {
+      "spec": "examples/triangles.json",
+      "frames": 720,
+      "width": 960,
+      "height": 540,
+      "duration": 30,
+      "fps": 24,
+      "codec": "h264",
+      "decoded": true,
+      "bytes": 191672,
+      "sha256": "da5d5f58a708486fe7bec0f596b1c48032df6ae080e0429866808a3c38a88afd",
+      "elapsedSeconds": 9.607099752,
+      "peakNodeRssKiB": 237264,
+      "workers": 2,
+      "batch": 3,
+      "backend": "native",
+      "sampledTreeRssKiB": 238356
+    }
+  ]
+}

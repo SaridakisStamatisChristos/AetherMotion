@@ -30,3 +30,12 @@ The render command prints JSON metrics to standard output. Choose a fresh output
 
 ## Authoring and extension
 Copy an example JSON file, change its contents and run validate, render and verify. The schema rejects unknown actions. [Scene format and API](docs/SCENE.md) · [Architecture](docs/ARCHITECTURE.md) · [Reference and licensing](docs/RECONNAISSANCE.md) · [Verification](docs/VERIFICATION.md) · [Development status](docs/PROGRESS.md) · [Continuation](docs/CONTINUATION_CHECKPOINT.md).
+
+## Three films from the same engine
+[Light and distance](samples/light.mp4) · [A counterexample about courage](samples/courage.mp4) · [Triangular numbers](samples/triangles.mp4)
+
+![Nine decoded frames from the reuse experiment](samples/reuse-contact.jpg)
+
+After building, run `python3 scripts/experiment.py out/experiment` on Linux to render all three, measure time and memory, hash the runtime around each production and write experiment.json. Supply an empty or new destination. Use `--backend chromium` to run the same experiment in Chromium. The complete scene specifications are in examples/. [Style authoring](docs/STYLES.md).
+
+These releases produce silent video. The director, audio adapter, character rigs, and 3D backend are planned milestones.
