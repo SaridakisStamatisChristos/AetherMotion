@@ -1,0 +1,2494 @@
+{
+  "version": "0.1",
+  "engine": "canvas2d",
+  "width": 540,
+  "height": 960,
+  "fps": 24,
+  "durationFrames": 720,
+  "scenes": [
+    {
+      "id": "count",
+      "frames": 240,
+      "background": "#20202F",
+      "objects": [
+        {
+          "kind": "rect",
+          "id": "plate",
+          "x": 20,
+          "y": 208,
+          "width": 500,
+          "height": 497,
+          "color": "#2A2B3B"
+        },
+        {
+          "kind": "path",
+          "id": "rule",
+          "points": [
+            [33, 67],
+            [507, 67]
+          ],
+          "color": "#454556",
+          "stroke": 1
+        },
+        {
+          "kind": "text",
+          "id": "series",
+          "x": 33,
+          "y": 48,
+          "text": "FOLD  /  A GEOMETRY STUDY",
+          "size": 15,
+          "color": "#A5D6C9",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "page",
+          "x": 454,
+          "y": 48,
+          "text": "01/03",
+          "size": 14,
+          "color": "#AAA6AF",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "title",
+          "x": 31,
+          "y": 134,
+          "text": "The missing square",
+          "size": 47,
+          "color": "#FAEEDF",
+          "face": "serif"
+        },
+        {
+          "kind": "text",
+          "id": "subtitle",
+          "x": 34,
+          "y": 178,
+          "text": "How can forty tiles become a square?",
+          "size": 20,
+          "color": "#AAA6AF",
+          "face": "sans"
+        },
+        {
+          "kind": "path",
+          "id": "register0",
+          "points": [
+            [42, 221],
+            [33, 221],
+            [33, 230]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register1",
+          "points": [
+            [498, 221],
+            [507, 221],
+            [507, 230]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register2",
+          "points": [
+            [42, 692],
+            [33, 692],
+            [33, 683]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register3",
+          "points": [
+            [498, 692],
+            [507, 692],
+            [507, 683]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "group",
+          "id": "square",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "square-base",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 180,
+              "color": "#F1C58E"
+            },
+            {
+              "kind": "path",
+              "id": "square-col0",
+              "points": [
+                [0, 0],
+                [0, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col1",
+              "points": [
+                [45, 0],
+                [45, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col2",
+              "points": [
+                [90, 0],
+                [90, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col3",
+              "points": [
+                [135, 0],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col4",
+              "points": [
+                [180, 0],
+                [180, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row0",
+              "points": [
+                [0, 0],
+                [180, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row1",
+              "points": [
+                [0, 45],
+                [180, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row2",
+              "points": [
+                [0, 90],
+                [180, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row3",
+              "points": [
+                [0, 135],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row4",
+              "points": [
+                [0, 180],
+                [180, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 0, "value": 32, "ease": "smooth"},
+            {"frame": 92, "value": 55, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 0, "value": 305, "ease": "smooth"},
+            {"frame": 92, "value": 285, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "upright",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "upright-base",
+              "x": 0,
+              "y": 0,
+              "width": 135,
+              "height": 180,
+              "color": "#F18B77"
+            },
+            {
+              "kind": "path",
+              "id": "upright-col0",
+              "points": [
+                [0, 0],
+                [0, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col1",
+              "points": [
+                [45, 0],
+                [45, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col2",
+              "points": [
+                [90, 0],
+                [90, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col3",
+              "points": [
+                [135, 0],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row0",
+              "points": [
+                [0, 0],
+                [135, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row1",
+              "points": [
+                [0, 45],
+                [135, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row2",
+              "points": [
+                [0, 90],
+                [135, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row3",
+              "points": [
+                [0, 135],
+                [135, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row4",
+              "points": [
+                [0, 180],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 0, "value": 368, "ease": "smooth"},
+            {"frame": 135, "value": 306, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 0, "value": 260, "ease": "smooth"},
+            {"frame": 135, "value": 285, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "across",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "across-base",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 135,
+              "color": "#F18B77"
+            },
+            {
+              "kind": "path",
+              "id": "across-col0",
+              "points": [
+                [0, 0],
+                [0, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col1",
+              "points": [
+                [45, 0],
+                [45, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col2",
+              "points": [
+                [90, 0],
+                [90, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col3",
+              "points": [
+                [135, 0],
+                [135, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col4",
+              "points": [
+                [180, 0],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row0",
+              "points": [
+                [0, 0],
+                [180, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row1",
+              "points": [
+                [0, 45],
+                [180, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row2",
+              "points": [
+                [0, 90],
+                [180, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row3",
+              "points": [
+                [0, 135],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 0, "value": 25, "ease": "smooth"},
+            {"frame": 177, "value": 55, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 0, "value": 554, "ease": "smooth"},
+            {"frame": 177, "value": 516, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "text",
+          "id": "a-area",
+          "x": 58,
+          "y": 258,
+          "text": "16 TILES",
+          "size": 16,
+          "color": "#F1C58E",
+          "face": "mono",
+          "opacity": [
+            {"frame": 18, "value": 0, "ease": "smooth"},
+            {"frame": 75, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "text",
+          "id": "b-area",
+          "x": 308,
+          "y": 258,
+          "text": "12 TILES",
+          "size": 16,
+          "color": "#F18B77",
+          "face": "mono",
+          "opacity": [
+            {"frame": 69, "value": 0, "ease": "smooth"},
+            {"frame": 124, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "text",
+          "id": "c-area",
+          "x": 260,
+          "y": 592,
+          "text": "12 TILES",
+          "size": 16,
+          "color": "#F18B77",
+          "face": "mono",
+          "opacity": [
+            {"frame": 114, "value": 0, "ease": "smooth"},
+            {"frame": 174, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "underline",
+          "points": [
+            [34, 774],
+            [380, 774]
+          ],
+          "color": "#F18B77",
+          "stroke": 2,
+          "reveal": [
+            {"frame": 120, "value": 0, "ease": "smooth"},
+            {"frame": 235, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "text",
+          "id": "legend",
+          "x": 34,
+          "y": 724,
+          "text": "AREA  /  THREE PIECES",
+          "size": 14,
+          "color": "#A5D6C9",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "formula",
+          "x": 32,
+          "y": 766,
+          "text": "16 + 12 + 12 = 40",
+          "size": 40,
+          "color": "#FAEEDF",
+          "face": "serif"
+        }
+      ]
+    },
+    {
+      "id": "arrange",
+      "frames": 240,
+      "background": "#20202F",
+      "objects": [
+        {
+          "kind": "rect",
+          "id": "plate",
+          "x": 20,
+          "y": 208,
+          "width": 500,
+          "height": 497,
+          "color": "#2A2B3B"
+        },
+        {
+          "kind": "path",
+          "id": "rule",
+          "points": [
+            [33, 67],
+            [507, 67]
+          ],
+          "color": "#454556",
+          "stroke": 1
+        },
+        {
+          "kind": "text",
+          "id": "series",
+          "x": 33,
+          "y": 48,
+          "text": "FOLD  /  A GEOMETRY STUDY",
+          "size": 15,
+          "color": "#A5D6C9",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "page",
+          "x": 454,
+          "y": 48,
+          "text": "02/03",
+          "size": 14,
+          "color": "#AAA6AF",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "title",
+          "x": 31,
+          "y": 134,
+          "text": "Find the corner",
+          "size": 47,
+          "color": "#FAEEDF",
+          "face": "serif"
+        },
+        {
+          "kind": "text",
+          "id": "subtitle",
+          "x": 34,
+          "y": 178,
+          "text": "Rearrange the same forty tiles.",
+          "size": 20,
+          "color": "#AAA6AF",
+          "face": "sans"
+        },
+        {
+          "kind": "path",
+          "id": "register0",
+          "points": [
+            [42, 221],
+            [33, 221],
+            [33, 230]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register1",
+          "points": [
+            [498, 221],
+            [507, 221],
+            [507, 230]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register2",
+          "points": [
+            [42, 692],
+            [33, 692],
+            [33, 683]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register3",
+          "points": [
+            [498, 692],
+            [507, 692],
+            [507, 683]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "rect",
+          "id": "corner-fill",
+          "x": 280,
+          "y": 480,
+          "width": 135,
+          "height": 135,
+          "color": "#353646",
+          "opacity": [
+            {"frame": 100, "value": 0, "ease": "smooth"},
+            {"frame": 145, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r0",
+          "points": [
+            [415, 483],
+            [415, 490]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b0",
+          "points": [
+            [282, 615],
+            [289, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r1",
+          "points": [
+            [415, 498],
+            [415, 505]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b1",
+          "points": [
+            [297, 615],
+            [304, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r2",
+          "points": [
+            [415, 513],
+            [415, 520]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b2",
+          "points": [
+            [312, 615],
+            [319, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r3",
+          "points": [
+            [415, 528],
+            [415, 535]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b3",
+          "points": [
+            [327, 615],
+            [334, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r4",
+          "points": [
+            [415, 543],
+            [415, 550]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b4",
+          "points": [
+            [342, 615],
+            [349, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r5",
+          "points": [
+            [415, 558],
+            [415, 565]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b5",
+          "points": [
+            [357, 615],
+            [364, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r6",
+          "points": [
+            [415, 573],
+            [415, 580]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b6",
+          "points": [
+            [372, 615],
+            [379, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r7",
+          "points": [
+            [415, 588],
+            [415, 595]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b7",
+          "points": [
+            [387, 615],
+            [394, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-r8",
+          "points": [
+            [415, 603],
+            [415, 610]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "corner-b8",
+          "points": [
+            [402, 615],
+            [409, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "opacity": [
+            {"frame": 104, "value": 0, "ease": "smooth"},
+            {"frame": 153, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "square",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "square-base",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 180,
+              "color": "#F1C58E"
+            },
+            {
+              "kind": "path",
+              "id": "square-col0",
+              "points": [
+                [0, 0],
+                [0, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col1",
+              "points": [
+                [45, 0],
+                [45, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col2",
+              "points": [
+                [90, 0],
+                [90, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col3",
+              "points": [
+                [135, 0],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col4",
+              "points": [
+                [180, 0],
+                [180, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row0",
+              "points": [
+                [0, 0],
+                [180, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row1",
+              "points": [
+                [0, 45],
+                [180, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row2",
+              "points": [
+                [0, 90],
+                [180, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row3",
+              "points": [
+                [0, 135],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row4",
+              "points": [
+                [0, 180],
+                [180, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 0, "value": 55, "ease": "smooth"},
+            {"frame": 71, "value": 100, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 0, "value": 285, "ease": "smooth"},
+            {"frame": 71, "value": 300, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "upright",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "upright-base",
+              "x": 0,
+              "y": 0,
+              "width": 135,
+              "height": 180,
+              "color": "#F18B77"
+            },
+            {
+              "kind": "path",
+              "id": "upright-col0",
+              "points": [
+                [0, 0],
+                [0, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col1",
+              "points": [
+                [45, 0],
+                [45, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col2",
+              "points": [
+                [90, 0],
+                [90, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col3",
+              "points": [
+                [135, 0],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row0",
+              "points": [
+                [0, 0],
+                [135, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row1",
+              "points": [
+                [0, 45],
+                [135, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row2",
+              "points": [
+                [0, 90],
+                [135, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row3",
+              "points": [
+                [0, 135],
+                [135, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row4",
+              "points": [
+                [0, 180],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 0, "value": 306, "ease": "smooth"},
+            {"frame": 55, "value": 319, "ease": "smooth"},
+            {"frame": 130, "value": 280, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 0, "value": 285, "ease": "smooth"},
+            {"frame": 55, "value": 262, "ease": "smooth"},
+            {"frame": 130, "value": 300, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "across",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "across-base",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 135,
+              "color": "#F18B77"
+            },
+            {
+              "kind": "path",
+              "id": "across-col0",
+              "points": [
+                [0, 0],
+                [0, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col1",
+              "points": [
+                [45, 0],
+                [45, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col2",
+              "points": [
+                [90, 0],
+                [90, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col3",
+              "points": [
+                [135, 0],
+                [135, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col4",
+              "points": [
+                [180, 0],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row0",
+              "points": [
+                [0, 0],
+                [180, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row1",
+              "points": [
+                [0, 45],
+                [180, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row2",
+              "points": [
+                [0, 90],
+                [180, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row3",
+              "points": [
+                [0, 135],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 0, "value": 55, "ease": "smooth"},
+            {"frame": 63, "value": 73, "ease": "smooth"},
+            {"frame": 127, "value": 100, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 0, "value": 516, "ease": "smooth"},
+            {"frame": 63, "value": 533, "ease": "smooth"},
+            {"frame": 127, "value": 480, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "text",
+          "id": "missing",
+          "x": 298,
+          "y": 558,
+          "text": "3 × 3",
+          "size": 26,
+          "color": "#A5D6C9",
+          "face": "mono",
+          "opacity": [
+            {"frame": 112, "value": 0, "ease": "smooth"},
+            {"frame": 149, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "gap-width",
+          "points": [
+            [280, 627],
+            [280, 635],
+            [415, 635],
+            [415, 627]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 1.5,
+          "reveal": [
+            {"frame": 149, "value": 0, "ease": "smooth"},
+            {"frame": 196, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "gap-height",
+          "points": [
+            [429, 480],
+            [437, 480],
+            [437, 615],
+            [429, 615]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 1.5,
+          "reveal": [
+            {"frame": 189, "value": 0, "ease": "smooth"},
+            {"frame": 236, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "text",
+          "id": "legend",
+          "x": 34,
+          "y": 724,
+          "text": "AREA  /  AFTER THE MOVE",
+          "size": 14,
+          "color": "#A5D6C9",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "formula",
+          "x": 32,
+          "y": 766,
+          "text": "40 tiles, one gap",
+          "size": 40,
+          "color": "#FAEEDF",
+          "face": "serif"
+        }
+      ]
+    },
+    {
+      "id": "complete",
+      "frames": 240,
+      "background": "#20202F",
+      "objects": [
+        {
+          "kind": "rect",
+          "id": "plate",
+          "x": 20,
+          "y": 208,
+          "width": 500,
+          "height": 497,
+          "color": "#2A2B3B"
+        },
+        {
+          "kind": "path",
+          "id": "rule",
+          "points": [
+            [33, 67],
+            [507, 67]
+          ],
+          "color": "#454556",
+          "stroke": 1
+        },
+        {
+          "kind": "text",
+          "id": "series",
+          "x": 33,
+          "y": 48,
+          "text": "FOLD  /  A GEOMETRY STUDY",
+          "size": 15,
+          "color": "#A5D6C9",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "page",
+          "x": 454,
+          "y": 48,
+          "text": "03/03",
+          "size": 14,
+          "color": "#AAA6AF",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "title",
+          "x": 31,
+          "y": 134,
+          "text": "Complete the square",
+          "size": 47,
+          "color": "#FAEEDF",
+          "face": "serif"
+        },
+        {
+          "kind": "text",
+          "id": "subtitle",
+          "x": 34,
+          "y": 178,
+          "text": "Fill the gap and read the side length.",
+          "size": 20,
+          "color": "#AAA6AF",
+          "face": "sans"
+        },
+        {
+          "kind": "path",
+          "id": "register0",
+          "points": [
+            [42, 221],
+            [33, 221],
+            [33, 230]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register1",
+          "points": [
+            [498, 221],
+            [507, 221],
+            [507, 230]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register2",
+          "points": [
+            [42, 692],
+            [33, 692],
+            [33, 683]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "path",
+          "id": "register3",
+          "points": [
+            [498, 692],
+            [507, 692],
+            [507, 683]
+          ],
+          "color": "#AAA6AF",
+          "stroke": 1.5
+        },
+        {
+          "kind": "group",
+          "id": "square",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "square-base",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 180,
+              "color": "#F1C58E"
+            },
+            {
+              "kind": "path",
+              "id": "square-col0",
+              "points": [
+                [0, 0],
+                [0, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col1",
+              "points": [
+                [45, 0],
+                [45, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col2",
+              "points": [
+                [90, 0],
+                [90, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col3",
+              "points": [
+                [135, 0],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-col4",
+              "points": [
+                [180, 0],
+                [180, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row0",
+              "points": [
+                [0, 0],
+                [180, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row1",
+              "points": [
+                [0, 45],
+                [180, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row2",
+              "points": [
+                [0, 90],
+                [180, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row3",
+              "points": [
+                [0, 135],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "square-row4",
+              "points": [
+                [0, 180],
+                [180, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": 100,
+          "y": 300
+        },
+        {
+          "kind": "group",
+          "id": "upright",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "upright-base",
+              "x": 0,
+              "y": 0,
+              "width": 135,
+              "height": 180,
+              "color": "#F18B77"
+            },
+            {
+              "kind": "path",
+              "id": "upright-col0",
+              "points": [
+                [0, 0],
+                [0, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col1",
+              "points": [
+                [45, 0],
+                [45, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col2",
+              "points": [
+                [90, 0],
+                [90, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-col3",
+              "points": [
+                [135, 0],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row0",
+              "points": [
+                [0, 0],
+                [135, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row1",
+              "points": [
+                [0, 45],
+                [135, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row2",
+              "points": [
+                [0, 90],
+                [135, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row3",
+              "points": [
+                [0, 135],
+                [135, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "upright-row4",
+              "points": [
+                [0, 180],
+                [135, 180]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": 280,
+          "y": 300
+        },
+        {
+          "kind": "group",
+          "id": "across",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "across-base",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 135,
+              "color": "#F18B77"
+            },
+            {
+              "kind": "path",
+              "id": "across-col0",
+              "points": [
+                [0, 0],
+                [0, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col1",
+              "points": [
+                [45, 0],
+                [45, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col2",
+              "points": [
+                [90, 0],
+                [90, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col3",
+              "points": [
+                [135, 0],
+                [135, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-col4",
+              "points": [
+                [180, 0],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row0",
+              "points": [
+                [0, 0],
+                [180, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row1",
+              "points": [
+                [0, 45],
+                [180, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row2",
+              "points": [
+                [0, 90],
+                [180, 90]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "across-row3",
+              "points": [
+                [0, 135],
+                [180, 135]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": 100,
+          "y": 480
+        },
+        {
+          "kind": "group",
+          "id": "unit-0",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-0-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-0-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-0-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-0-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-0-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 8, "value": 330, "ease": "smooth"},
+            {"frame": 67, "value": 280, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 8, "value": 538, "ease": "smooth"},
+            {"frame": 67, "value": 480, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 8, "value": 0, "ease": "smooth"},
+            {"frame": 30, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-1",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-1-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-1-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-1-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-1-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-1-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 18, "value": 375, "ease": "smooth"},
+            {"frame": 77, "value": 325, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 18, "value": 538, "ease": "smooth"},
+            {"frame": 77, "value": 480, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 18, "value": 0, "ease": "smooth"},
+            {"frame": 40, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-2",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-2-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-2-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-2-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-2-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-2-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 28, "value": 420, "ease": "smooth"},
+            {"frame": 87, "value": 370, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 28, "value": 538, "ease": "smooth"},
+            {"frame": 87, "value": 480, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 28, "value": 0, "ease": "smooth"},
+            {"frame": 50, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-3",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-3-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-3-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-3-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-3-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-3-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 38, "value": 330, "ease": "smooth"},
+            {"frame": 97, "value": 280, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 38, "value": 583, "ease": "smooth"},
+            {"frame": 97, "value": 525, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 38, "value": 0, "ease": "smooth"},
+            {"frame": 60, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-4",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-4-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-4-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-4-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-4-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-4-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 48, "value": 375, "ease": "smooth"},
+            {"frame": 107, "value": 325, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 48, "value": 583, "ease": "smooth"},
+            {"frame": 107, "value": 525, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 48, "value": 0, "ease": "smooth"},
+            {"frame": 70, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-5",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-5-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-5-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-5-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-5-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-5-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 58, "value": 420, "ease": "smooth"},
+            {"frame": 117, "value": 370, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 58, "value": 583, "ease": "smooth"},
+            {"frame": 117, "value": 525, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 58, "value": 0, "ease": "smooth"},
+            {"frame": 80, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-6",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-6-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-6-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-6-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-6-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-6-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 68, "value": 330, "ease": "smooth"},
+            {"frame": 127, "value": 280, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 68, "value": 628, "ease": "smooth"},
+            {"frame": 127, "value": 570, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 68, "value": 0, "ease": "smooth"},
+            {"frame": 90, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-7",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-7-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-7-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-7-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-7-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-7-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 78, "value": 375, "ease": "smooth"},
+            {"frame": 137, "value": 325, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 78, "value": 628, "ease": "smooth"},
+            {"frame": 137, "value": 570, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 78, "value": 0, "ease": "smooth"},
+            {"frame": 100, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "unit-8",
+          "children": [
+            {
+              "kind": "rect",
+              "id": "unit-8-base",
+              "x": 0,
+              "y": 0,
+              "width": 45,
+              "height": 45,
+              "color": "#A5D6C9"
+            },
+            {
+              "kind": "path",
+              "id": "unit-8-col0",
+              "points": [
+                [0, 0],
+                [0, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-8-col1",
+              "points": [
+                [45, 0],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-8-row0",
+              "points": [
+                [0, 0],
+                [45, 0]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            },
+            {
+              "kind": "path",
+              "id": "unit-8-row1",
+              "points": [
+                [0, 45],
+                [45, 45]
+              ],
+              "color": "#312D38",
+              "stroke": 1.5
+            }
+          ],
+          "x": [
+            {"frame": 88, "value": 420, "ease": "smooth"},
+            {"frame": 147, "value": 370, "ease": "smooth"}
+          ],
+          "y": [
+            {"frame": 88, "value": 628, "ease": "smooth"},
+            {"frame": 147, "value": 570, "ease": "smooth"}
+          ],
+          "opacity": [
+            {"frame": 88, "value": 0, "ease": "smooth"},
+            {"frame": 110, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "group",
+          "id": "dimensions",
+          "children": [
+            {
+              "kind": "path",
+              "id": "measure",
+              "points": [
+                [100, 272],
+                [100, 265],
+                [415, 265],
+                [415, 272]
+              ],
+              "color": "#AAA6AF",
+              "stroke": 1.4
+            },
+            {
+              "kind": "text",
+              "id": "seven",
+              "x": 244,
+              "y": 253,
+              "text": "7",
+              "size": 19,
+              "color": "#FAEEDF",
+              "face": "mono"
+            },
+            {
+              "kind": "path",
+              "id": "rightmeasure",
+              "points": [
+                [439, 300],
+                [446, 300],
+                [446, 615],
+                [439, 615]
+              ],
+              "color": "#AAA6AF",
+              "stroke": 1.4
+            },
+            {
+              "kind": "text",
+              "id": "seven-down",
+              "x": 458,
+              "y": 465,
+              "text": "7",
+              "size": 19,
+              "color": "#FAEEDF",
+              "face": "mono"
+            }
+          ],
+          "opacity": [
+            {"frame": 130, "value": 0, "ease": "smooth"},
+            {"frame": 182, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "path",
+          "id": "underline",
+          "points": [
+            [34, 774],
+            [381, 774]
+          ],
+          "color": "#A5D6C9",
+          "stroke": 2,
+          "reveal": [
+            {"frame": 148, "value": 0, "ease": "smooth"},
+            {"frame": 238, "value": 1, "ease": "smooth"}
+          ]
+        },
+        {
+          "kind": "text",
+          "id": "legend",
+          "x": 34,
+          "y": 724,
+          "text": "AREA  /  THE COMPLETED SQUARE",
+          "size": 14,
+          "color": "#A5D6C9",
+          "face": "mono"
+        },
+        {
+          "kind": "text",
+          "id": "formula",
+          "x": 32,
+          "y": 766,
+          "text": "40 + 9 = 7 × 7",
+          "size": 40,
+          "color": "#FAEEDF",
+          "face": "serif"
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "role": "narration",
+      "file": "audio/square-1.wav",
+      "startFrame": 10,
+      "endFrame": 235,
+      "caption": "Start with a four by four square. Two strips add twelve tiles each, bringing the total to forty."
+    },
+    {
+      "role": "narration",
+      "file": "audio/square-2.wav",
+      "startFrame": 250,
+      "endFrame": 475,
+      "caption": "Slide one strip to the right side and the other below. The empty corner is three tiles by three."
+    },
+    {
+      "role": "narration",
+      "file": "audio/square-3.wav",
+      "startFrame": 490,
+      "endFrame": 715,
+      "caption": "Nine tiles close the gap. Forty plus nine makes forty-nine, a square with seven tiles on each side."
+    }
+  ]
+}
