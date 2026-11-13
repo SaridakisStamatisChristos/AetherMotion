@@ -15,8 +15,16 @@ export interface Pose {
   rotation?: Scalar
   opacity?: Scalar
 }
+export type ShapeCommand =
+  | {op:'move'|'line'; x:number; y:number}
+  | {op:'cubic'; x1:number; y1:number; x2:number; y2:number; x:number; y:number}
+  | {op:'close'}
+export type ShapeFill = string | {
+  kind:'linear'; from:Point; to:Point; stops:{at:number;color:string}[]
+}
 export type Point = [number, number]
 export type Drawable = Pose & (
+  | {kind:'shape'; commands:ShapeCommand[]; fill?:ShapeFill; outline?:{color:string;width:number}; shadow?:{color:string;blur:number;x:number;y:number}}
   | {kind:'group'; children:Drawable[]}
   | {kind:'polygon'; points:Point[]; color:string}
   | {kind:'glow'; radius:number; color:string}

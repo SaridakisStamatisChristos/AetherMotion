@@ -30,6 +30,16 @@ export function parseFilm(input: unknown): Film {
       if(object.kind==='group') for(const child of object.children) pending.push({object:child,depth:depth+1})
       if (ids.has(object.id)) throw new Error(scene.id + ': duplicate object ' + object.id)
       ids.add(object.id)
+      if (object.kind==='shape') {
+        if(object.commands[0].op!=='move') throw new Error(object.id+': shape must start with move')
+        if(!object.fill && !object.outline) throw new Error(object.id+': shape needs fill or outline')
+        if(object.fill && typeof object.fill!=='string') {
+          if(object.fill.from[0]===object.fill.to[0] && object.fill.from[1]===object.fill.to[1])
+            throw new Error(object.id+': gradient endpoints must differ')
+          if(object.fill.stops.some((stop,i,stops)=>i>0 && stop.at<=stops[i-1].at))
+            throw new Error(object.id+': gradient stops must increase')
+        }
+      }
       if (object.kind==='actor' && scene.style?.name!=='cartoon') throw new Error(object.id + ': select cartoon style for actor')
       if (object.kind==='bars' && object.data.some(d => d.value>object.ceiling))
         throw new Error(object.id + ': bar values must fit the chart ceiling')

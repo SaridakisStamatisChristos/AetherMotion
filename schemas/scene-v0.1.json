@@ -1196,6 +1196,273 @@
               "pattern": "^#[0-9a-fA-F]{6}$"
             }
           }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "x": {
+              "$ref": "#/definitions/coord"
+            },
+            "y": {
+              "$ref": "#/definitions/coord"
+            },
+            "rotation": {
+              "$ref": "#/definitions/coord"
+            },
+            "opacity": {
+              "$ref": "#/definitions/unit"
+            },
+            "scale": {
+              "$ref": "#/definitions/scale"
+            },
+            "kind": {
+              "const": "shape"
+            },
+            "commands": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 512,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "move"
+                      },
+                      "x": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "y": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "x",
+                      "y"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "line"
+                      },
+                      "x": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "y": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "x",
+                      "y"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "cubic"
+                      },
+                      "x1": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "y1": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "x2": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "y2": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "x": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "y": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "x1",
+                      "y1",
+                      "x2",
+                      "y2",
+                      "x",
+                      "y"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "close"
+                      }
+                    },
+                    "required": [
+                      "op"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "fill": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "const": "linear"
+                    },
+                    "from": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "to": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "minimum": -100000,
+                        "maximum": 100000
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "stops": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 16,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "at": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "color": {
+                            "type": "string",
+                            "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+                          }
+                        },
+                        "required": [
+                          "at",
+                          "color"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "from",
+                    "to",
+                    "stops"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "outline": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "type": "string",
+                  "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+                },
+                "width": {
+                  "type": "number",
+                  "minimum": 0.1,
+                  "maximum": 100
+                }
+              },
+              "required": [
+                "color",
+                "width"
+              ],
+              "additionalProperties": false
+            },
+            "shadow": {
+              "type": "object",
+              "properties": {
+                "color": {
+                  "type": "string",
+                  "pattern": "^#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$"
+                },
+                "blur": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "x": {
+                  "type": "number",
+                  "minimum": -100000,
+                  "maximum": 100000
+                },
+                "y": {
+                  "type": "number",
+                  "minimum": -100000,
+                  "maximum": 100000
+                }
+              },
+              "required": [
+                "color",
+                "blur",
+                "x",
+                "y"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "id",
+            "kind",
+            "commands"
+          ],
+          "additionalProperties": false
         }
       ],
       "type": "object",

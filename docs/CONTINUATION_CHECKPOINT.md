@@ -27,3 +27,7 @@ The next empirical step is to run direct with --layout motion on a new topic usi
 ## Resume after vertical stages
 
 Run npm test and the balloon commands in docs/DIRECTOR.md. Motion boards accept optional stage width and height, with legacy dimensions preserved when omitted. The silent portrait sample and measured report are in samples/balloon.mp4 and benchmarks/balloon.json. Further capability work can add scene camera direction or reusable illustration assets. Live model evaluation still needs a configured provider key.
+
+## Resume graphics refinement
+
+The user has deferred live Gemini creation. Continue with graphics and rendering. Run npm test and render examples/ascent.json using docs/GRAPHICS.md. The checked-in 12-second silent sample demonstrates the shape primitive with cubic curves, gradients, outlines and shadow support. The broader engine still needs richer character artwork and movement, transitions, material effects and artistic assessment. Keep all work on feature/aethermotion-v0.1.

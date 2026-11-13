@@ -40,6 +40,8 @@ jobs:
         run: |
           node dist/cli/main.js compile-board examples/balloon/board.json out/balloon.json
           node dist/cli/main.js render out/balloon.json out/balloon.mp4 --backend ${{ matrix.backend }} --workers 2
+      - name: Render curved illustration
+        run: node dist/cli/main.js render examples/ascent.json out/ascent.mp4 --backend ${{ matrix.backend }} --workers 2
       - name: Verify published eclipse film
         run: |
           node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4

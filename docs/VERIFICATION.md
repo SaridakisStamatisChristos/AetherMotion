@@ -80,3 +80,9 @@ Use the [director guide](DIRECTOR.md#motion-storyboards) to compile and produce 
 ## Vertical balloon stage
 
 The explicitly authored 60×90 stage compiled into a 540×960 film with 360 frames at 24 fps. FFprobe and full FFmpeg decode passed. The silent H.264 export took 4.94 seconds including verification with two native workers and peaked at 237408 KiB Node RSS. Samples at frames 12, 175 and 345 show the balloon rising from behind the foreground hills, crossing behind a cloud and reaching the upper sky. The source uses the same uniform scale on both axes. The output has no narration. [Film](../samples/balloon.mp4) · [Frames](../samples/balloon-contact.jpg) · [Metrics](../benchmarks/balloon.json)
+
+## Revised curved artwork
+
+The 12-second Ascent study rendered at 720×1280, 24 fps and 288 frames, using two native workers. Rendering and full verification took 11.06 seconds. Peak Node RSS was 282028 KiB and the MP4 is 240925 bytes. FFprobe and a full FFmpeg decode passed. Frames 12, 144 and 275 show a rising balloon, moving cloud wisps and terrain parallax. A decoded full-size midpoint was also inspected for typography, fabric shading and basket detail.
+
+The local suite passed 26 tests and skipped the browser-only WebGL test. New pixel tests check gradient direction, curve fill bounds and frame-seek repeatability. Invalid geometry headers, invisible shapes and malformed gradients are rejected. The sample is silent. Independent artistic review remains open. [Film](../samples/ascent.mp4) · [Frames](../samples/ascent-contact.jpg) · [Raw measurements](../benchmarks/ascent.json)

@@ -25,6 +25,39 @@ function paint(ctx: CanvasRenderingContext2D, images: ReadonlyMap<string,CanvasI
   const ink = style?.ink ?? '#193038'
   ctx.fillStyle = ctx.strokeStyle = ('color' in o && o.color) || style?.accent || (style?.name==='whiteboard' ? '#235577' : '#007C79')
   switch (o.kind) {
+    case 'shape': {
+      ctx.beginPath()
+      for (const command of o.commands) {
+        switch (command.op) {
+          case 'move': ctx.moveTo(command.x,command.y); break
+          case 'line': ctx.lineTo(command.x,command.y); break
+          case 'cubic': ctx.bezierCurveTo(command.x1,command.y1,command.x2,command.y2,command.x,command.y); break
+          case 'close': ctx.closePath(); break
+        }
+      }
+      if (o.shadow) {
+        ctx.shadowColor=o.shadow.color
+        ctx.shadowBlur=o.shadow.blur
+        ctx.shadowOffsetX=o.shadow.x
+        ctx.shadowOffsetY=o.shadow.y
+      }
+      if (o.fill) {
+        if (typeof o.fill==='string') ctx.fillStyle=o.fill
+        else {
+          const gradient=ctx.createLinearGradient(...o.fill.from,...o.fill.to)
+          for (const stop of o.fill.stops) gradient.addColorStop(stop.at,stop.color)
+          ctx.fillStyle=gradient
+        }
+        ctx.fill()
+      }
+      if (o.outline) {
+        ctx.strokeStyle=o.outline.color
+        ctx.lineWidth=o.outline.width
+        ctx.lineJoin=ctx.lineCap='round'
+        ctx.stroke()
+      }
+      break
+    }
     case 'group':
       for(const child of o.children) paint(ctx,images,child,t,style)
       break

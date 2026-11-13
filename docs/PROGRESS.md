@@ -29,3 +29,7 @@ Revision `2f5414fdd0c75df2b9f68d2d4af69089124f2ec4` lets the optional director a
 ## Explicit stage dimensions
 
 Motion boards can specify a vertical stage. The 15-second balloon example uses depth ordering, moving clouds and a rising balloon. Local tests passed with 24 successes and one WebGL check reserved for Chromium CI. Independent artistic review and live Gemini evaluation remain open.
+
+## Graphics refinement
+
+Curved vector shapes, linear gradients, outlines and soft shadows now work through ordinary scene JSON. The Ascent sample replaces the earlier flat balloon composition with original shaded artwork at 720×1280. Provider generation is deferred by user instruction. Focus further work on graphics, composition, animation and rendering quality. See docs/GRAPHICS.md for the API and reproduction commands.
