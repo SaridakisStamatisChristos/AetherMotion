@@ -46,6 +46,11 @@ export function timeSpeech(original:Film, lengths:Map<number,number>) {
 }
 function stretchKeys(value:unknown,ratio:number) {
   if(!value || typeof value!=='object') return
+  const travel=(value as {travel?:{startFrame:number;endFrame:number}}).travel
+  if(travel) {
+    travel.startFrame=Math.round(travel.startFrame*ratio)
+    travel.endFrame=Math.round(travel.endFrame*ratio)
+  }
   if(Array.isArray(value) && typeof value[0]?.frame==='number') {
     for(const key of value) key.frame=Math.round(key.frame*ratio)
   } else for(const child of Object.values(value)) stretchKeys(child,ratio)

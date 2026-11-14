@@ -38,6 +38,8 @@ export type Drawable = Pose & (
   | {kind: 'counter'; value:Scalar; decimals:number; suffix?:string; size:number; color?:string}
   | {kind: 'milestones'; labels:string[]; width:number; size:number; reveal?:Scalar; color?:string}
   | {kind:'actor'; height:number; skin:string; shirt:string; trousers:string; hair:string; shoes:string;
+      travel?:{fromX:number;toX:number;ground:number;startFrame:number;endFrame:number;stride:number};
+      held?:Drawable[];
       lean?:Scalar; headTilt?:Scalar; blink?:Scalar; wave?:Scalar; design?:'classic'|'illustrated'; phase?:Scalar; stride?:Scalar; gesture?:Scalar; mouth?:Scalar; expression?:'neutral'|'happy'|'curious'|'concerned'; facing?:'left'|'right'}
   | {kind: 'image'; asset: string; width: number; height: number}
 )

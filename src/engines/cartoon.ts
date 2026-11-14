@@ -13,8 +13,8 @@ export function gait(phase:number, stride:number) {
     return {knee:[reach*.56+7,31-lift(leg)*.26] as Joint, foot:[reach,58-lift(leg)*.52] as Joint}
   })
 }
-export function actor(ctx:CanvasRenderingContext2D, o:Actor, frame:number) {
-  if(o.design==='illustrated') return illustratedActor(ctx,o,frame)
+export function actor(ctx:CanvasRenderingContext2D, o:Actor, frame:number, drawHeld?:()=>void) {
+  if(o.design==='illustrated') return illustratedActor(ctx,o,frame,drawHeld)
   const factor=o.height/152, phase=sample(o.phase,frame,0), stride=sample(o.stride,frame,0)
   const direction=o.facing==='left'?-1:1
   ctx.scale(factor*direction,factor)

@@ -17,7 +17,7 @@ export function illustratedGait(phase:number,stride:number) {
 
 type Actor = Extract<Drawable,{kind:'actor'}>
 /** Shaded profile rig. The origin is the same ground anchor used by the classic actor. */
-export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:number) {
+export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:number, drawHeld?:()=>void) {
   const stride=sample(o.stride,frame,0), phase=sample(o.phase,frame,0)
   const gesture=sample(o.gesture,frame,0), mouth=sample(o.mouth,frame,0)
   const legs=illustratedGait(phase,stride)
@@ -72,6 +72,10 @@ export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:nu
   hand[0]+=(28-hand[0])*wave
   hand[1]+=(-69-hand[1])*wave
   limb([[10,-37],elbow,hand],o.shirt,10)
+  ctx.save()
+  ctx.translate(hand[0],hand[1])
+  drawHeld?.()
+  ctx.restore()
   oval(hand[0],hand[1],4,5,o.skin)
   // Neck, ear and shaped face retain the clothing palette supplied by the scene.
   line([[1,-45],[1,-58]],o.skin,10)

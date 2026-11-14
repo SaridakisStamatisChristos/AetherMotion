@@ -28,6 +28,15 @@ export function parseFilm(input: unknown): Film {
       const {object,depth}=pending.pop()!
       if(depth>12 || ids.size>=2048) throw new Error(scene.id+': maximum 12 levels and 2048 drawable objects per shot')
       if(object.kind==='group') for(const child of object.children) pending.push({object:child,depth:depth+1})
+      if(object.kind==='actor' && object.held)
+        for(const child of object.held) pending.push({object:child,depth:depth+1})
+      if(object.kind==='actor' && object.travel) {
+        const travel=object.travel
+        if(travel.endFrame<=travel.startFrame || travel.endFrame>=scene.frames || travel.fromX===travel.toX)
+          throw new Error(object.id+': travel needs distinct endpoints and an increasing frame interval inside the shot')
+        if([object.x,object.y,object.phase,object.stride,object.facing].some(value=>value!==undefined))
+          throw new Error(object.id+': travel controls x, y, phase, stride and facing; omit those fields')
+      }
       if (ids.has(object.id)) throw new Error(scene.id + ': duplicate object ' + object.id)
       ids.add(object.id)
       if (object.kind==='shape') {
@@ -41,8 +50,8 @@ export function parseFilm(input: unknown): Film {
         }
       }
       if(object.kind==='actor' && object.design!=='illustrated' &&
-        [object.wave,object.lean,object.headTilt,object.blink].some(value=>value!==undefined))
-        throw new Error(object.id+': wave, lean, headTilt and blink require illustrated design')
+        [object.wave,object.lean,object.headTilt,object.blink,object.travel,object.held].some(value=>value!==undefined))
+        throw new Error(object.id+': reaction controls, travel and held props require illustrated design')
       if (object.kind==='actor' && scene.style?.name!=='cartoon') throw new Error(object.id + ': select cartoon style for actor')
       if (object.kind==='bars' && object.data.some(d => d.value>object.ceiling))
         throw new Error(object.id + ': bar values must fit the chart ceiling')
