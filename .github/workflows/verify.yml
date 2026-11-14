@@ -48,6 +48,11 @@ jobs:
         run: node dist/cli/main.js render examples/greeting.json out/greeting.mp4 --backend ${{ matrix.backend }} --workers 2
       - name: Render character reactions
         run: node dist/cli/main.js render examples/curiosity.json out/curiosity.mp4 --backend ${{ matrix.backend }} --workers 2
+      - name: Render the complete lantern story
+        run: |
+          node dist/cli/main.js render examples/evening-delivery.json out/evening-delivery.mp4 --backend ${{ matrix.backend }} --workers 2 > out/evening-metrics.json
+          python3 scripts/check_evening.py out/evening-delivery.mp4 > out/evening-content-checks.json
+          ffmpeg -v error -i out/evening-delivery.mp4 -vf "select='eq(n,20)+eq(n,195)+eq(n,275)+eq(n,419)+eq(n,450)+eq(n,687)',scale=384:216,tile=2x3" -frames:v 1 out/evening-contact.jpg
       - name: Verify published eclipse film
         run: |
           node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4

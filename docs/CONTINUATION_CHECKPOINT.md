@@ -43,3 +43,9 @@ Render examples/greeting.json and review samples/greeting.mp4. The illustrated r
 ## Resume after character reactions
 
 Run npm test and render examples/curiosity.json. Illustrated actors now accept lean, headTilt and blink, all keyed through the existing scalar system. Feet retain their anchor during upper-body lean. See docs/STYLES.md for bounds and transform order. Next development can improve starts/stops, introduce new environments, and develop longer interactions. Live Gemini remains deferred.
+
+## Resume after the complete lantern film
+
+The travel and attachment implementation is `1002914cf2b68ea8280d34d6893aa9872122cdf9`. Run npm test and reproduce examples/evening-delivery.json using docs/CHOREOGRAPHY.md. The film is 30 seconds in three landscape shots. Sample frames and metrics are preserved beside the MP4.
+
+The next substantial animation campaign can implement automatic prop transfer using named scene targets, improve foot contact through acceleration/deceleration, and add a second character silhouette. Travel currently supports horizontal ground only. Held props follow the near hand. Release positions and lighting changes are authored. Continue on feature/aethermotion-v0.1. Live Gemini and other-repository integration remain deferred.

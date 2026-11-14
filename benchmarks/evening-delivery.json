@@ -1,0 +1,51 @@
+{
+  "implementationRevision": "1002914cf2b68ea8280d34d6893aa9872122cdf9",
+  "input": "examples/evening-delivery.json",
+  "production": {
+    "frames": 720,
+    "width": 1280,
+    "height": 720,
+    "duration": 30,
+    "fps": 24,
+    "codec": "h264",
+    "audioCodec": "aac",
+    "audioDuration": 30,
+    "decoded": true,
+    "bytes": 839264,
+    "sha256": "a64d1045b0eeccefb8790cb14175c2632235f1b6ab68ba389c9248f921ed8ecb",
+    "elapsedSeconds": 27.286143744999997,
+    "peakNodeRssKiB": 356784,
+    "workers": 2,
+    "batch": 2,
+    "backend": "native"
+  },
+  "replay": {
+    "frames": 720,
+    "width": 1280,
+    "height": 720,
+    "duration": 30,
+    "fps": 24,
+    "codec": "h264",
+    "audioCodec": "aac",
+    "audioDuration": 30,
+    "decoded": true,
+    "bytes": 839264,
+    "sha256": "a64d1045b0eeccefb8790cb14175c2632235f1b6ab68ba389c9248f921ed8ecb",
+    "elapsedSeconds": 49.817095082,
+    "peakNodeRssKiB": 317436,
+    "workers": 1,
+    "batch": 3,
+    "backend": "native"
+  },
+  "decodedContent": {
+    "handoffCropMeanAbsoluteByteDifference": 0.23765432098765432,
+    "preCueRms": 0.0,
+    "bellRms": 398.2878535864685
+  },
+  "frameVariation": {
+    "frames": 720,
+    "uniqueThumbnails": 655,
+    "adjacentIdenticalPairs": 61,
+    "longestIdenticalRun": 52
+  }
+}

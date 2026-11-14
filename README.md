@@ -1,5 +1,8 @@
 # AetherMotion
 
+[Watch the complete 30-second lantern story](samples/evening-delivery.mp4) · [Six decoded frames](samples/evening-delivery-contact.jpg). A courier carries a lantern from the garden house, hangs it by the glasshouse and lowers the hand. The example combines coordinated travel, held props, camera framing, lighting and a quiet bell. [Reproduction guide](docs/CHOREOGRAPHY.md)
+
+
 [Watch the character reaction study](samples/curiosity.mp4) · [Decoded frames](samples/curiosity-contact.jpg). Keyed head tilts, torso lean and blinking add reactions to the illustrated rig.
 
 

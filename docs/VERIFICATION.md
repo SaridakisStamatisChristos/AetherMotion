@@ -102,3 +102,17 @@ The 12-second silent greeting contains 288 H.264 frames at 720×1280 and 24 fps.
 The silent curiosity example exports 288 H.264 frames at 720×1280 and 24 fps. FFprobe and a full FFmpeg decode passed. Native rendering and verification took 10.15 seconds with two workers and peaked at 268464 KiB Node RSS. The file is 176176 bytes. Frames 48, 140 and 245 were inspected for the blink, forward lean and lifted gaze.
 
 The local suite passed 29 tests and skipped one Chromium-only WebGL check. A pixel regression confirms that upper-body reactions preserve the foot region, blinking changes face pixels and restoring the original controls restores the original face. The animation remains a stylized profile. Full head rotation and naturalistic weight transfer remain open. [Film](../samples/curiosity.mp4) · [Frames](../samples/curiosity-contact.jpg) · [Metrics](../benchmarks/curiosity.json)
+
+## An evening delivery — complete short film
+
+The final 30-second story contains 720 H.264 frames at 1280×720 and 24 fps, with stereo 48 kHz AAC. The sound consists of a quiet bell at the lamp handoff. It has no speech or music. FFprobe and a strict full decode passed. Two native workers rendered and verified it in 27.29 seconds, with 356784 KiB peak Node RSS. The MP4 is 839264 bytes. The runtime implementation was committed at 1002914cf2b68ea8280d34d6893aa9872122cdf9.
+
+Six decoded samples show arrival, travel, the closer lamp view, raising the lamp, withdrawing the hand and the final illuminated house. Review caught both a layer-order difference and a missing five-degree rotation at the prop release. The fixed lamp now matches the hand-held transform. The exported-frame checker compares a 48×36 lamp crop across global frames 429 and 430. Its mean absolute RGB byte difference was 0.238, below the fixture limit of 8. The same crop is tested in Chromium CI. The limit tolerates encoding noise while catching the observed visual error.
+
+Decoded audio has zero RMS in seconds 16–17 and RMS 398.29 in the bell interval from 17.94–18.25 seconds, measured as mono 16-bit PCM at 16 kHz. This verifies the intended delayed effect. It does not assess listening quality.
+
+The grayscale thumbnail check found 655 distinct thumbnails, 61 identical adjacent pairs and a longest hold of 52 frames (2.17 seconds). The final view includes a held ending. These metrics are sensitive to compression and scale. The sample uses a session-authored specification and original procedural artwork. Independent artistic and listening reviews remain open.
+
+Reproduce the film with docs/CHOREOGRAPHY.md. Run scripts/check_evening.py against the exported MP4 to repeat the pixel and audio checks. [Film](../samples/evening-delivery.mp4) · [Frames](../samples/evening-delivery-contact.jpg) · [Measurements and replay](../benchmarks/evening-delivery.json)
+
+The same JSON rendered with one native worker and batches of three produced a byte-identical MP4. That replay took 49.82 seconds including verification. These timings describe this host and backend. See the report for output hashes and both render schedules.

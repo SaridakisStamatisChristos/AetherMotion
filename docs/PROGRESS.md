@@ -45,3 +45,9 @@ The illustrated rig now has its own walk with a level stance sole and straighter
 ## Illustrated reactions
 
 Keyed torso lean, head tilt and blinking now add small reactions to the illustrated rig. The curiosity example demonstrates these controls with a stationary character and butterfly. Foot-region and blink pixel regressions pass. Broader expressions, full head turns and automatic motion coordination remain future work.
+
+## Coordinated animation and a complete short film
+
+Implementation revision `1002914cf2b68ea8280d34d6893aa9872122cdf9` adds horizontal travel with coordinated gait, eased starts/stops and held prop geometry. Speech-driven timeline extension also retimes travel. Tests cover endpoint settling, conflicting controls, reverse travel, nested prop validation, hand following and deterministic seeking.
+
+The 30-second evening delivery uses a new landscape setting with three camera compositions, a carried lantern, an authored handoff, warm lighting and a timed bell. Engine development and film production remain separate. The scene instructions contain no executable code. See docs/CHOREOGRAPHY.md and docs/VERIFICATION.md for reproduction and limitations.
