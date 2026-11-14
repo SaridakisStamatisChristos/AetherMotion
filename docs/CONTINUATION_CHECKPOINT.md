@@ -39,3 +39,7 @@ Continue graphics work. The courtyard example uses actor design illustrated and 
 ## Resume after the greeting
 
 Render examples/greeting.json and review samples/greeting.mp4. The illustrated rig now uses illustratedGait, with 60% stance and 40% swing, plus optional wave. See docs/STYLES.md for matching travel and cycle speed. Next refinements can add torso weight shifts and head direction, and improve motion through starts and stops. The user has approved the courtyard visual style and deferred live Gemini work. Continue graphics and animation on the feature branch.
+
+## Resume after character reactions
+
+Run npm test and render examples/curiosity.json. Illustrated actors now accept lean, headTilt and blink, all keyed through the existing scalar system. Feet retain their anchor during upper-body lean. See docs/STYLES.md for bounds and transform order. Next development can improve starts/stops, introduce new environments, and develop longer interactions. Live Gemini remains deferred.

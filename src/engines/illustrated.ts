@@ -47,6 +47,9 @@ export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:nu
     ctx.lineTo(14,9);ctx.bezierCurveTo(17,3,8,2,5,-1);ctx.closePath();ctx.fill()
     line([[-3,8],[13,8]],'#F4DFC078',1.3);ctx.restore()
   }
+  // Rotate the upper body at the hips while the legs retain their ground anchor.
+  ctx.save()
+  ctx.rotate(sample(o.lean,frame,0)*Math.PI/180)
   limb([[-11,-36],[-19-swing,-19],[-16-swing,-2]],o.shirt,11)
   oval(-16-swing,-1,4.2,5,o.skin)
   // Coat silhouette, shaded side, lapel and seam.
@@ -72,6 +75,10 @@ export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:nu
   oval(hand[0],hand[1],4,5,o.skin)
   // Neck, ear and shaped face retain the clothing palette supplied by the scene.
   line([[1,-45],[1,-58]],o.skin,10)
+  ctx.save()
+  ctx.translate(1,-50)
+  ctx.rotate(sample(o.headTilt,frame,0)*Math.PI/180)
+  ctx.translate(-1,50)
   ctx.fillStyle=o.skin;ctx.beginPath();ctx.moveTo(-12,-79)
   ctx.bezierCurveTo(-5,-94,15,-91,18,-77)
   ctx.lineTo(19,-70);ctx.lineTo(24,-65);ctx.lineTo(19,-63)
@@ -89,11 +96,17 @@ export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:nu
   line([[-11,-81],[-7,-87],[2,-89]],'#FFFFFF20',1.3)
   const brow=o.expression==='concerned'?2:o.expression==='curious'?-2:0
   line([[11,-76],[17,-76+brow]],o.hair,1.4)
-  oval(15,-71,1.3,1.7,o.shoes)
-  oval(15.4,-71.5,.4,.5,'#FFFFFF')
+  const openness=1-sample(o.blink,frame,0)
+  if(openness<.08) line([[13.5,-71],[16.5,-71]],o.shoes,1)
+  else {
+    oval(15,-71,1.3,1.7*openness,o.shoes)
+    oval(15.4,-71-.5*openness,.4,.5*openness,'#FFFFFF')
+  }
   if(mouth>.06) oval(17,-57,2,1+mouth*2.8,o.shoes)
   else {
     ctx.strokeStyle='#854D46';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(13,-57)
     ctx.quadraticCurveTo(17,-55,20,o.expression==='happy'?-58:-57);ctx.stroke()
   }
+  ctx.restore()
+  ctx.restore()
 }

@@ -46,6 +46,8 @@ jobs:
         run: node dist/cli/main.js render examples/courtyard.json out/courtyard.mp4 --backend ${{ matrix.backend }} --workers 2
       - name: Render illustrated greeting
         run: node dist/cli/main.js render examples/greeting.json out/greeting.mp4 --backend ${{ matrix.backend }} --workers 2
+      - name: Render character reactions
+        run: node dist/cli/main.js render examples/curiosity.json out/curiosity.mp4 --backend ${{ matrix.backend }} --workers 2
       - name: Verify published eclipse film
         run: |
           node dist/cli/main.js verify examples/eclipse.json samples/eclipse.mp4

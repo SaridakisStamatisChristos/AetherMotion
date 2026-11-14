@@ -41,3 +41,7 @@ An optional illustrated actor design now supplies curved clothing, profile facia
 ## Illustrated movement refinement
 
 The illustrated rig now has its own walk with a level stance sole and straighter resting legs, plus a keyed wave blend. Two palette variants exchange a greeting in the new courtyard sample. The existing classic gait keeps its earlier implementation. Matching stride, phase and travel is documented. Automatic foot locking during arbitrary travel remains open.
+
+## Illustrated reactions
+
+Keyed torso lean, head tilt and blinking now add small reactions to the illustrated rig. The curiosity example demonstrates these controls with a stationary character and butterfly. Foot-region and blink pixel regressions pass. Broader expressions, full head turns and automatic motion coordination remain future work.

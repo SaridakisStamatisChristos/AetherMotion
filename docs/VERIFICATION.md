@@ -96,3 +96,9 @@ The local suite passed 27 tests, with one browser-only WebGL check skipped. The 
 ## Courtyard greeting
 
 The 12-second silent greeting contains 288 H.264 frames at 720×1280 and 24 fps. FFprobe and full decoding passed. Rendering and verification with two native workers took 6.05 seconds and peaked at 270412 KiB Node RSS. The file is 206690 bytes. Frames 28, 127 and 188 show travel, rest and the two raised hands. The local suite passed 28 tests and skipped the Chromium-only WebGL check. A numerical test confirms that matching world travel cancels backward foot movement during stance, that the sole is level, and that the cycle repeats. Deceleration and general movement quality still need independent viewer assessment. [Film](../samples/greeting.mp4) · [Frames](../samples/greeting-contact.jpg) · [Metrics](../benchmarks/greeting.json)
+
+## Character reaction study
+
+The silent curiosity example exports 288 H.264 frames at 720×1280 and 24 fps. FFprobe and a full FFmpeg decode passed. Native rendering and verification took 10.15 seconds with two workers and peaked at 268464 KiB Node RSS. The file is 176176 bytes. Frames 48, 140 and 245 were inspected for the blink, forward lean and lifted gaze.
+
+The local suite passed 29 tests and skipped one Chromium-only WebGL check. A pixel regression confirms that upper-body reactions preserve the foot region, blinking changes face pixels and restoring the original controls restores the original face. The animation remains a stylized profile. Full head rotation and naturalistic weight transfer remain open. [Film](../samples/curiosity.mp4) · [Frames](../samples/curiosity-contact.jpg) · [Metrics](../benchmarks/curiosity.json)

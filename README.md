@@ -1,5 +1,8 @@
 # AetherMotion
 
+[Watch the character reaction study](samples/curiosity.mp4) · [Decoded frames](samples/curiosity-contact.jpg). Keyed head tilts, torso lean and blinking add reactions to the illustrated rig.
+
+
 [Watch the courtyard greeting](samples/greeting.mp4) · [Decoded frames](samples/greeting-contact.jpg). Two illustrated characters use the refined walk and keyed wave control.
 
 

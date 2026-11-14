@@ -36,3 +36,14 @@ Reproduce the silent two-character greeting with:
 node dist/cli/main.js render examples/greeting.json out/greeting.mp4 --backend native --workers 2
 node dist/cli/main.js verify examples/greeting.json out/greeting.mp4
 ```
+
+## Illustrated reactions
+
+Illustrated actors accept lean (−12 to +12 degrees), headTilt (−25 to +25 degrees) and blink (0 open through 1 closed). Each supports scalar keyframes. Lean rotates the upper body at the hips. Head tilt rotates the face and hair at the neck, within the torso transform. Positive angles rotate clockwise in the actor's local coordinates, before facing reflection. The legs keep their existing ground anchor. These controls require design illustrated.
+
+The controls default to zero, so scenes retain their prior pose when fields are omitted. They model planar tilt. Full head turns and eye tracking need further development. Blinks are explicitly timed, so rendering never depends on wall time or random state.
+
+```sh
+node dist/cli/main.js render examples/curiosity.json out/curiosity.mp4 --backend native --workers 2
+node dist/cli/main.js verify examples/curiosity.json out/curiosity.mp4
+```

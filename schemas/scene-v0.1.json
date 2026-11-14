@@ -1055,6 +1055,91 @@
             },
             "wave": {
               "$ref": "#/definitions/unit"
+            },
+            "lean": {
+              "oneOf": [
+                {
+                  "type": "number",
+                  "minimum": -12,
+                  "maximum": 12
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "frame": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 216000
+                      },
+                      "value": {
+                        "type": "number",
+                        "minimum": -12,
+                        "maximum": 12
+                      },
+                      "ease": {
+                        "enum": [
+                          "linear",
+                          "smooth",
+                          "hold"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "frame",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 1,
+                  "maxItems": 256
+                }
+              ]
+            },
+            "headTilt": {
+              "oneOf": [
+                {
+                  "type": "number",
+                  "minimum": -25,
+                  "maximum": 25
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "frame": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 216000
+                      },
+                      "value": {
+                        "type": "number",
+                        "minimum": -25,
+                        "maximum": 25
+                      },
+                      "ease": {
+                        "enum": [
+                          "linear",
+                          "smooth",
+                          "hold"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "frame",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 1,
+                  "maxItems": 256
+                }
+              ]
+            },
+            "blink": {
+              "$ref": "#/definitions/unit"
             }
           },
           "required": [

@@ -42,3 +42,24 @@ test('illustrated stance keeps a level sole, relaxes at rest and repeats across 
   assert.deepEqual(illustratedGait(.2,0),illustratedGait(.8,0))
   assert.deepEqual(illustratedGait(.25,20),illustratedGait(1.25,20))
 })
+
+test('head and torso reactions preserve feet, blink pixels and seek identity',()=>{
+  const f=parseFilm(JSON.parse(readFileSync('examples/curiosity.json','utf8')))
+  const actor=f.scenes[0].objects.find(o=>o.kind==='actor')
+  const canvas=createCanvas(f.width,f.height),ctx=canvas.getContext('2d')
+  function region(x,y,w,h) {return Buffer.from(ctx.getImageData(x,y,w,h).data)}
+  drawFrame(ctx,f,new Map(),0)
+  const feet=region(280,1015,120,30),body=region(270,680,220,300)
+  drawFrame(ctx,f,new Map(),140)
+  assert.deepEqual(region(280,1015,120,30),feet)
+  assert.notDeepEqual(region(270,680,220,300),body)
+  actor.headTilt=0;actor.lean=0;actor.gesture=0;actor.blink=0
+  drawFrame(ctx,f,new Map(),0)
+  const open=region(300,690,100,110)
+  actor.blink=1
+  drawFrame(ctx,f,new Map(),0)
+  assert.notDeepEqual(region(300,690,100,110),open)
+  actor.blink=0
+  drawFrame(ctx,f,new Map(),0)
+  assert.deepEqual(region(300,690,100,110),open)
+})
