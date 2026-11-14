@@ -1052,6 +1052,9 @@
                 "classic",
                 "illustrated"
               ]
+            },
+            "wave": {
+              "$ref": "#/definitions/unit"
             }
           },
           "required": [

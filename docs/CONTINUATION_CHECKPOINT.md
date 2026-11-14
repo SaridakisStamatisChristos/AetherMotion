@@ -35,3 +35,7 @@ The user has deferred live Gemini creation. Continue with graphics and rendering
 ## Resume after the illustrated courtyard
 
 Continue graphics work. The courtyard example uses actor design illustrated and a silent 720×1280 composition. Run npm test and render examples/courtyard.json. Review samples/courtyard-contact.jpg and docs/STYLES.md. The actor retains the existing keyed controls, with a new drawing implementation. Improve foot contact and natural rest posture, broaden gestures and add character variants. Live Gemini remains deferred.
+
+## Resume after the greeting
+
+Render examples/greeting.json and review samples/greeting.mp4. The illustrated rig now uses illustratedGait, with 60% stance and 40% swing, plus optional wave. See docs/STYLES.md for matching travel and cycle speed. Next refinements can add torso weight shifts and head direction, and improve motion through starts and stops. The user has approved the courtyard visual style and deferred live Gemini work. Continue graphics and animation on the feature branch.

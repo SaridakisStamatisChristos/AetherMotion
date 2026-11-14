@@ -31,3 +31,14 @@ test('illustrated rig honours palette, facing and deterministic gesture seeking'
   actor.facing='left'
   assert.notDeepEqual(pixels(0),rest)
 })
+
+test('illustrated stance keeps a level sole, relaxes at rest and repeats across cycles',async()=>{
+  const {illustratedGait}=await import('../dist/engines/illustrated.js')
+  const left=illustratedGait(.1,20)[0],right=illustratedGait(.4,20)[0]
+  assert.equal(left.foot[1],right.foot[1])
+  // World travel cancels the stance foot moving backward under the actor.
+  assert.ok(Math.abs(left.foot[0]+.1*40/.6-right.foot[0]-.4*40/.6)<1e-9)
+  assert.ok(illustratedGait(.8,20)[0].foot[1]<61)
+  assert.deepEqual(illustratedGait(.2,0),illustratedGait(.8,0))
+  assert.deepEqual(illustratedGait(.25,20),illustratedGait(1.25,20))
+})

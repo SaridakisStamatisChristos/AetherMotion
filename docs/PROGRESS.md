@@ -37,3 +37,7 @@ Curved vector shapes, linear gradients, outlines and soft shadows now work throu
 ## Illustrated character study
 
 An optional illustrated actor design now supplies curved clothing, profile facial detail, shaded limbs and shaped shoes. It reuses the established walk and gesture controls. The courtyard example combines the rig with gradient architecture, citrus foliage, a butterfly and depth ordering. The silent 12-second export passed full decode. Further gait polish, broader expression controls and character variants remain open.
+
+## Illustrated movement refinement
+
+The illustrated rig now has its own walk with a level stance sole and straighter resting legs, plus a keyed wave blend. Two palette variants exchange a greeting in the new courtyard sample. The existing classic gait keeps its earlier implementation. Matching stride, phase and travel is documented. Automatic foot locking during arbitrary travel remains open.

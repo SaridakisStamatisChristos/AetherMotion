@@ -24,3 +24,15 @@ The illustrated rig is a stylized profile. It has no automatic lip synchronizati
 node dist/cli/main.js render examples/courtyard.json out/courtyard.mp4 --backend native --workers 2
 node dist/cli/main.js verify examples/courtyard.json out/courtyard.mp4
 ```
+
+## Illustrated walk and wave
+
+The illustrated design uses a separate walk cycle with 60% stance and 40% swing per foot. Its sole stays level throughout stance. A stride of zero gives a straight, relaxed rest pose. With constant stride, match world travel to `2 * stride / 0.6 * height / 161` pixels per phase cycle. This cancels horizontal foot motion during stance. Facing left reverses the travel sign. Independent changes to phase, stride and travel can still produce sliding. Deceleration remains authored.
+
+The illustrated actor accepts wave as a scalar or unit track from zero to one. It blends the near arm from the current gesture pose to a raised hand. Oscillate its value to animate the greeting. Classic actors reject wave. Existing gesture and mouth controls remain available.
+
+Reproduce the silent two-character greeting with:
+```sh
+node dist/cli/main.js render examples/greeting.json out/greeting.mp4 --backend native --workers 2
+node dist/cli/main.js verify examples/greeting.json out/greeting.mp4
+```

@@ -1,5 +1,8 @@
 # AetherMotion
 
+[Watch the courtyard greeting](samples/greeting.mp4) · [Decoded frames](samples/greeting-contact.jpg). Two illustrated characters use the refined walk and keyed wave control.
+
+
 [Watch the illustrated courtyard character](samples/courtyard.mp4) · [Decoded frames](samples/courtyard-contact.jpg). A reusable shaded profile rig walks, stops and reaches toward a butterfly.
 
 

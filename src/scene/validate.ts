@@ -40,6 +40,8 @@ export function parseFilm(input: unknown): Film {
             throw new Error(object.id+': gradient stops must increase')
         }
       }
+      if(object.kind==='actor' && object.wave!==undefined && object.design!=='illustrated')
+        throw new Error(object.id+': wave requires illustrated design')
       if (object.kind==='actor' && scene.style?.name!=='cartoon') throw new Error(object.id + ': select cartoon style for actor')
       if (object.kind==='bars' && object.data.some(d => d.value>object.ceiling))
         throw new Error(object.id + ': bar values must fit the chart ceiling')

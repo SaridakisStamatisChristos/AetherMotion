@@ -1,13 +1,27 @@
 import type { Drawable } from '../scene/types.js'
 import { sample } from '../timeline/sample.js'
-import { gait } from './cartoon.js'
+/** Stance occupies 60% of a cycle, with a level sole moving backward under the body.
+ * Match travel to 2*stride/0.6 rig units per cycle for a planted stance.
+ */
+export function illustratedGait(phase:number,stride:number) {
+  return [0,.5].map(offset=>{
+    const cycle=((phase+offset)%1+1)%1
+    const stance=cycle<.6
+    const u=stance?cycle/.6:(cycle-.6)/.4
+    const reach=stance?stride*(1-2*u):stride*(-1+2*u)
+    const lift=stance?0:stride*.65*Math.sin(Math.PI*u)
+    return {knee:[reach*.45+stride*.2,30-lift*.35] as [number,number],
+      foot:[reach,61-lift] as [number,number]}
+  })
+}
 
 type Actor = Extract<Drawable,{kind:'actor'}>
 /** Shaded profile rig. The origin is the same ground anchor used by the classic actor. */
 export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:number) {
   const stride=sample(o.stride,frame,0), phase=sample(o.phase,frame,0)
   const gesture=sample(o.gesture,frame,0), mouth=sample(o.mouth,frame,0)
-  const legs=gait(phase,stride)
+  const legs=illustratedGait(phase,stride)
+  const wave=sample(o.wave,frame,0)
   const swing=stride*.4*Math.cos(phase*Math.PI*2)
   const factor=o.height/161
   ctx.scale(factor*(o.facing==='left'?-1:1),factor)
@@ -48,9 +62,14 @@ export function illustratedActor(ctx:CanvasRenderingContext2D, o:Actor, frame:nu
   line([[4,-27],[5,1]],'#182D4028',.8)
   line([[-11,-8],[-5,-8]],'#F8E4C768',1)
   for(const y of [-18,-8]) oval(6,y,.9,.9,'#E6C59C')
-  limb([[10,-37],[18+swing*.35+10*gesture,-22-15*gesture],
-    [13+swing+40*gesture,-3-36*gesture]],o.shirt,10)
-  oval(13+swing+40*gesture,-2-36*gesture,4,5,o.skin)
+  const elbow:[number,number]=[18+swing*.35+10*gesture,-22-15*gesture]
+  const hand:[number,number]=[13+swing+40*gesture,-2-36*gesture]
+  elbow[0]+=(24-elbow[0])*wave
+  elbow[1]+=(-39-elbow[1])*wave
+  hand[0]+=(28-hand[0])*wave
+  hand[1]+=(-69-hand[1])*wave
+  limb([[10,-37],elbow,hand],o.shirt,10)
+  oval(hand[0],hand[1],4,5,o.skin)
   // Neck, ear and shaped face retain the clothing palette supplied by the scene.
   line([[1,-45],[1,-58]],o.skin,10)
   ctx.fillStyle=o.skin;ctx.beginPath();ctx.moveTo(-12,-79)
